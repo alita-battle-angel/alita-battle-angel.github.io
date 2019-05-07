@@ -1,10 +1,4 @@
-@font-face {
-  font-family: 'BattleAngel';
-  src: url('BattleAngel.ttf') format('truetype'),
-       url('BattleAngel.woff') format('woff');
-  font-weight: normal;
-  font-style: normal;
-}
+@import url('https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600,700,800,900');
 
 html {
   height: 100%;
@@ -15,12 +9,11 @@ body {
   display: flex;
   flex-direction: row;
   align-items: center;
+  justify-content: center;
+  font-size: 18px;
 }
 
 html, body {
-  font-family: 'BattleAngel';
+  font-family: 'Montserrat';
 }
 
-h1 {
-  text-align: center;
-}
