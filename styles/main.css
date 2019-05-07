@@ -1,0 +1,23 @@
+@font-face {
+  font-family: 'BattleAngel';
+  src: url('BattleAngel.ttf') format('truetype'),
+       url('BattleAngel.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+html {
+  height: 100%;
+}
+
+body {
+  min-height: 100%;
+}
+
+html, body {
+  font-family: 'BattleAngel';
+}
+
+h1 {
+  text-align: center;
+}
