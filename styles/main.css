@@ -7,17 +7,23 @@ html {
 body {
   min-height: 100%;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   font-size: 18px;
 }
 
 html, body {
-  font-family: 'Montserrat';
+  font-family: 'Montserrat', sans-serif;
 }
 
 h1 {
   font-size: 3.5vw;
   text-transform: uppercase;
+  color:  #444;
+}
+
+h2 {
+  font-size: 1.75vw;
+  color:  #F1CA1A;
 }
