@@ -5,13 +5,17 @@ cache: npm
 jobs:
   include:
     - stage: deploy
-      if: type != pull_request AND branch = master
       script: 'mkdir public && echo "Hello Alita!" > public/index.html'
       deploy:
         provider: pages
-        skip_cleanup: true
-        github_token: $GITHUB_API_KEY
+        verbose: true
+        on:
+          branch: develop
+          condition: $TRAVIS_PULL_REQUEST == false
         local_dir: public
+        skip_cleanup: true
+        target_branch: master
+        github_token: $GITHUB_API_KEY
 
 notifications:
   webhooks: https://fathomless-fjord-24024.herokuapp.com/notify
