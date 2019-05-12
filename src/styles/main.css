@@ -77,7 +77,7 @@ h1 {
 }
 
 h2 {
-  font-size: 1.75vw;
+  font-size: 2.15vw;
   color: #F1CA1A;
 }
 
@@ -94,7 +94,7 @@ h3 {
 }
 
 .temp-content {
-  padding: 0 60px;
+  padding: 0 30px;
   text-align: center;
   display: flex;
   flex-direction: column;
@@ -111,5 +111,7 @@ h3 {
 .flex-row {
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
   margin-bottom: 45px;
 }
