@@ -1,0 +1,17 @@
+language: node_js
+node_js: node # latest stable Node.js version
+cache: npm
+
+jobs:
+  include:
+    - stage: deploy
+      if: type != pull_request AND branch = master
+      script: 'mkdir public && echo "Hello Alita!" > public/index.html'
+      deploy:
+        provider: pages
+        skip_cleanup: true
+        github_token: $GITHUB_API_KEY
+        local_dir: public
+
+notifications:
+  webhooks: https://fathomless-fjord-24024.herokuapp.com/notify
