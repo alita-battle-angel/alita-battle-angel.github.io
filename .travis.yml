@@ -2,21 +2,19 @@ language: node_js
 node_js: node # latest stable Node.js version
 cache: npm
 
-jobs:
-  include:
-    - stage: deploy
-      script: 'mkdir public && echo "Hello Alita!" > public/index.html'
-      deploy:
-        provider: pages
-        verbose: true
-        on:
-          branch: develop
-          condition: $TRAVIS_PULL_REQUEST == false
-        local_dir: public
-        skip_cleanup: true
-        target_branch: master
-        github_token: $GITHUB_API_KEY
-        fqdn: i-do-not-stand-by-in-the-presence-of-evil.com
+script: 'mkdir public && echo "Hello Alita!" > public/index.html'
+
+deploy:
+  provider: pages
+  verbose: true
+  on:
+    branch: develop
+    condition: $TRAVIS_PULL_REQUEST == false
+  local_dir: public
+  skip_cleanup: true
+  target_branch: master
+  github_token: $GITHUB_API_KEY
+  fqdn: i-do-not-stand-by-in-the-presence-of-evil.com
 
 notifications:
   webhooks: https://fathomless-fjord-24024.herokuapp.com/notify
