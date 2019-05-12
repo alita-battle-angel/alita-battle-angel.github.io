@@ -16,6 +16,7 @@ jobs:
         skip_cleanup: true
         target_branch: master
         github_token: $GITHUB_API_KEY
+        fqdn: i-do-not-stand-by-in-the-presence-of-evil.com
 
 notifications:
   webhooks: https://fathomless-fjord-24024.herokuapp.com/notify
