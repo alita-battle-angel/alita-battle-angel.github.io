@@ -22,6 +22,7 @@ a {
   text-decoration: none;
   border-radius: 20px;
   padding: 4px 10px;
+  margin-bottom: 5px;
   transition: all 200ms ease-in-out;
 }
 
@@ -53,6 +54,22 @@ a:hover {
   width: 128px;
 }
 
+.icon-link.youtube {
+  /*background-color: #fe0001;*/
+}
+
+.icon-link.youtube > img {
+  width: 100px;
+  margin: 0 auto;
+  border-radius: 50px;
+}
+
+.icon-link.youtube > span {
+  margin-top: 10px;
+  font-weight: 400;
+
+}
+
 h1 {
   font-size: 3.5vw;
   text-transform: uppercase;
@@ -62,6 +79,10 @@ h1 {
 h2 {
   font-size: 1.75vw;
   color: #F1CA1A;
+}
+
+h3 {
+  font-weight: 700;
 }
 
 .banner {
@@ -80,12 +101,15 @@ h2 {
   align-items: center;
 }
 
-.temp-content > a {
-  margin-bottom: 10px;
+.flex-col {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 45px;
+  align-items: center;
 }
 
 .flex-row {
   display: flex;
   flex-direction: row;
-  margin-bottom: 30px;
+  margin-bottom: 45px;
 }
