@@ -5,7 +5,7 @@ cache: npm
 jobs:
   include:
     - stage: deploy
-      script: 'mkdir public && echo "Hello Alita!" > public/index.html'
+      script: 'mkdir public && npm run build'
       deploy:
         provider: pages
         verbose: true
