@@ -1,4 +1,5 @@
-@import url('https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600,700,800,900');
+@import "fonts";
+@import "normalize";
 
 html {
   height: 100%;
@@ -11,7 +12,6 @@ body {
 }
 
 html, body {
-  font-family: 'Montserrat', sans-serif;
   color: #444;
 }
 
@@ -24,10 +24,10 @@ a {
   padding: 4px 10px;
   margin-bottom: 5px;
   transition: all 200ms ease-in-out;
-}
 
-a:hover {
-  background-color: rgba(150, 61, 197, .15);
+  &:hover {
+    background-color: rgba(#963dc5, .15);
+  }
 }
 
 .icon-link {
@@ -37,38 +37,39 @@ a:hover {
   font-size: .78em;
   color: #444;
   margin: 5px;
+
+  &:hover {
+    background-color: transparent;
+    box-shadow: 0 8px 15px rgba(#000, .2);
+  }
+
+
+  > img {
+    margin: 0;
+    width: 100%;
+    overflow: hidden;
+  }
+
+  &.big {
+    width: 128px;
+  }
+
+  &.youtube {
+    /*background-color: #fe0001;*/
+
+    > img {
+      width: 100px;
+      margin: 0 auto;
+      border-radius: 50px;
+    }
+
+    > span {
+      margin-top: 10px;
+      font-weight: 400;
+    }
+  }
 }
 
-.icon-link > img {
-  margin: 0;
-  width: 100%;
-  overflow: hidden;
-}
-
-.icon-link:hover {
-  background-color: transparent;
-  box-shadow: 0 8px 15px rgba(0, 0, 0, .2);
-}
-
-.icon-link.big {
-  width: 128px;
-}
-
-.icon-link.youtube {
-  /*background-color: #fe0001;*/
-}
-
-.icon-link.youtube > img {
-  width: 100px;
-  margin: 0 auto;
-  border-radius: 50px;
-}
-
-.icon-link.youtube > span {
-  margin-top: 10px;
-  font-weight: 400;
-
-}
 
 h1 {
   font-size: 3.5vw;
