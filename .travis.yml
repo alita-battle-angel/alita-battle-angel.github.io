@@ -2,18 +2,18 @@ language: node_js
 node_js: node # latest stable Node.js version
 cache: npm
 
-script: 'npm run generate'
+script: 'mkdir dist && npm run generate'
 
 deploy:
   provider: pages
   verbose: true
-  on:
-    branch: develop
-    condition: $TRAVIS_PULL_REQUEST == false
   local_dir: dist
   skip_cleanup: true
   target_branch: master
   github_token: $GITHUB_API_KEY
+  on:
+    branch: develop
+    condition: $TRAVIS_PULL_REQUEST == false
   fqdn: i-do-not-stand-by-in-the-presence-of-evil.com
 
 notifications:
