@@ -2,7 +2,7 @@ language: node_js
 node_js: node # latest stable Node.js version
 cache: npm
 
-script: 'mkdir public && npm run build'
+script: 'mkdir dist && npm run generate'
 
 deploy:
   provider: pages
@@ -10,7 +10,7 @@ deploy:
   on:
     branch: develop
     condition: $TRAVIS_PULL_REQUEST == false
-  local_dir: public
+  local_dir: dist
   skip_cleanup: true
   target_branch: master
   github_token: $GITHUB_API_KEY
