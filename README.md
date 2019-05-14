@@ -2,8 +2,19 @@
 
 [![Travis (.com) branch](https://img.shields.io/travis/com/alita-battle-angel/alita-battle-angel.github.io/develop.svg?style=flat-square)](https://travis-ci.com/alita-battle-angel/alita-battle-angel.github.io)
 
-Official repo for [i-do-not-stand-by-in-the-presence-of-evil.com](https://i-do-not-stand-by-in-the-presence-of-evil.com) website.
+Build by Nuxt.js
 
-In order to run the website locally:
-   1. `npm install`
-   2. `npm run dev` 
+## Build Setup
+
+``` bash
+# install dependencies
+$ npm install
+
+# serve with hot reload at localhost:3000
+$ npm run dev
+
+# generate static project
+$ npm run generate
+```
+
+For detailed explanation on how things work, checkout [Nuxt.js docs](https://nuxtjs.org).
