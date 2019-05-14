@@ -2,7 +2,7 @@ language: node_js
 node_js: node # latest stable Node.js version
 cache: npm
 
-script: 'mkdir dist && npm run generate'
+script: 'mkdir .next && mkdir dist && npm run generate'
 
 deploy:
   provider: pages
