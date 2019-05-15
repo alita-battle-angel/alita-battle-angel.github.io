@@ -12,7 +12,41 @@ body {
 }
 
 html, body {
-  color: #444;
+  color: #aaa;
+}
+
+@keyframes shifting {
+  0% {
+    background-position: 0 0;
+  }
+
+  100% {
+
+    background-position: 0px 202px;
+  }
+}
+
+body {
+  background-color: #000;
+  position: relative;
+
+  &::before {
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('~assets/textures/hexellence.png');
+    background-size: 175px 202px;
+    background-attachment: fixed;
+    content: ' ';
+    opacity: .8;
+    position: absolute;
+    z-index: 0;
+    animation: shifting infinite 180s linear;
+  }
+
+  > div {
+    position: relative;
+  }
 }
 
 a {
@@ -21,12 +55,12 @@ a {
   color: #963dc5;
   text-decoration: none;
   border-radius: 20px;
-  padding: 4px 10px;
-  margin-bottom: 5px;
+  padding: 8px 10px;
+  margin-bottom: 10px;
   transition: all 200ms ease-in-out;
 
   &:hover {
-    background-color: rgba(#963dc5, .15);
+    background-color: rgba(#361549, .85);
   }
 }
 
@@ -35,12 +69,13 @@ a {
   flex-direction: column;
   padding: 15px;
   font-size: .78em;
-  color: #444;
+  color: #555;
   margin: 5px;
 
   &:hover {
     background-color: transparent;
-    box-shadow: 0 8px 15px rgba(#000, .2);
+    box-shadow: 0 5px 23px rgba(#009ae5, .58), 0 0 5px 1px rgba(#009ae5, .3);
+    color: #fff;
   }
 
 
@@ -55,7 +90,23 @@ a {
   }
 
   &.youtube {
-    /*background-color: #fe0001;*/
+    width: 100px;
+    padding-bottom: 25px;
+    border-radius: 63px;
+    border: 1px solid #222;
+    margin: 10px 15px;
+    background-color: rgba(#222, .2);
+    position: relative;
+    overflow: hidden;
+
+    &:hover {
+      border-color: #009ae5;
+      background-color: rgba(#009ae5, .1);
+    }
+
+    > * {
+      position: relative;
+    }
 
     > img {
       width: 100px;
@@ -64,7 +115,7 @@ a {
     }
 
     > span {
-      margin-top: 10px;
+      margin-top: 20px;
       font-weight: 400;
     }
   }
@@ -95,11 +146,15 @@ h3 {
 }
 
 .temp-content {
-  padding: 0 30px;
+  padding: 30px;
   text-align: center;
   display: flex;
   flex-direction: column;
   align-items: center;
+  background-color: rgba(#000, .6);
+  border-style: solid;
+  border-color: #333;
+  border-width: 1px 0;
 }
 
 .flex-col {
