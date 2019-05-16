@@ -101,6 +101,16 @@
 
 <script>
 export default {
+  head: {
+    link: [
+      {
+        rel: 'preload',
+        as: 'image',
+        type: 'image/jpg',
+        href: '~/static/petition-banner.jpg'
+      }
+    ]
+  },
   components: {},
   data() {
     return {
