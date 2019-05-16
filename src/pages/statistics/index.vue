@@ -5,7 +5,7 @@
         Statistics
       </h1>
       <h2 class="subtitle">
-        Stuff here
+        Coming Soon...
       </h2>
     </div>
   </section>

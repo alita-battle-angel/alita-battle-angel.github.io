@@ -22,7 +22,7 @@ html, body {
 
   100% {
 
-    background-position: 0px 202px;
+    background-position: 0 202px;
   }
 }
 
@@ -121,7 +121,6 @@ a {
   }
 }
 
-
 h1 {
   font-size: 3.5vw;
   text-transform: uppercase;
@@ -152,9 +151,6 @@ h3 {
   flex-direction: column;
   align-items: center;
   background-color: rgba(#000, .6);
-  border-style: solid;
-  border-color: #333;
-  border-width: 1px 0;
 }
 
 .flex-col {

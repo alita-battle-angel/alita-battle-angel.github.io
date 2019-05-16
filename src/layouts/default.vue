@@ -6,11 +6,12 @@
           v-for="item in menus"
           :key="item.href"
           :to="item.href"
-          exact-active-class="active">
+          exact-active-class="active"
+        >
           <i class="material-icons">{{ item.icon }}</i>
           <span>
-          {{ item.title }}
-        </span>
+            {{ item.title }}
+          </span>
         </nuxt-link>
       </nav>
     </div>
@@ -20,6 +21,7 @@
 </template>
 
 <script>
+
 export default {
   data() {
     return {
