@@ -33,6 +33,7 @@ $size = filesize($file_path);
 if ($size > 0) {
   $handle = fopen($petition_info, 'r') or die('Cannot open file:  ' . $file_path);
   header('Content-Type: application/json', true);
+  header("Access-Control-Allow-Origin: *");
   echo fread($handle, $size);
   fclose($handle);
 }

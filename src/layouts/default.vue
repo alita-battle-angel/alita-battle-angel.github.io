@@ -58,7 +58,7 @@ export default {
       align-items: center;
       overflow: hidden;
       position: relative;
-      padding: 15px 16px;
+      padding: 10px 5px;
       border-radius: 10px;
       box-shadow: 0 0 6px rgba(#000, .15), 0 10px 23px rgba(#000, .25);
 
@@ -78,13 +78,14 @@ export default {
         width: 86px;
         line-height: 18px;
         padding: 10px 5px;
-        border: 1px solid transparent;
+        border: 1px solid #333;
         border-radius: 5px;
-        color: #fff;
+        color: #ccc;
+        background-color: rgba(#000, .3);
         font-weight: 300;
         letter-spacing: 1px;
         text-transform: uppercase;
-        margin: 0 20px 0 0;
+        margin: 0 5px;
         text-align: center;
         font-size: 12px;
         display: flex;
@@ -102,6 +103,7 @@ export default {
 
         &:hover {
           background-color: rgba(#009ae5, .15);
+          border-color: rgba(#009ae5, .16);
         }
 
         &.active {

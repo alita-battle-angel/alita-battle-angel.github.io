@@ -3,14 +3,23 @@
     <article class="banner">
       <h1>I do not stand by in the presence of Evil</h1>
       <h2>UNDER CONSTRUCTION...</h2>
+      <a
+        class="petition icon-link box"
+        href="https://www.change.org/p/robert-rodriguez-alita-battle-angel-part-2"
+        target="_blank"
+      >
+        <img
+          src="~/static/petition-banner.jpg"
+          alt="petition logo"
+        >
+        <span>Alita's Sequel Petition</span>
+        <strong>{{ petition.signatureCount.total }} have signed</strong>
+      </a>
     </article>
 
     <article class="temp-content">
       <h3>In the mean while you can check following links</h3>
       <div class="flex-col">
-        <a href="https://www.change.org/p/robert-rodriguez-alita-battle-angel-part-2">
-          Sign the Alita's Sequel Petition
-        </a>
         <a href="https://shop.foxmovies.com/collections/alita">
           Official Alita's Merchandise
         </a>
@@ -92,10 +101,53 @@
 
 <script>
 export default {
-  components: {}
+  components: {},
+  data() {
+    return {
+      petition: {
+        signatureCount: {
+          total: '00000'
+        }
+      }
+    }
+  },
+  mounted() {
+    fetch('https://ewcms.org/alita-battle-angel/petition.php').then((res) => {
+      return res.json()
+    }).then((data) => {
+      this.petition = data.petition
+    })
+  }
 }
 </script>
 
-<style>
+<style lang="scss">
+  .petition {
+    width: 220px;
+    display: flex;
+    flex-direction: column;
+    margin-top: 30px;
+    padding: 15px 15px 60px;
+    border-radius: 120px;
+    color: #aaa;
+    font-weight: 300;
+    font-size: 14px;
+    text-align: center;
+    align-items: center;
 
+    > img {
+      width: 100%;
+      border-radius: 50%;
+      margin-bottom: 10px;
+    }
+
+    strong {
+      font-weight: 600;
+      text-transform: uppercase;
+      margin-top: 5px;
+      font-size: 15px;
+      letter-spacing: 1px;
+      white-space: nowrap;
+    }
+  }
 </style>
