@@ -19,16 +19,12 @@ module.exports = {
         content: 'For Alita\'s fan'
       },
       {
-        name: 'og:image',
-        content: '/social-banner.jpg'
-      },
-      {
         name: 'twitter:card',
         content: 'summary_large_image'
       },
       {
         name: 'twitter:url',
-        content: 'https://i-do-not-stand-by-in-the-presence-of-evil.com/'
+        content: 'https://i-do-not-stand-by-in-the-presence-of-evil.com'
       },
       {
         name: 'twitter:title',
@@ -40,7 +36,31 @@ module.exports = {
       },
       {
         name: 'twitter:image',
-        content: '/social-banner.jpg'
+        content: 'https://i-do-not-stand-by-in-the-presence-of-evil.com/social-banner.jpg'
+      },
+      {
+        name: 'og:title',
+        content: 'I Do Not Stand by in The Presence of Evil'
+      },
+      {
+        name: 'og:site_name',
+        content: 'I Do Not Stand by in The Presence of Evil'
+      },
+      {
+        name: 'og:url',
+        content: 'https://i-do-not-stand-by-in-the-presence-of-evil.com'
+      },
+      {
+        name: 'og:description',
+        content: 'For Alita\'s fan'
+      },
+      {
+        name: 'og:type',
+        content: 'website'
+      },
+      {
+        name: 'og:image',
+        content: 'https://i-do-not-stand-by-in-the-presence-of-evil.com/social-banner.jpg'
       }
     ],
     link: [
@@ -50,7 +70,12 @@ module.exports = {
         href: '/favicon.png'
       }
     ],
-    script: []
+    script: [
+      // {
+      //   async: true,
+      //   src: 'https://platform.twitter.com/widgets.js'
+      // }
+    ]
   },
 
   /*

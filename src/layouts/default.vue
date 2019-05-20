@@ -45,9 +45,11 @@ export default {
 <style lang="scss">
   .header-bar {
     position: fixed;
-    width: 100%;
+    width: calc(100% - 20px);
+    padding: 0 10px;
     left: 0;
     top: 10px;
+    z-index: 10;
 
     > nav {
       background-color: #0f1318;
