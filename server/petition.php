@@ -20,7 +20,7 @@ $last_modified_time = filemtime($file_path) or 0;
 $current_time = time();
 fclose($handle);
 
-if ($current_time - $last_modified_time > 3600 || filesize($file_path) === 0) {
+if ($current_time - $last_modified_time > 60 || filesize($file_path) === 0) {
   $content = file_get_contents('https://www.change.org/p/robert-rodriguez-alita-battle-angel-part-2', false, $context);
   preg_match('/window\.changeTargetingData\s=\s([a-zA-z:\'",\s\d\n\t\{\}\-]*);?/m', $content, $output_array);
   $handle = fopen($file_path, 'w') or die('Cannot open file:  ' . $file_path);
