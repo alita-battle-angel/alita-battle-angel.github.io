@@ -71,17 +71,31 @@ module.exports = {
       }
     ],
     script: [
-      // {
-      //   async: true,
-      //   src: 'https://platform.twitter.com/widgets.js'
-      // }
+      {
+        defer: true,
+        src: 'https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/plugins/CSSPlugin.min.js'
+      },
+      {
+        defer: true,
+        src: 'https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/easing/EasePack.min.js'
+      },
+      {
+        defer: true,
+        src: 'https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TweenLite.min.js'
+      },
+      {
+        defer: true,
+        src: 'https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/plugins/ScrollToPlugin.min.js'
+      }
     ]
   },
 
   /*
   ** Customize the progress-bar color
   */
-  loading: { color: '#fff' },
+  loading: {
+    color: '#fff'
+  },
 
   /*
   ** Global CSS
@@ -101,6 +115,12 @@ module.exports = {
   modules: [
     '@nuxtjs/pwa'
   ],
+
+  router: {
+    scrollBehavior: function (to, from, savedPosition) {
+      return false
+    }
+  },
 
   /*
   ** Build configuration
