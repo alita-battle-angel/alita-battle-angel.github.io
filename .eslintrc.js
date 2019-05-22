@@ -14,6 +14,7 @@ module.exports = {
   // add your custom rules here
   rules: {
     'nuxt/no-cjs-in-config': 'off',
-    'no-console': 0
+    'no-console': 0,
+    'no-unused-vars': ["warn", {"vars": "all", "args": "after-used", "ignoreRestSiblings": false}]
   }
 }

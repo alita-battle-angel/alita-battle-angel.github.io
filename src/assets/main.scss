@@ -1,14 +1,16 @@
 @import "fonts";
 @import "normalize";
+@import "layout";
 
 html {
   height: 100%;
 }
 
 body {
-  min-height: 100%;
+  min-height: calc(100% - 60px);
   font-size: 18px;
   padding: 30px 0;
+  overflow-y: scroll;
 }
 
 html, body {
@@ -37,15 +39,12 @@ body {
     background-image: url('~assets/textures/hexellence.png');
     background-size: 175px 202px;
     background-attachment: fixed;
+    background-position: inherit;
     content: ' ';
     opacity: .8;
     position: absolute;
     z-index: 0;
-    animation: shifting infinite 180s linear;
-  }
-
-  > div {
-    position: relative;
+    //animation: shifting infinite 180s linear;
   }
 }
 
@@ -77,7 +76,6 @@ a {
     box-shadow: 0 3px 23px rgba(#009ae5, .58), 0 0 5px 1px rgba(#009ae5, .3);
     color: #fff;
   }
-
 
   > img {
     margin: 0;
@@ -132,13 +130,14 @@ a {
 }
 
 h1 {
-  font-size: 3.5vw;
+  font-size: 40px;
   text-transform: uppercase;
+  color: rgba(#fff, .7)
 
 }
 
 h2 {
-  font-size: 2.15vw;
+  font-size: 30px;
   color: #F1CA1A;
 }
 
@@ -155,12 +154,18 @@ h3 {
 }
 
 .temp-content {
-  padding: 30px;
+  padding:0 30px;
   text-align: center;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  background-color: rgba(#000, .6);
+
+  > div {
+    padding: 15px 0;
+    background-color: rgba(#000, .6);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 1px solid #222;
+    border-radius: 5px;
+  }
 }
 
 .flex-col {
