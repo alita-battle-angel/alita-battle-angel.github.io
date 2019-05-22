@@ -6,23 +6,28 @@
           Fans
         </h1>
         <h2>
-          Find out what are fans up to
+          Find out what fans are up to
+        </h2>
+        <h2>
+          Coming soon...
         </h2>
       </header>
-      <main>
-        <article>
-          <h3>Call on the Alita Army: Sign Mayylayy shirt!</h3>
-          <p>
-            stuff here
-          </p>
-        </article>
-      </main>
+      <main class="articles"></main>
     </div>
   </div>
 </template>
 
 <script>
 export default {
+  head: {
+    title: 'Fans | I Do Not Stand by in The Presence of Evil',
+    meta: [
+      {
+        name: 'description',
+        content: 'Explore all the projects and contents made by Alita\'s fans, also known as Alita Army.'
+      }
+    ]
+  },
   components: {}
 }
 </script>

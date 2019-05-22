@@ -1,5 +1,6 @@
-@import "fonts";
 @import "normalize";
+@import "fonts";
+@import "scrollbar";
 @import "layout";
 
 html {
@@ -7,14 +8,13 @@ html {
 }
 
 body {
-  min-height: calc(100% - 60px);
+  min-height: 100%;
   font-size: 18px;
-  padding: 30px 0;
   overflow-y: scroll;
 }
 
 html, body {
-  color: #aaa;
+  color: #bbb;
 }
 
 @keyframes shifting {
@@ -44,7 +44,6 @@ body {
     opacity: .8;
     position: absolute;
     z-index: 0;
-    //animation: shifting infinite 180s linear;
   }
 }
 
@@ -57,9 +56,16 @@ a {
   padding: 8px 10px;
   margin-bottom: 10px;
   transition: all 200ms ease-in-out;
+  cursor: pointer;
+  border: 1px solid transparent;
 
   &:hover {
-    background-color: rgba(#361549, .85);
+    border-color: #963dc5;
+  }
+
+  &:active {
+    color: #111;
+    background-color: #963dc5;
   }
 }
 
@@ -68,13 +74,15 @@ a {
   flex-direction: column;
   padding: 15px;
   font-size: .78em;
-  color: #666;
+  color: #888;
+  text-align: center;
   margin: 5px;
 
   &:hover {
     background-color: transparent;
     box-shadow: 0 3px 23px rgba(#009ae5, .58), 0 0 5px 1px rgba(#009ae5, .3);
     color: #fff;
+    border-color: transparent;
   }
 
   > img {
@@ -84,22 +92,29 @@ a {
   }
 
   &.big {
-    width: 128px;
+    min-width: 140px;
+    max-width: 160px;
+    white-space: nowrap;
+    font-weight: 700;
+
+    > span {
+      margin-top: 15px;
+    }
   }
 
   &.youtube {
     width: 100px;
     padding-bottom: 25px;
     border-radius: 63px;
-    border: 1px solid #222;
+    border: 1px solid #333;
     margin: 10px 15px;
-    background-color: rgba(#222, .2);
+    background-color: rgba(#333, .3);
     position: relative;
     overflow: hidden;
 
     &:hover {
       border-color: #009ae5;
-      background-color: rgba(#009ae5, .1);
+      background-color: rgba(#009ae5, .15);
     }
 
     > * {
@@ -130,14 +145,14 @@ a {
 }
 
 h1 {
-  font-size: 40px;
+  font-size: 2.25em;
   text-transform: uppercase;
   color: rgba(#fff, .7)
 
 }
 
 h2 {
-  font-size: 30px;
+  font-size: 1.65em;
   color: #F1CA1A;
 }
 
@@ -146,39 +161,29 @@ h3 {
 }
 
 .banner {
-  min-height: calc(100vh - 30px);
+  min-height: calc(100vh - 210px);
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-}
-
-.temp-content {
-  padding:0 30px;
   text-align: center;
 
-  > div {
-    padding: 15px 0;
-    background-color: rgba(#000, .6);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    border: 1px solid #222;
-    border-radius: 5px;
+  @media only screen and (max-width: 600px) {
+   font-size: 12px;
   }
 }
 
-.flex-col {
-  display: flex;
-  flex-direction: column;
-  margin-bottom: 45px;
-  align-items: center;
-}
+.temp-content {
+  padding: 0 30px;
+  text-align: center;
 
-.flex-row {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: center;
-  margin-bottom: 45px;
+  > div {
+    padding: 15px 0 30px;
+    background-color: rgba(#000, .6);
+    box-shadow: 0 0 5px rgba(#444, .2), 0 8px 23px rgba(#444, .3);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 5px;
+  }
 }

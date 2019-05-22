@@ -1,5 +1,5 @@
 <template>
-  <div class="font-digit">
+  <div class="countdown-to-release">
     <span>{{ days }} D</span>
     <span>{{ hours }} H</span>
     <span>{{ minutes }} M</span>
@@ -9,7 +9,6 @@
 
 <script>
 const endDate = new Date(2019, 6, 9, 0, 0, 0).getTime()
-// const endDate = new Date().getTime() + 5000
 
 export default {
   data: () => {
@@ -68,16 +67,32 @@ export default {
 </script>
 
 <style lang="scss">
-  .font-digit {
+  .countdown-to-release {
     font-size: 40px;
     text-transform: uppercase;
     display: flex;
     justify-content: center;
     color: #fff;
+    text-shadow: 0 0 4px rgba(#fff, .55), 0 0 9px rgba(#fff, .85);
 
     > span {
       text-align: right;
-      width: 140px;
+      width: 120px;
+      padding-right: 25px;
+      border-right: 1px solid #999;
+
+      &:last-child {
+        border-right: none;
+      }
+    }
+
+    @media only screen and (max-width: 600px) {
+      font-size: 29px;
+
+      > span {
+        width: 80px;
+        padding-right: 10px;
+      }
     }
   }
 </style>

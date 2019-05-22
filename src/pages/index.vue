@@ -4,13 +4,14 @@
       <div class="banner">
         <h1>I do not stand by in the presence of Evil</h1>
         <h2>UNDER CONSTRUCTION...</h2>
-        <countdown-to-release />
+
         <a
           class="petition icon-link box"
           href="https://www.change.org/p/robert-rodriguez-alita-battle-angel-part-2"
           target="_blank"
         >
           <img
+            height="220"
             src="~/static/petition-banner.jpg"
             alt="petition logo"
           >
@@ -23,7 +24,7 @@
     <article class="temp-content page-row">
       <div>
         <h3>In the mean while you can check following links</h3>
-        <div class="flex-col">
+        <div class="f-col">
           <a href="https://shop.foxmovies.com/collections/alita">
             Official Alita's Merchandise
           </a>
@@ -38,7 +39,7 @@
         <h3>
           Some awesome YouTube channels
         </h3>
-        <div class="flex-row">
+        <div class="f-row">
           <a class="icon-link youtube" href="https://www.youtube.com/channel/UCqeFRqda27r7IZfUsxkg1hw">
             <img
               src="https://yt3.ggpht.com/a/AGF-l7-xOfA8jBDZ9nqEKBzVU4mUL4lio1_KOEe_hA=s288-mo-c-c0xffffffff-rj-k-no"
@@ -105,8 +106,6 @@
 </template>
 
 <script>
-import CountdownToRelease from '~/components/countdown-to-release.vue'
-
 export default {
   head: {
     meta: [
@@ -124,10 +123,7 @@ export default {
       }
     ]
   },
-  components: {
-    CountdownToRelease
-
-  },
+  components: {},
   data() {
     return {
       petition: {

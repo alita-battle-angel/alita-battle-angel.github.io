@@ -8,7 +8,7 @@ module.exports = {
   head: {
     title: 'I Do Not Stand by in The Presence of Evil',
     meta: [
-      {charset: 'utf-8'},
+      { charset: 'utf-8' },
       {
         name: 'viewport',
         content: 'width=device-width, initial-scale=1'
@@ -71,18 +71,22 @@ module.exports = {
       }
     ],
     script: [
-      // {
-      //   defer: true,
-      //   src: 'https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/plugins/CSSPlugin.min.js'
-      // },
-      // {
-      //   defer: true,
-      //   src: 'https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/easing/EasePack.min.js'
-      // },
-      // {
-      //   defer: true,
-      //   src: 'https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TweenLite.min.js'
-      // }
+      {
+        defer: true,
+        src: 'https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/plugins/CSSPlugin.min.js'
+      },
+      {
+        defer: true,
+        src: 'https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/easing/EasePack.min.js'
+      },
+      {
+        defer: true,
+        src: 'https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TweenLite.min.js'
+      },
+      {
+        defer: true,
+        src: 'https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/plugins/ScrollToPlugin.min.js'
+      }
     ]
   },
 
@@ -111,6 +115,12 @@ module.exports = {
   modules: [
     '@nuxtjs/pwa'
   ],
+
+  router: {
+    scrollBehavior: function (to, from, savedPosition) {
+      return false
+    }
+  },
 
   /*
   ** Build configuration
