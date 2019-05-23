@@ -115,7 +115,7 @@ export default {
     clearInterval(this.hightHandlerInterval)
   },
   methods: {
-    toggleExpand(event) {
+    toggleExpand() {
       this.expand = !this.expand
     },
     shrink() {

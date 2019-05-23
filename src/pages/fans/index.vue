@@ -12,7 +12,7 @@
           Coming soon...
         </h2>
       </header>
-      <main class="articles"></main>
+      <main class="articles" />
     </div>
   </div>
 </template>
