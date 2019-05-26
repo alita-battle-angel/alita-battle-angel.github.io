@@ -122,6 +122,29 @@ module.exports = {
     }
   },
 
+  workbox: {
+    dev: true
+  },
+
+  manifest: {
+    icons: [
+      {
+        'src': '/favicon.png',
+        'sizes': '144x144',
+        'type': 'image/png'
+      },
+      {
+        'src': '/favicon.png',
+        'sizes': '192x192',
+        'type': 'image/png'
+      },
+      {
+        'src': '/favicon.png',
+        'sizes': '512x512',
+        'type': 'image/png'
+      }
+    ]
+  },
   /*
   ** Build configuration
   */
@@ -136,7 +159,7 @@ module.exports = {
           enforce: 'pre',
           test: /\.(js|vue)$/,
           loader: 'eslint-loader',
-          exclude: /(node_modules)/
+          exclude: [/(node_modules)/, /(_nuxt)/]
         })
       }
     }

@@ -44,6 +44,15 @@ let height = 1
 let lastScrollY = 0
 
 export default {
+  head: {
+    script: [
+      {
+        defer: true,
+        src: 'https://platform.twitter.com/widgets.js',
+        charset: 'utf-8'
+      }
+    ]
+  },
   data() {
     return {
       menus: [
@@ -115,7 +124,7 @@ export default {
     clearInterval(this.hightHandlerInterval)
   },
   methods: {
-    toggleExpand(event) {
+    toggleExpand() {
       this.expand = !this.expand
     },
     shrink() {
