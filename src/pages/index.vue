@@ -124,12 +124,6 @@
 <script>
 export default {
   head: {
-    meta: [
-      {
-        name: 'twitter:widgets:theme',
-        content: 'dark'
-      }
-    ],
     link: [
       {
         rel: 'preload',

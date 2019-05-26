@@ -45,6 +45,12 @@ let lastScrollY = 0
 
 export default {
   head: {
+    meta: [
+      {
+        name: 'twitter:widgets:theme',
+        content: 'dark'
+      }
+    ],
     script: [
       {
         defer: true,
