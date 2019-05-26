@@ -94,7 +94,9 @@ module.exports = {
   ** Customize the progress-bar color
   */
   loading: {
-    color: '#fff'
+    color: '#aaa',
+    continuous: true,
+    duration: 1000
   },
 
   /*

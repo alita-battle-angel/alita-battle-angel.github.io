@@ -50,13 +50,6 @@ export default {
         name: 'twitter:widgets:theme',
         content: 'dark'
       }
-    ],
-    script: [
-      {
-        defer: true,
-        src: 'https://platform.twitter.com/widgets.js',
-        charset: 'utf-8'
-      }
     ]
   },
   data() {
