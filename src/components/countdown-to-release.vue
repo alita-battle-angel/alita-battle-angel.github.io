@@ -77,8 +77,8 @@ export default {
 
     > span {
       text-align: right;
-      width: 120px;
-      padding-right: 25px;
+      width: 140px;
+      padding: 0 15px;
       border-right: 1px solid #999;
 
       &:last-child {
@@ -90,8 +90,8 @@ export default {
       font-size: 29px;
 
       > span {
-        width: 80px;
-        padding-right: 10px;
+        width: 96px;
+        padding: 0 10px;
       }
     }
   }

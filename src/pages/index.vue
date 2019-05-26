@@ -5,19 +5,35 @@
         <h1>I do not stand by in the presence of Evil</h1>
         <h2>UNDER CONSTRUCTION...</h2>
 
-        <a
-          class="petition icon-link box"
-          href="https://www.change.org/p/robert-rodriguez-alita-battle-angel-part-2"
-          target="_blank"
-        >
-          <img
-            height="220"
-            src="~/static/petition-banner.jpg"
-            alt="petition logo"
+        <div class="f-row">
+          <a
+            class="x-large icon-link box"
+            href="https://www.change.org/p/robert-rodriguez-alita-battle-angel-part-2"
+            target="_blank"
           >
-          <span>Alita's Sequel Petition</span>
-          <strong>{{ petition.signatureCount.total }} have signed</strong>
-        </a>
+            <img
+              height="188"
+              src="~/static/petition-banner.jpg"
+              alt="petition logo"
+            >
+            <span>Alita's Sequel Petition</span>
+            <strong>{{ petition.signatureCount.total }} have signed</strong>
+          </a>
+
+          <a
+            class="x-large icon-link box"
+            href="https://alitaunbreakablewarrior.github.io/the-game.html"
+            target="_blank"
+          >
+            <img
+              height="188"
+              src="~/static/alita-unbreakable-warrior.jpg"
+              alt="petition logo"
+            >
+            <span>Alita Unbreakable Warrior</span>
+            <strong>RPG action game</strong>
+          </a>
+        </div>
       </div>
     </article>
 
@@ -144,11 +160,11 @@ export default {
 </script>
 
 <style lang="scss">
-  .petition {
+  .x-large {
     width: 220px;
     display: flex;
     flex-direction: column;
-    margin-top: 30px;
+    margin: 30px 15px;
     padding: 15px 15px 60px;
     border-radius: 120px;
     color: #aaa;
@@ -160,7 +176,7 @@ export default {
     > img {
       width: 100%;
       border-radius: 50%;
-      margin-bottom: 10px;
+      margin-bottom: 20px;
     }
 
     strong {
@@ -171,39 +187,5 @@ export default {
       letter-spacing: 1px;
       white-space: nowrap;
     }
-  }
-
-  blockquote.twitter-tweet {
-    display: inline-block;
-    font-family: "Helvetica Neue", Roboto, "Segoe UI", Calibri, sans-serif;
-    font-size: 12px;
-    font-weight: bold;
-    line-height: 16px;
-    border-color: #eee #ddd #bbb;
-    border-radius: 5px;
-    border-style: solid;
-    border-width: 1px;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15);
-    margin: 10px 5px;
-    padding: 0 16px 16px 16px;
-    max-width: 468px;
-  }
-
-  blockquote.twitter-tweet p {
-    font-size: 16px;
-    font-weight: normal;
-    line-height: 20px;
-  }
-
-  blockquote.twitter-tweet a {
-    color: inherit;
-    font-weight: normal;
-    text-decoration: none;
-    outline: 0 none;
-  }
-
-  blockquote.twitter-tweet a:hover,
-  blockquote.twitter-tweet a:focus {
-    text-decoration: underline;
   }
 </style>
