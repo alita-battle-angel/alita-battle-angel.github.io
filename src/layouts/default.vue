@@ -15,7 +15,7 @@
           </span>
         </nuxt-link>
 
-        <a class=" mob-icon" @click="toggleExpand($event)">
+        <a class="mob-icon" @touchstart="toggleExpand()">
           <i class="material-icons">menu</i>
         </a>
       </nav>
@@ -84,30 +84,36 @@ export default {
     const nav = document.querySelector('.header-box > nav')
 
     this.scrollHandler = () => {
-      requestAnimationFrame(() => {
-        const max = (window.innerHeight - nav.getBoundingClientRect().height) / 2
-        lastScrollY = window.scrollY
-        const space = document.scrollingElement.scrollHeight - window.innerHeight
+      const max = (window.innerHeight - nav.getBoundingClientRect().height) / 2
+      lastScrollY = window.scrollY
+      const space = document.scrollingElement.scrollHeight - window.innerHeight
 
-        if (lastScrollY) {
+      if (lastScrollY) {
+        requestAnimationFrame(() => {
           body.style.backgroundPositionY = -Math.floor((lastScrollY * (max * 0.35)) / space) + 'px'
           nav.style.transform = 'translateY(' + -Math.floor((lastScrollY * (max * 0.95)) / space) + 'px)'
-        } else {
-          body.style.backgroundPositionY = 0
-          nav.style.transform = 'translateY(0)'
-        }
-      })
+        })
+      } else {
+        body.style.backgroundPositionY = 0
+        nav.style.transform = 'translateY(0)'
+      }
     }
 
     const __nuxt = document.querySelector('#__nuxt')
+    const maxScrollDistance = 500
+    const maxScrollTime = 0.5
     this.hightHandlerInterval = setInterval(() => {
-      const currentHeight = document.querySelector('#__layout').getBoundingClientRect().height
+      const currentHeight = Math.floor(document.querySelector('#__layout').getBoundingClientRect().height || 0)
       if (height !== currentHeight) {
         height = currentHeight
-        window.TweenLite.to(window, 0.5, { scrollTo: { y: 0 }, ease: 'Strong.easeInOut' })
-        window.TweenLite.to(__nuxt, 0.6, {
-          height: Math.max(height, window.innerHeight - 60),
-          ease: 'Strong.easeInOut'
+        const time = Math.min(maxScrollTime, (window.scrollY * maxScrollTime) / maxScrollDistance)
+        console.log('time', time)
+        window.TweenLite.to(window, time || 0.01, {
+          scrollTo: { y: 0 },
+          ease: 'Strong.easeInOut',
+          onComplete() {
+            __nuxt.style.height = Math.max(height, window.innerHeight) + 'px'
+          }
         })
       }
     }, 100)

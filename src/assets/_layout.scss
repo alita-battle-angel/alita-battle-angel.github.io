@@ -158,6 +158,7 @@ button {
       display: flex;
       flex-direction: row;
       z-index: 1;
+      outline: none;
 
       > i {
         font-size: 36px;

@@ -32,11 +32,11 @@
           <blockquote class="twitter-tweet">
             <p lang="tl" dir="ltr">
               Alita: Battle Angel <a
-              href="https://t.co/nnUMUm23zS"
-            >pic.twitter.com/nnUMUm23zS</a>
+                href="https://t.co/nnUMUm23zS"
+              >pic.twitter.com/nnUMUm23zS</a>
             </p>&mdash; Doc Ido (@doc_ido) <a
-            href="https://twitter.com/doc_ido/status/1130514726914596866?ref_src=twsrc%5Etfw"
-          >May 20, 2019</a>
+              href="https://twitter.com/doc_ido/status/1130514726914596866?ref_src=twsrc%5Etfw"
+            >May 20, 2019</a>
           </blockquote>
         </article>
 
@@ -67,17 +67,17 @@
             <p lang="en" dir="ltr">
               We&#39;ve draft the release Alpha 3. You can download
               it now ^^ <a href="https://t.co/HbKMckKIqS">https://t.co/HbKMckKIqS</a><a
-              href="https://twitter.com/hashtag/indiedev?src=hash&amp;ref_src=twsrc%5Etfw"
-            >#indiedev</a> <a
-              href="https://twitter.com/hashtag/gamedev?src=hash&amp;ref_src=twsrc%5Etfw"
-            >#gamedev</a> <a
-              href="https://twitter.com/hashtag/Alita?src=hash&amp;ref_src=twsrc%5Etfw"
-            >#Alita</a> <a
-              href="https://t.co/gUhdYF4VeQ"
-            >pic.twitter.com/gUhdYF4VeQ</a>
+                href="https://twitter.com/hashtag/indiedev?src=hash&amp;ref_src=twsrc%5Etfw"
+              >#indiedev</a> <a
+                href="https://twitter.com/hashtag/gamedev?src=hash&amp;ref_src=twsrc%5Etfw"
+              >#gamedev</a> <a
+                href="https://twitter.com/hashtag/Alita?src=hash&amp;ref_src=twsrc%5Etfw"
+              >#Alita</a> <a
+                href="https://t.co/gUhdYF4VeQ"
+              >pic.twitter.com/gUhdYF4VeQ</a>
             </p>&mdash; JellyBit (@studiojellybit) <a
-            href="https://twitter.com/studiojellybit/status/1126524230483496961?ref_src=twsrc%5Etfw"
-          >May 9, 2019</a>
+              href="https://twitter.com/studiojellybit/status/1126524230483496961?ref_src=twsrc%5Etfw"
+            >May 9, 2019</a>
           </blockquote>
         </article>
 
@@ -85,18 +85,18 @@
           <blockquote class="twitter-tweet">
             <p lang="en" dir="ltr">
               Calling on the <a
-              href="https://twitter.com/hashtag/AlitaArmy?src=hash&amp;ref_src=twsrc%5Etfw"
-            >#AlitaArmy</a> : I&#39;m
+                href="https://twitter.com/hashtag/AlitaArmy?src=hash&amp;ref_src=twsrc%5Etfw"
+              >#AlitaArmy</a> : I&#39;m
               seeing how many <a href="https://twitter.com/hashtag/AlitaBattleAngel?src=hash&amp;ref_src=twsrc%5Etfw">#AlitaBattleAngel</a>
               fans I can get to sign this shirt. I hope to get it filled and then tag James Cameron, Robert Rodriguez,
               and
               critics of the movie as well as a nod from the fans that we all believe <a
-              href="https://twitter.com/hashtag/Alitaneedsasequel?src=hash&amp;ref_src=twsrc%5Etfw"
-            >#Alitaneedsasequel</a>
+                href="https://twitter.com/hashtag/Alitaneedsasequel?src=hash&amp;ref_src=twsrc%5Etfw"
+              >#Alitaneedsasequel</a>
               ⬇️sign below⬇️ <a href="https://t.co/4GuPXyRbQP">pic.twitter.com/4GuPXyRbQP</a>
             </p><span class="user">&mdash; Mayylayy
               (@maryeflee)</span><a href="https://twitter.com/maryeflee/status/1120750607806214149?ref_src=twsrc%5Etfw">April
-            23, 2019</a>
+              23, 2019</a>
           </blockquote>
         </article>
 
@@ -106,8 +106,8 @@
               We&#39;re several months into 2019, so we want to
               know: What&#39;s your favorite movie of the year so far? 🤔 <a href="https://t.co/8Jbgr8NNu6">pic.twitter.com/8Jbgr8NNu6</a>
             </p>&mdash; Atom Tickets (@atomtickets) <a
-            href="https://twitter.com/atomtickets/status/1117501789849444355?ref_src=twsrc%5Etfw"
-          >April 14, 2019</a>
+              href="https://twitter.com/atomtickets/status/1117501789849444355?ref_src=twsrc%5Etfw"
+            >April 14, 2019</a>
           </blockquote>
         </article>
       </main>
