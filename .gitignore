@@ -85,3 +85,8 @@ dist
 
 # Service worker
 sw.*
+
+# Server
+server/*.json
+server/*.config.ini
+server/*.config.json

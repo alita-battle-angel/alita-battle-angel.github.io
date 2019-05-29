@@ -15,19 +15,24 @@
           </span>
         </nuxt-link>
 
-        <a class="mob-icon" @touchstart="toggleExpand()">
+        <button class="mob-icon menu-btn" @click="toggleExpand($event)" @touchstart="toggleExpand($event)">
           <i class="material-icons">menu</i>
-        </a>
+        </button>
       </nav>
     </div>
 
     <nuxt />
 
     <footer>
-      <p>Released under the <a href="https://opensource.org/licenses/MIT" target="_blank">MIT License</a></p>
+      <p>
+        Released under the
+        <a class="link-white" href="https://opensource.org/licenses/MIT" target="_blank">MIT
+          License</a>
+      </p>
       <p>
         Source code available at
         <a
+          class="link-white"
           href="https://github.com/alita-battle-angel/alita-battle-angel.github.io"
           target="_blank"
         >
@@ -35,6 +40,14 @@
         </a>
       </p>
     </footer>
+    <div v-if="!cookieNotify" class="cookie-popup">
+      <p>
+        Our website use cookies. By continuing, you agree to their use
+      </p>
+      <button @click="acceptCookies()">
+        Got it
+      </button>
+    </div>
   </div>
 </template>
 
@@ -54,6 +67,7 @@ export default {
   },
   data() {
     return {
+      cookieNotify: true,
       menus: [
         {
           title: 'Home',
@@ -80,22 +94,26 @@ export default {
     }
   },
   mounted() {
+    this.cookieNotify = document.cookie.indexOf('notify=true') !== -1
     const body = document.querySelector('body')
-    const nav = document.querySelector('.header-box > nav')
 
     this.scrollHandler = () => {
-      const max = (window.innerHeight - nav.getBoundingClientRect().height) / 2
-      lastScrollY = window.scrollY
+      const max = (document.scrollingElement.scrollHeight - window.innerHeight)
+      lastScrollY = window.scrollY / window.devicePixelRatio
       const space = document.scrollingElement.scrollHeight - window.innerHeight
 
       if (lastScrollY) {
         requestAnimationFrame(() => {
           body.style.backgroundPositionY = -Math.floor((lastScrollY * (max * 0.35)) / space) + 'px'
-          nav.style.transform = 'translateY(' + -Math.floor((lastScrollY * (max * 0.95)) / space) + 'px)'
+
+          // const layer5 = document.querySelectorAll('.layer-5')
+          // const maxLayer5 = max * 0.25
+          // Array.prototype.forEach.call(layer5, (node) => {
+          //   node.style.transform = 'translateY(' + ((maxLayer5 / 2) - Math.floor((lastScrollY * maxLayer5) / space)) + 'px)'
+          // })
         })
       } else {
         body.style.backgroundPositionY = 0
-        nav.style.transform = 'translateY(0)'
       }
     }
 
@@ -104,10 +122,11 @@ export default {
     const maxScrollTime = 0.5
     this.hightHandlerInterval = setInterval(() => {
       const currentHeight = Math.floor(document.querySelector('#__layout').getBoundingClientRect().height || 0)
+      // console.log(document.scrollingElement.scrollHeight - window.innerHeight, window.scrollY)
       if (height !== currentHeight) {
         height = currentHeight
         const time = Math.min(maxScrollTime, (window.scrollY * maxScrollTime) / maxScrollDistance)
-        console.log('time', time)
+
         window.TweenLite.to(window, time || 0.01, {
           scrollTo: { y: 0 },
           ease: 'Strong.easeInOut',
@@ -129,11 +148,22 @@ export default {
     clearInterval(this.hightHandlerInterval)
   },
   methods: {
-    toggleExpand() {
+    toggleExpand(event) {
+      if (event.type === 'click' && window.hasOwnProperty('ontouchstart')) {
+        return
+      }
+
       this.expand = !this.expand
     },
     shrink() {
       this.expand = false
+    },
+    updatePerspective() {
+
+    },
+    acceptCookies() {
+      document.cookie = 'notify=true'
+      this.cookieNotify = document.cookie.indexOf('notify=true') !== -1
     }
   }
 }

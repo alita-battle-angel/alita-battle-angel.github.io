@@ -86,11 +86,11 @@ export default {
       }
     }
 
-    @media only screen and (max-width: 600px) {
-      font-size: 29px;
+    @media only screen and (max-width: 800px) {
+      font-size: 22px;
 
       > span {
-        width: 96px;
+        width: 80px;
         padding: 0 10px;
       }
     }
