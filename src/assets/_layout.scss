@@ -23,6 +23,17 @@ button {
   }
 }
 
+a.link-white {
+  &:hover {
+    border-color: #eee;
+  }
+
+  &:active {
+    color: #111;
+    background-color: #eee;
+  }
+}
+
 #__nuxt {
   position: relative;
   overflow: hidden;
@@ -34,7 +45,7 @@ button {
   position: relative;
 
   > div {
-    padding-top: 100px;
+    padding-top: 120px;
     padding-bottom: 160px;
     min-height: 100vh;
     position: relative;
@@ -55,10 +66,6 @@ button {
         padding: 2px 6px;
         color: inherit;
         font-weight: 800;
-
-        &:hover {
-          border-color: #eee;
-        }
       }
 
       > p {
@@ -69,14 +76,54 @@ button {
   }
 }
 
+.youtube-widget {
+  width: 100%;
+  max-width: 800px;
+  min-height: 400px;
+  max-height: 500px;
+}
+
 .page {
   justify-content: center;
   display: flex;
   flex-direction: column;
+  padding: 0 15px;
 }
 
 .page-row {
   flex: 1 0 auto;
+
+  > .box {
+    background-color: #151515;
+    padding: 30px;
+
+    > header {
+      overflow: hidden;
+      padding-bottom: 60px;
+      margin-bottom: 60px;
+      border-bottom: 2px solid #222;
+
+      &:last-child {
+        border-bottom: none;
+        padding-bottom: 0;
+        margin-bottom: 0;
+      }
+
+      > h1 {
+        margin-top: 0;
+        margin-bottom: 10px;
+      }
+
+      > h2 {
+        margin-top: 10px;
+        margin-bottom: 30px;
+      }
+
+      *:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
 
   > * {
     max-width: 1000px;
@@ -87,83 +134,83 @@ button {
   }
 
   @media only screen and (max-width: 1480px) {
-    > * {
-      left: 100px;
-    }
+
   }
 
   @media only screen and (max-width: 1280px) {
-    > * {
-      left: auto;
-    }
+
   }
 }
 
 .header-box {
   position: fixed;
-  width: 220px;
-  height: 100%;
+  width: 100%;
+  min-height: 100px;
   display: flex;
   align-items: center;
+  justify-content: center;
   padding: 0;
   left: 0;
   top: 0;
   z-index: 10;
+  background-color: rgba(#060606, .95);
+
+  &::before {
+    content: ' ';
+    position: absolute;
+    background-image: url('~assets/textures/brushed-alum.png');
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    opacity: .1;
+    transition: all 100ms ease-in-out;
+    z-index: 0;
+  }
 
   > nav {
-    background-color: #0f1318;
-    max-height: 544px;
-    margin: 0 10px;
+    height: 100%;
+    margin: 0;
+    width: 100%;
+    max-width: 1000px;
     display: flex;
     flex: 1 0 auto;
-    flex-direction: column;
-    justify-content: center;
-    overflow: hidden;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
     position: relative;
-    padding: 5px 10px;
-    border-radius: 10px;
-    box-shadow: 0 0 3px 0 rgba(#339ae5, .1), 0 2px 16px rgba(#339ae5, .35);
+    padding: 27px 0;
+    border-radius: 0;
     transition: box-shadow 100ms ease-in-out;
 
-    &::before {
-      content: ' ';
-      position: absolute;
-      background-image: url('~assets/textures/brushed-alum.png');
-      left: 0;
-      top: 0;
-      width: 100%;
-      height: 100%;
-      opacity: .28;
-      transition: all 100ms ease-in-out;
-      z-index: 0;
-    }
-
-    &:hover {
-      box-shadow: 0 0 3px rgba(#339ae5, .45), 0 2px 18px rgba(#339ae5, .5);
+    .menu-btn {
+      padding: 12px;
     }
 
     > a {
       line-height: 18px;
-      padding: 10px;
-      border: 1px solid #333;
-      border-radius: 5px;
+      height: 46px;
+      padding: 12px 20px 12px 10px;
+      border: none;
+      border-radius: 0;
       color: #ccc;
-      background-color: rgba(#000, .3);
+      background-color: #000;
       font-weight: 300;
       letter-spacing: 1px;
       text-transform: uppercase;
-      margin: 5px 0;
+      margin: 0 10px 0 0;
       align-items: center;
       font-size: 12px;
       display: flex;
       flex-direction: row;
       z-index: 1;
       outline: none;
+      flex: 0 0 auto;
 
       > i {
-        font-size: 36px;
+        font-size: 22px;
         font-weight: 300;
-        width: 40px;
+        width: 26px;
       }
 
       > span {
@@ -171,19 +218,18 @@ button {
       }
 
       &:hover {
-        background-color: rgba(#009ae5, .15);
-        border-color: rgba(#009ae5, .16);
+        background-color: #005c8c;
       }
 
       &.active {
         color: #fff;
-        background-color: rgba(#009ae5, .3);
-        border: 1px solid #009ae5;
+        background-color: #009ae5;
         text-shadow: 0 0 3px #fff, 0 0 5px #fff;
         box-shadow: 0 0 9px 1px rgba(#009ae5, .6);
+        z-index: 2;
 
         > i {
-          color: #00adff;
+          color: #fff;
           text-shadow: 0 0 3px #33adff;
         }
       }
@@ -192,27 +238,27 @@ button {
     > .mob-icon {
       display: none;
       position: absolute;
-      right: 10px;
+      right: 0;
       margin: 0;
       text-align: center;
     }
   }
 
-  @media only screen and (max-width: 1280px) {
+  @media only screen and (max-width: 1050px) {
     width: auto;
     height: auto;
-    padding: 0;
-    left: 5px;
-    top: 10px;
-    right: 5px;
+    padding: 0 15px;
+    left: 0;
+    top: 0;
+    right: 0;
 
     > nav {
-      height: 78px;
+      height: 100px;
       justify-content: flex-start;
+      align-items: flex-start;
+      flex-direction: column;
       transform: translateY(0) !important;
       padding-right: 90px;
-      padding-top: 10px;
-      padding-bottom: 10px;
       transition: height 200ms ease-in-out;
 
       > a:not(.active) {
@@ -242,26 +288,51 @@ button {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  align-items: flex-start;
-  justify-content: center;
+  padding: 0;
 
-  > article {
-    min-width: 340px;
-    width: calc(50% - 20px);
+  > .column {
+    display: flex;
+    flex-direction: column;
     flex: 1 0 auto;
-    margin: 10px;
-    background-color: rgba(#1c1a20, .9);
-    border-radius: 5px;
-    padding: 20px 15px;
+    width: 50%;
+    padding-right: 1px;
+    min-width: 340px;
 
-    > h3 {
-      font-family: 'Inconsolata', monospace;
-      margin: 0 0 20px;
-      padding: 7px 9px;
-      border-radius: 3px;
-      font-size: 16px;
-      background-color: #333;
-      display: inline-block;
+    &:last-child {
+      padding-right: 0;
+      padding-left: 1px;
+    }
+
+    > article {
+      flex: 1 0 auto;
+      margin: 0 0 2px;
+      background-color: #1c1a20;
+      border-radius: 0;
+      padding: 20px 15px;
+      position: relative;
+
+      &::before {
+        content: ' ';
+        position: absolute;
+        background-image: url('~assets/textures/brushed-alum.png');
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        opacity: .1;
+        transition: all 100ms ease-in-out;
+        z-index: 0;
+      }
+
+      > h3 {
+        font-family: 'Inconsolata', monospace;
+        margin: 0 0 20px;
+        padding: 7px 9px;
+        border-radius: 3px;
+        font-size: 16px;
+        background-color: #333;
+        display: inline-block;
+      }
     }
   }
 }
@@ -269,7 +340,6 @@ button {
 .f-col {
   display: flex;
   flex-direction: column;
-  margin-bottom: 45px;
   align-items: center;
 }
 
@@ -278,5 +348,4 @@ button {
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: center;
-  margin-bottom: 45px;
 }
