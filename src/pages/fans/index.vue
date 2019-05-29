@@ -31,7 +31,9 @@
               v-for="tweet in oddTweets"
               :key="tweet.id"
               :tweet="tweet"
-            />
+            >
+              <article-tweet v-if="tweet.in_reply_to_status" class="reply" :tweet="tweet.in_reply_to_status" />
+            </article-tweet>
           </div>
         </main>
       </div>
