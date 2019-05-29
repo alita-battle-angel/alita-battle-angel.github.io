@@ -15,9 +15,9 @@
           </span>
         </nuxt-link>
 
-        <a class="mob-icon menu-btn" @click="toggleExpand()">
+        <button class="mob-icon menu-btn" @click="toggleExpand($event)" @touchstart="toggleExpand($event)">
           <i class="material-icons">menu</i>
-        </a>
+        </button>
       </nav>
     </div>
 
@@ -139,7 +139,11 @@ export default {
     clearInterval(this.hightHandlerInterval)
   },
   methods: {
-    toggleExpand() {
+    toggleExpand(event) {
+      if (event.type === 'click' && window.hasOwnProperty('ontouchstart')) {
+        return
+      }
+
       this.expand = !this.expand
     },
     shrink() {

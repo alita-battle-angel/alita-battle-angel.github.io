@@ -39,7 +39,9 @@
 
     <article class="temp-content page-row">
       <div>
-        <h3 class="">In the mean while you can check following links</h3>
+        <h3 class="">
+          In the mean while you can check following links
+        </h3>
         <div class="f-col">
           <a href="https://shop.foxmovies.com/collections/alita">
             Official Alita's Merchandise

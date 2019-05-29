@@ -9,7 +9,6 @@ html {
 
 body {
   min-height: 100%;
-  font-size: 18px;
   overflow-y: scroll;
 }
 
@@ -25,8 +24,8 @@ body {
     top: 0;
     width: 100%;
     height: 100%;
-    background-image: url('~assets/textures/hexellence.png');
-    background-size: 175px 202px;
+    background-image: url('~assets/textures/white-diamond.png');
+    //background-size: 175px 202px;
     background-attachment: fixed;
     background-position: inherit;
     content: ' ';
@@ -42,13 +41,16 @@ a {
   color: #963dc5;
   text-decoration: none;
   border-radius: 20px;
-  padding: 8px 10px;
-  margin-bottom: 10px;
-  transition-property: background-color, border, box-shadow, color, transform;
-  transition-duration: 200ms;
+  padding: 6px 10px;
+  transition-property: background-color, border, box-shadow, color, transform, text-shadow;
+  transition-duration: 150ms;
   transition-timing-function: ease-in-out;
   cursor: pointer;
   border: 1px solid transparent;
+
+  & + a {
+    margin-top: 10px;
+  }
 
   &:hover {
     border-color: #963dc5;
@@ -60,20 +62,20 @@ a {
   }
 }
 
-h1 {
-  font-size: 1.5em;
-  text-transform: uppercase;
-  color: rgba(#fff, .88)
-}
+a.action {
+  border: none;
+  border-radius: 0;
+  color: inherit;
 
-h2 {
-  font-size: 1.2em;
-  color: #F1CA1A;
-}
+  &:hover {
+    color: #fff;
+    text-shadow: 0 1px 7px #888;
+    background-color: rgba(#fff, .15);
+  }
 
-h3 {
-  font-size: 1.1em;
-  font-weight: 700;
+  &:active {
+    background-color: #009ae5;
+  }
 }
 
 a.link-icon {
@@ -190,7 +192,7 @@ a.link-icon {
   background-color: #151515;
   border-bottom: 2px solid #000;
 
-  @media only screen and (max-width: 600px) {
+  @media only screen and (max-width: 800px) {
     font-size: 12px;
   }
 }

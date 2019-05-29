@@ -17,7 +17,7 @@
             frameborder="0"
             allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
             allowfullscreen
-          ></iframe>
+          />
           <h3>Countdown to Digital Release</h3>
           <countdown-to-release />
 
@@ -31,8 +31,8 @@
               alt="prime video logo"
             >
             <span>
-            Alita: Battle Angel
-          </span>
+              Alita: Battle Angel
+            </span>
           </a>
         </main>
       </div>
