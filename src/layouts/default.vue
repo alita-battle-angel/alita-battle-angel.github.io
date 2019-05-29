@@ -40,6 +40,14 @@
         </a>
       </p>
     </footer>
+    <div v-if="!cookieNotify" class="cookie-popup">
+      <p>
+        Our website use cookies. By continuing, you agree to their use
+      </p>
+      <button @click="acceptCookies()">
+        Got it
+      </button>
+    </div>
   </div>
 </template>
 
@@ -59,6 +67,7 @@ export default {
   },
   data() {
     return {
+      cookieNotify: true,
       menus: [
         {
           title: 'Home',
@@ -85,8 +94,8 @@ export default {
     }
   },
   mounted() {
+    this.cookieNotify = document.cookie.indexOf('notify=true') !== -1
     const body = document.querySelector('body')
-    const nav = document.querySelector('.header-box > nav')
 
     this.scrollHandler = () => {
       const max = (document.scrollingElement.scrollHeight - window.innerHeight)
@@ -151,6 +160,10 @@ export default {
     },
     updatePerspective() {
 
+    },
+    acceptCookies() {
+      document.cookie = 'notify=true'
+      this.cookieNotify = document.cookie.indexOf('notify=true') !== -1
     }
   }
 }

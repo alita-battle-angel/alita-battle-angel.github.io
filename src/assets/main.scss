@@ -209,3 +209,25 @@ a.link-icon {
     border-radius: 0;
   }
 }
+
+
+.cookie-popup {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  padding: 15px;
+  background-color: #000000;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  > p {
+    margin: 0;
+  }
+
+  > button {
+    padding: 10px;
+    margin-left: 20px;
+  }
+}

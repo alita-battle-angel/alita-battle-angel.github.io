@@ -14,49 +14,24 @@
           </p>
         </header>
         <main class="articles">
-          <h3 v-if="!tweets.length">Loading...</h3>
+          <h3 v-if="!tweets.length">
+            Loading...
+          </h3>
           <div class="column">
-            <article
-              class="tweet"
+            <article-tweet
               v-for="tweet in eventTweets"
-              v-bind:key="tweet.id"
+              :key="tweet.id"
+              :tweet="tweet"
             >
-              <div class="twitter-user-info">
-                <div class="action user">
-                  <img :src="tweet.user.profile_image_url_https" :alt="tweet.user.name" />
-                  <div>
-                    <strong>{{tweet.user.name}}</strong>
-                    <span>@{{tweet.user.screen_name}}</span>
-                  </div>
-                </div>
-                <a class="action tweet" :href="getTweetLink(tweet)" target="_blank">
-                  <i class="fab fa-twitter"></i>
-                </a>
-              </div>
-              <p v-html="getParsedText(tweet)"></p>
-              <p class="thin">{{tweet.created_at}}</p>
-            </article>
+              <article-tweet v-if="tweet.in_reply_to_status" class="reply" :tweet="tweet.in_reply_to_status" />
+            </article-tweet>
           </div>
           <div class="column">
-            <article
-              class="tweet"
+            <article-tweet
               v-for="tweet in oddTweets"
-              v-bind:key="tweet.id"
-            >
-              <div class="twitter-user-info">
-                <div class="action user">
-                  <img :src="tweet.user.profile_image_url_https" :alt="tweet.user.name" />
-                  <div>
-                    <strong>{{tweet.user.name}}</strong>
-                    <span>@{{tweet.user.screen_name}}</span>
-                  </div>
-                </div>
-                <a class="action tweet" :href="getTweetLink(tweet)" target="_blank">
-                  <i class="fab fa-twitter"></i>
-                </a>
-              </div>
-              <p v-html="getParsedText(tweet)"></p>
-            </article>
+              :key="tweet.id"
+              :tweet="tweet"
+            />
           </div>
         </main>
       </div>
@@ -65,6 +40,8 @@
 </template>
 
 <script>
+import ArticleTweet from '~/components/article-tweet'
+
 export default {
   head: {
     title: 'Fans | I Do Not Stand by in The Presence of Evil',
@@ -82,7 +59,9 @@ export default {
       }
     ]
   },
-  components: {},
+  components: {
+    ArticleTweet
+  },
   data: () => {
     return {
       tweets: []
@@ -114,6 +93,10 @@ export default {
       this.tweets = tweets || []
     },
     getParsedText(tweet) {
+      if (!tweet) {
+        return ''
+      }
+
       const media = tweet.entities.media ? tweet.entities.media[0] : {}
 
       let withHashTags = tweet.full_text.replace(/#([^\s]*)/g, (hash, text) => {
@@ -131,6 +114,13 @@ export default {
     },
     getUserLink(tweet) {
       return `https://twitter.com/${tweet.user.screen_name}`
+    },
+    getTweetDate(tweet) {
+      if (!tweet) {
+        return ''
+      }
+
+      return new Date(tweet.created_at).toLocaleString()
     }
   }
 }

@@ -24,6 +24,10 @@ button {
 }
 
 a.link-white {
+  color: #eee;
+  text-shadow: 0 0 3px rgba(#fff, .35), 0 0 7px rgba(#fff, .45);
+  letter-spacing: .2px;
+
   &:hover {
     border-color: #eee;
   }
@@ -35,7 +39,7 @@ a.link-white {
 }
 
 .thin {
-  //font-size: .9em;
+  font-size: .9em;
   font-weight: 300;
 }
 
@@ -63,18 +67,17 @@ a.link-white {
       left: calc(50% - 120px);
       margin: 0 auto 0;
       text-align: center;
-      font-size: .68em;
+      font-size: .75em;
       font-weight: 400;
       color: #eee;
 
       a {
         padding: 2px 6px;
-        color: inherit;
         font-weight: 700;
       }
 
       > p {
-        text-shadow: 0 0 3px rgba(#fff, .45), 0 0 5px rgba(#fff, .45);
+        text-shadow: 0 0 3px rgba(#fff, .45), 0 1px 5px rgba(#fff, .45);
         margin: 5px 0;
       }
     }
@@ -336,7 +339,7 @@ a.link-white {
     > article {
       flex: 1 0 auto;
       margin: 0 0 4px;
-      background-color: #1c1a20;
+      background-color: #27242e;
       border-radius: 0;
       padding: 15px;
       position: relative;
@@ -345,33 +348,7 @@ a.link-white {
       min-width: 315px;
 
       &:hover {
-        background-color: #25242c;
-      }
-
-      &.tweet {
-        &:hover {
-          a.action {
-            border-color: #1DA1F2;
-          }
-        }
-
-        > p {
-          margin: 15px 0 0;
-
-          > a {
-            padding: 0 4px 0 3px;
-            margin: 0 -2px;
-          }
-
-          > img {
-            margin-top: 15px;
-            width: 100%;
-          }
-        }
-
-        > .thin {
-          opacity: .4;
-        }
+        //background-color: #362f3e;
       }
 
       a.action {
@@ -391,53 +368,6 @@ a.link-white {
       padding-left: 0;
     }
   }
-}
-
-.twitter-user-info {
-  display: flex;
-
-  > .user {
-    height: 64px;
-    flex: 1 1 auto;
-    overflow: hidden;
-    background-color: rgba(#888, .1);
-    margin-right: 4px;
-    padding: 8px;
-
-    &:first-child {
-      display: flex;
-      align-items: center;
-      font-size: .88em;
-      padding-right: 10px;
-
-      > div {
-        overflow: hidden;
-      }
-
-      strong, span {
-        display: block;
-        white-space: nowrap;
-        text-overflow: ellipsis;
-        overflow: hidden;
-      }
-    }
-
-    > img {
-      border-radius: 50%;
-      margin-right: 10px;
-    }
-  }
-
-  > .tweet {
-    width: 64px;
-    height: 64px;
-    text-align: center;
-    font-size: 32px;
-    line-height: 48px;
-    background-color: rgba(#888, .1);
-    padding: 8px;
-  }
-
 }
 
 .f-col {
