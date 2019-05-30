@@ -75,6 +75,10 @@ if (is_cache_fresh($file_name, $config['LIFE_SPAN'])) {
   $in_replay_to_tweets = read_tweets(implode(',', $in_replay_to_ids), $context);
 
   $enriched_tweets = enrich_tweets($tweets_list, json_decode($in_replay_to_tweets, true));
+  usort($enriched_tweets, function($a, $b) {
+    return strtotime($b['created_at']) - strtotime($a['created_at']);
+  });
+//  echo json_encode($enriched_tweets);
   echo update_cache($file_name, json_encode($enriched_tweets));
 }
 

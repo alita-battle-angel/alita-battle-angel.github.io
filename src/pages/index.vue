@@ -1,7 +1,7 @@
 <template>
   <div class="page">
     <article class="page-row">
-      <div class="banner">
+      <div class="box f-col">
         <h1>I do not stand by in the presence of Evil</h1>
         <h2>UNDER CONSTRUCTION...</h2>
 
@@ -21,7 +21,7 @@
           </a>
 
           <a
-            class="link-icon x-large "
+            class="link-icon x-large"
             href="https://alitaunbreakablewarrior.github.io/the-game.html"
             target="_blank"
           >
@@ -33,12 +33,26 @@
             <span>Alita Unbreakable Warrior</span>
             <strong>RPG action game</strong>
           </a>
+
+          <a
+            class="link-icon x-large "
+            href="https://discordapp.com/invite/DBkt7Qm"
+            target="_blank"
+          >
+            <img
+              height="188"
+              src="~/static/discord-thumbnail.jpg"
+              alt="Discord"
+            >
+            <span>Gunnm/Alita: Battle Angel</span>
+            <strong>Alita Army on Discord</strong>
+          </a>
         </div>
       </div>
     </article>
 
-    <article class="temp-content page-row">
-      <div>
+    <article class="page-row">
+      <div class="box split f-col">
         <h3 class="">
           In the mean while you can check following links
         </h3>

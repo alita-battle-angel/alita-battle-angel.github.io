@@ -99,12 +99,11 @@ export default {
 
     this.scrollHandler = () => {
       const max = (document.scrollingElement.scrollHeight - window.innerHeight)
-      lastScrollY = window.scrollY / window.devicePixelRatio
-      const space = document.scrollingElement.scrollHeight - window.innerHeight
+      lastScrollY = window.scrollY
 
       if (lastScrollY) {
         requestAnimationFrame(() => {
-          body.style.backgroundPositionY = -Math.floor((lastScrollY * (max * 0.35)) / space) + 'px'
+          body.style.backgroundPositionY = -Math.floor((lastScrollY * Math.floor(max * 0.15)) / max) + 'px'
 
           // const layer5 = document.querySelectorAll('.layer-5')
           // const maxLayer5 = max * 0.25

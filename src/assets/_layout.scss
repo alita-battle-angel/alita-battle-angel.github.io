@@ -82,6 +82,14 @@ a.link-white {
       }
     }
   }
+
+  @media only screen and (max-width: 600px) {
+    > div {
+      > footer {
+        font-size: 1em;
+      }
+    }
+  }
 }
 
 .youtube-widget {
@@ -117,6 +125,10 @@ a.link-white {
       opacity: .1;
       transition: all 100ms ease-in-out;
       z-index: 0;
+    }
+
+    &.split {
+      border-top: 2px solid #000;
     }
 
     > * {
@@ -345,11 +357,7 @@ a.link-white {
       position: relative;
       cursor: default;
       transition: all 200ms ease-in-out;
-      min-width: 315px;
-
-      &:hover {
-        //background-color: #362f3e;
-      }
+      min-width: 280px;
 
       a.action {
         border: 1px solid transparent;

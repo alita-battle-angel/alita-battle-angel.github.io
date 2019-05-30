@@ -17,7 +17,9 @@ html, body {
 }
 
 body {
-  background-color: #000;
+  //background-color: #190d26;
+  background-color: #020005;
+  //background-color: #050308;
   position: relative;
 
   &::before {
@@ -25,13 +27,16 @@ body {
     width: 100%;
     height: 100%;
     background-image: url('~assets/textures/white-diamond.png');
-    //background-size: 175px 202px;
     background-attachment: fixed;
     background-position: inherit;
     content: ' ';
     opacity: .8;
     position: absolute;
     z-index: 0;
+  }
+
+  @media only screen and (max-width: 600px) {
+    background-position: 0 0 !important;
   }
 }
 
@@ -181,35 +186,6 @@ a.link-icon {
     }
   }
 }
-
-.banner {
-  min-height: calc(100vh - 210px);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  background-color: #151515;
-  border-bottom: 2px solid #000;
-
-  @media only screen and (max-width: 800px) {
-    font-size: 12px;
-  }
-}
-
-.temp-content {
-  text-align: center;
-
-  > div {
-    padding: 120px 0;
-    background-color: #151515;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    border-radius: 0;
-  }
-}
-
 
 .cookie-popup {
   position: fixed;

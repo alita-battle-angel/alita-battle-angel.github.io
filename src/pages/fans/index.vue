@@ -19,7 +19,7 @@
           </h3>
           <div class="column">
             <article-tweet
-              v-for="tweet in eventTweets"
+              v-for="tweet in oddTweets"
               :key="tweet.id"
               :tweet="tweet"
             >
@@ -28,7 +28,7 @@
           </div>
           <div class="column">
             <article-tweet
-              v-for="tweet in oddTweets"
+              v-for="tweet in evenTweets"
               :key="tweet.id"
               :tweet="tweet"
             >
@@ -73,8 +73,8 @@ export default {
     oddTweets() {
       return this.tweets.filter((item, i) => i % 2 === 0)
     },
-    eventTweets() {
-      return this.tweets.filter((item, i) => i % 2 !== 0)
+    evenTweets() {
+      return this.tweets.filter((item, i) => i % 2 === 1)
     }
   },
   mounted() {
@@ -88,7 +88,8 @@ export default {
         '1129912507576070150',
         '1126524230483496961',
         '1120750607806214149',
-        '1117501789849444355'
+        '1117501789849444355',
+        '1112391562628136960'
       ]
       const response = await fetch('https://ewcms.org/alita-battle-angel/twitter.php?id=' + tweetIds.join(','))
       const tweets = await response.json()
