@@ -37,6 +37,12 @@ body {
 
   @media only screen and (max-width: 600px) {
     background-position: 0 0 !important;
+
+    &::before {
+      background-attachment: initial;
+      background-position: initial;
+      position: fixed;
+    }
   }
 }
 
