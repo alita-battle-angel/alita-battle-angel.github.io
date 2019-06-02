@@ -1,13 +1,15 @@
 <template>
   <section class="page">
     <div class="page-row">
-      <div>
-        <h1 class="title">
-          Statistics
-        </h1>
-        <h2 class="subtitle">
-          Coming Soon...
-        </h2>
+      <div class="box">
+        <header>
+          <h1 class="title">
+            Statistics
+          </h1>
+          <h2 class="subtitle">
+            Coming Soon...
+          </h2>
+        </header>
       </div>
     </div>
   </section>

@@ -60,6 +60,11 @@ export default {
         withHashTags = withHashTags.replace(media.url, `<img src="${media.media_url_https}"/>`)
       }
 
+      tweet.entities.urls.forEach((item) => {
+        const url = item.url
+        withHashTags = withHashTags.replace(url, `<a href="${url}" target="_blank">${url}</a>`)
+      })
+
       return withHashTags
     },
     getTweetURL(tweet) {

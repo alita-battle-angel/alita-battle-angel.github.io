@@ -92,6 +92,16 @@
             </span>
           </a>
 
+          <a class="link-icon youtube" href="https://www.youtube.com/channel/UCRtAIk7o92YXDcbxgKk8rMQ">
+            <img
+              src="https://yt3.ggpht.com/a/AGF-l78nSy6MUviVOtXqz89Z3n50jCN3U14TKRFaYg=s288-mo-c-c0xffffffff-rj-k-no"
+              alt="TheLast300 youtube channel"
+            >
+            <span>
+              TheLast300
+            </span>
+          </a>
+
           <a class="link-icon youtube" href="https://www.youtube.com/channel/UC1jFLGc_OVIcAOaMKOXYxVw">
             <img
               src="https://yt3.ggpht.com/a/AGF-l78ZVHTHuQaFRE5n6fLbT4pzL3sNTY_TYieDaA=s288-mo-c-c0xffffffff-rj-k-no"
