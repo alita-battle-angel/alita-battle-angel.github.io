@@ -92,7 +92,8 @@ export default {
         '1112391562628136960',
         '1135116404901011457',
         '1131952934579625984',
-        '1134923821516038145'
+        '1134923821516038145',
+        '1136095142484598785'
       ]
       const response = await fetch('https://ewcms.org/alita-battle-angel/twitter.php?id=' + tweetIds.join(','))
       const tweets = await response.json()
