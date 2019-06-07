@@ -48,6 +48,7 @@ export default {
     title: 'Merchandise | I Do Not Stand by in The Presence of Evil',
     meta: [
       {
+        hid: 'description',
         name: 'description',
         content: 'Browse all Alita\'s merchandise'
       }

@@ -2,7 +2,7 @@
 @import url('https://fonts.googleapis.com/icon?family=Material+Icons');
 @import url('https://use.fontawesome.com/releases/v5.8.2/css/brands.css');
 @import url('https://use.fontawesome.com/releases/v5.8.2/css/fontawesome.css');
-//@import url('https://fonts.googleapis.com/css?family=Inconsolata&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Inconsolata:400,700&display=swap');
 
 html, body {
   font-family: 'Poppins', sans-serif;
@@ -34,9 +34,19 @@ h2 {
 h3 {
   font-size: 1.45em;
   font-weight: 600;
+  line-height: 25px;
+  margin-bottom: 15px;
+
+  & + p {
+    margin-top: 0;
+  }
 }
 
 p {
+}
+
+strong {
+  font-weight: 600;
 }
 
 .font-digit {

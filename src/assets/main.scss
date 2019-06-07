@@ -152,7 +152,7 @@ a.link-icon {
     }
 
     strong {
-      font-weight: 600;
+      font-weight: bold;
       text-transform: uppercase;
       margin-top: 5px;
       font-size: 14px;
@@ -211,5 +211,37 @@ a.link-icon {
   > button {
     padding: 10px;
     margin-left: 20px;
+  }
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.loading {
+  position: relative;
+  min-height: 48px;
+
+  > * {
+    opacity: .5;
+  }
+
+  &::after {
+    content: ' ';
+    width: 48px;
+    height: 48px;
+    border-width: 4px;
+    border-style: solid;
+    border-color: transparent transparent #fff;
+    animation: spin infinite 1s linear;
+    position: absolute;
+    left: calc(50% - 24px);
+    border-radius: 50%;
   }
 }

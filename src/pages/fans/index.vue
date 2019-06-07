@@ -49,15 +49,9 @@ export default {
     title: 'Fans | I Do Not Stand by in The Presence of Evil',
     meta: [
       {
+        hid: 'description',
         name: 'description',
         content: 'Explore all the projects and contents made by Alita\'s fans, also known as Alita Army.'
-      }
-    ],
-    script: [
-      {
-        defer: true,
-        src: 'https://platform.twitter.com/widgets.js',
-        charset: 'utf-8'
       }
     ]
   },
