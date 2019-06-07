@@ -5,7 +5,7 @@
     target="_blank"
   >
     <div class="content" />
-    <img class="banner" :src="profile.profile_banner_url" :alt="profile.name +' banner'">
+    <img v-if="profile.profile_banner_url" class="banner" :src="profile.profile_banner_url" :alt="profile.name +' banner'">
     <div class="user">
       <img :src="profile.profile_image_url_https" :alt="profile.name">
       <div>
