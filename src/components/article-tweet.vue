@@ -24,7 +24,10 @@
 <script>
 export default {
   props: {
-    tweet: Object
+    tweet: {
+      type: Object,
+      default: null
+    }
   },
   computed: {
     parsed_text() {

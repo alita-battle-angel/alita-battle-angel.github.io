@@ -114,9 +114,7 @@ module.exports = {
   /*
   ** Nuxt.js modules
   */
-  modules: [
-    '@nuxtjs/pwa'
-  ],
+  modules: [],
 
   router: {
     scrollBehavior: function (to, from, savedPosition) {

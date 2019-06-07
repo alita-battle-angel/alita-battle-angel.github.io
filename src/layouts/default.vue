@@ -57,14 +57,6 @@ let height = 1
 let lastScrollY = 0
 
 export default {
-  head: {
-    meta: [
-      {
-        name: 'twitter:widgets:theme',
-        content: 'dark'
-      }
-    ]
-  },
   data() {
     return {
       cookieNotify: true,
@@ -83,6 +75,11 @@ export default {
           title: 'Fans',
           href: '/fans',
           icon: 'group'
+        },
+        {
+          title: 'Alita Army',
+          href: '/alita-army',
+          icon: 'stars'
         },
         {
           title: 'Merchandise',
