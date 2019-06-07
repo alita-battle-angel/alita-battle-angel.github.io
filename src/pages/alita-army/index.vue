@@ -16,8 +16,8 @@
             Why join?
           </h3>
           <p>
-            Because Alita is one of the best movie released during the last few years, with an amazingly well written
-            protagonist, a catching storyline, unexpected twists and stunning visuals.
+            Because "Alita Army" is a passionate fanbase of Alita's fans that positively support her. We will give our
+            heart to her because she would do the same.
           </p>
           <p>
             Also, because we are not bots.
