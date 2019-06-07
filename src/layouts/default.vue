@@ -126,7 +126,9 @@ export default {
 
     },
     acceptCookies() {
-      document.cookie = 'notify=true'
+      const expiry = new Date()
+      expiry.setTime(new Date().getTime() + (10 * 24 * 60 * 60 * 1000))
+      document.cookie = 'notify=true; expires=' + expiry.toGMTString()
       this.cookieNotify = document.cookie.indexOf('notify=true') !== -1
     }
   }

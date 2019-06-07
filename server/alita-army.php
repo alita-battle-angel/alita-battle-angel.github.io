@@ -56,4 +56,4 @@ usort($list, function ($a, $b) {
   return $b['_SAVED_AT'] - $a['_SAVED_AT'];
 });
 
-echo json_encode(FileDB::get_page_of($list, $page_no, 12));
+echo json_encode(FileDB::get_page_of($list, $page_no, 15));
