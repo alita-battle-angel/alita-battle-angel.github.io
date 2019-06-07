@@ -2,10 +2,8 @@
 global $config;
 $config = parse_ini_file(__DIR__ . '/twitter.config.ini');
 
-class TwitterAPI
-{
-  public static function fetch($end_point, $params = [])
-  {
+class TwitterAPI {
+  public static function fetch ($end_point, $params = []) {
     global $config;
 
     $http_headers = [
@@ -19,7 +17,16 @@ class TwitterAPI
     ));
 
     $query = http_build_query($params);
-    return json_decode(file_get_contents("https://api.twitter.com/1.1/$end_point?$query", false, $context), true);
+
+
+    $content = file_get_contents("https://api.twitter.com/1.1/$end_point?$query", false, $context);
+
+    if ($content === false) {
+      $error = error_get_last();
+      $content = "{'error': '{$error['message']}'}";
+    }
+
+    return json_decode($content, true);
   }
 }
 

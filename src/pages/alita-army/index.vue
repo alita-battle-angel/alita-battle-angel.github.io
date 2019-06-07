@@ -117,6 +117,7 @@ export default {
       this.fetching = false
     },
     enroll() {
+      this.screen_name = this.screen_name.replace(' ', '')
       if (!this.screen_name) {
         return false
       }
