@@ -140,6 +140,8 @@ export default {
         return response.json()
       }).then((data) => {
         this.showMessage(data.message)
+      }).catch(() => {
+        this.showMessage('Something went wrong, please try again later.')
       })
 
       this.showMessage('Registering... please wait')
