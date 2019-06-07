@@ -53,7 +53,6 @@
 
 <script>
 
-let height = 1
 let lastScrollY = 0
 
 export default {
@@ -101,47 +100,16 @@ export default {
       if (lastScrollY) {
         requestAnimationFrame(() => {
           body.style.backgroundPositionY = -Math.floor((lastScrollY * Math.floor(max * 0.15)) / max) + 'px'
-
-          // const layer5 = document.querySelectorAll('.layer-5')
-          // const maxLayer5 = max * 0.25
-          // Array.prototype.forEach.call(layer5, (node) => {
-          //   node.style.transform = 'translateY(' + ((maxLayer5 / 2) - Math.floor((lastScrollY * maxLayer5) / space)) + 'px)'
-          // })
         })
       } else {
         body.style.backgroundPositionY = 0
       }
     }
 
-    const __nuxt = document.querySelector('#__nuxt')
-    const maxScrollDistance = 500
-    const maxScrollTime = 0.5
-    this.hightHandlerInterval = setInterval(() => {
-      const currentHeight = Math.floor(document.querySelector('#__layout').getBoundingClientRect().height || 0)
-      // console.log(document.scrollingElement.scrollHeight - window.innerHeight, window.scrollY)
-      if (height !== currentHeight) {
-        height = currentHeight
-        const time = Math.min(maxScrollTime, (window.scrollY * maxScrollTime) / maxScrollDistance)
-
-        window.TweenLite.to(window, time || 0.01, {
-          scrollTo: { y: 0 },
-          ease: 'Strong.easeInOut',
-          onComplete() {
-            __nuxt.style.height = Math.max(height, window.innerHeight) + 'px'
-          }
-        })
-      }
-    }, 100)
-
     window.addEventListener('scroll', this.scrollHandler)
-
-    requestAnimationFrame(() => {
-      this.scrollHandler()
-    })
   },
   destroyed() {
     window.removeEventListener('scroll', this.scrollHandler)
-    clearInterval(this.hightHandlerInterval)
   },
   methods: {
     toggleExpand(event) {

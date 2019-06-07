@@ -17,7 +17,7 @@ class FileDB {
     return [
       'page' => $page_no + 1,
       'item_per_page' => $item_per_page,
-      'total_pages' => ceil(sizeof($list) / $item_per_page) | 1,
+      'total_pages' => sizeof($list) === 0 ? 1 : ceil(sizeof($list) / $item_per_page),
       'data' => $page
     ];
   }

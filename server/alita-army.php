@@ -51,4 +51,9 @@ if(isset($_REQUEST['page'])) {
   $page_no = $_REQUEST['page'];
 }
 
-echo json_encode(FileDB::get_page_of($alita_army_db->get_all(), $page_no, 12));
+$list = $alita_army_db->get_all();
+usort($list, function ($a, $b) {
+  return $b['_SAVED_AT'] - $a['_SAVED_AT'];
+});
+
+echo json_encode(FileDB::get_page_of($list, $page_no, 12));
