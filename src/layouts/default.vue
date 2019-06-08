@@ -6,6 +6,7 @@
           v-for="item in menus"
           :key="item.href"
           :to="item.href"
+          :active-class="item.href === '/' ? null : 'active'"
           exact-active-class="active"
           @click.native="shrink()"
         >
@@ -63,7 +64,8 @@ export default {
         {
           title: 'Home',
           href: '/',
-          icon: 'power_settings_new'
+          icon: 'power_settings_new',
+          exact: false
         },
         {
           title: 'Statistics',

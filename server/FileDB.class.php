@@ -116,6 +116,21 @@ class FileDB {
     return $record;
   }
 
+  public function update ($record, $id_column = 'id') {
+    $ids = array_column($this->table, $id_column);
+    $key = array_search($record[$id_column], $ids);
+
+    if ($key) {
+      $current_time = time();
+      $record['_SAVED_AT'] = $current_time;
+      $this->table[$key] = $record;
+    }
+
+    $this->update_file();
+
+    return $this->table[$key];
+  }
+
   public function batch_update ($records = [], $id_column = 'id') {
     $ids = array_column($this->table, $id_column);
     $current_time = time();

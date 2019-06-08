@@ -7,26 +7,32 @@ class TwitterAPI {
     global $config;
 
     $http_headers = [
+      'Content-Type: application/json',
       "Authorization: Bearer {$config['BEARER_TOKEN']}"
     ];
 
-    $context = stream_context_create(array(
-      "http" => array(
-        "header" => implode('\n', $http_headers),
-      )
-    ));
-
     $query = http_build_query($params);
 
+    $handle = curl_init();
 
-    $content = file_get_contents("https://api.twitter.com/1.1/$end_point?$query", false, $context);
+    $url = "https://api.twitter.com/1.1/$end_point?$query";
 
-    if ($content === false) {
-      $error = error_get_last();
-      $content = "{'error': '{$error['message']}'}";
+    curl_setopt($handle, CURLOPT_URL, $url);
+    curl_setopt($handle, CURLOPT_HTTPHEADER, $http_headers);
+    curl_setopt($handle, CURLOPT_RETURNTRANSFER, true);
+
+    $content = curl_exec($handle);
+
+    $http_code = curl_getinfo($handle, CURLINFO_HTTP_CODE);
+    curl_close($handle);
+
+    $response = json_decode($content, true);
+
+    if ($http_code > 250) {
+      $response['code'] = $http_code;
     }
 
-    return json_decode($content, true);
+    return $response;
   }
 }
 

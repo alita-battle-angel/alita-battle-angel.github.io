@@ -56,7 +56,7 @@
         </div>
 
         <main :class="list_state">
-          <HunterWarrior v-for="hunter in army" :key="hunter.id_str" :profile="hunter" />
+          <HunterWarrior v-for="hunter in data" :key="hunter.id_str" :profile="hunter" />
         </main>
       </div>
     </div>
@@ -83,7 +83,7 @@ export default {
   },
   data: () => {
     return {
-      army: [],
+      data: [],
       screen_name: '',
       message: null,
       fetching: false,
@@ -103,17 +103,21 @@ export default {
       return this.total_pages <= this.page
     }
   },
+  watch: {
+    '$route.query.page': 'fetchArmy'
+  },
   mounted() {
+    this.page = this.$route.query.page || 1
     this.fetchArmy()
   },
   methods: {
     async fetchArmy(page) {
       this.fetching = true
       const response = await fetch('https://ewcms.org/alita-battle-angel/alita-army.php?page=' + (page || this.page))
-      const army = await response.json()
-      this.army = army.data || []
-      this.total_pages = army.total_pages
-      this.page = army.page
+      const jsonResponse = await response.json()
+      this.data = jsonResponse.data || []
+      this.total_pages = jsonResponse.total_pages
+      this.page = jsonResponse.page
       this.fetching = false
     },
     enroll() {
@@ -166,12 +170,12 @@ export default {
     },
     next() {
       if (this.total_pages > this.page) {
-        this.fetchArmy(this.page + 1)
+        this.$router.push({ path: this.$route.path, query: { page: this.page + 1 } })
       }
     },
     previous() {
       if (this.page > 1) {
-        this.fetchArmy(this.page - 1)
+        this.$router.push({ path: this.$route.path, query: { page: this.page - 1 } })
       }
     }
   }
