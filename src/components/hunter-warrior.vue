@@ -40,16 +40,14 @@ export default {
     color: #bbb;
     border: none;
     font-size: 1em;
-    /*background-color: #1a2637;*/
-    /*background-color: #000;*/
     border-radius: 0;
     padding: 0;
     transition: all .2s ease-in-out;
     cursor: pointer;
     position: relative;
+    overflow: hidden;
 
     &:hover {
-      /*background-color: #006ea3;*/
       background-color: #56606a;
       box-shadow: 0 5px 23px rgba(#555, .58), 0 0 2px 1px #222;
       color: #fff;
