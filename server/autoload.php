@@ -8,3 +8,12 @@ function my_autoloader ($class) {
 }
 
 spl_autoload_register('my_autoloader');
+
+$input_json_string = file_get_contents('php://input');
+$_INPUT = json_decode($input_json_string, TRUE);
+
+function response ($content, $code = 200) {
+  http_response_code($code);
+  echo json_encode($content);
+  die;
+}

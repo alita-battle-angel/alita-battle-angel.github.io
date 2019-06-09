@@ -1,70 +1,132 @@
 <?php
 require_once 'autoload.php';
-
 header('Access-Control-Allow-Origin: *', true);
+header('Access-Control-Allow-Headers: *', true);
 header('Content-Type: application/json', true);
-header('Access-Control-Allow-Headers: *');
 
-$input_json_string = file_get_contents('php://input');
-$input = json_decode($input_json_string, TRUE);
+$database_config = parse_ini_file(__DIR__ . '/database.config.ini');
 
-$alita_army_db = new FileDB('alita-army-db.json');
+// Create OneDB instance and have fun
+global $database;
+$database = OneDB::load([
+  'host' => $database_config['host'],
+  'database' => $database_config['database'],
+  'user' => $database_config['username'],
+  'password' => $database_config['password'],
+  'charset'   => 'utf8mb4',
+]);
+
+$method = $_SERVER['REQUEST_METHOD'];
 
 function check_eligibility ($profile) {
   return $profile['statuses_count'] >= 1 && strpos($profile['description'], '#AlitaArmy') !== false;
 }
 
-if (isset($input['register']) && isset($input['screen_name'])) {
-  $screen_name = $input['screen_name'];
-  $user_profile = $alita_army_db->find_by_id($screen_name, 'screen_name');
+function get_profile ($screen_name) {
+  global $database;
+  return $database->fetchRow("SELECT * FROM alita_army WHERE alita_army.screen_name = '{$screen_name}'");
+}
 
-  if (!$user_profile) {
-    $user_profile = TwitterAPI::fetch('users/lookup.json', ['screen_name' => $screen_name]);
+function save_profile ($profile) {
+  global $database;
+  $hunter_warrior_id = $database->fetchOne("SELECT AUTO_INCREMENT FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_NAME = 'alita_army'");
+  $database->insert('alita_army', [
+    'name' => $profile['name'],
+    'screen_name' => $profile['screen_name'],
+    'description' => $profile['description'],
+    'location' => $profile['location'],
+    'profile_banner_url' => $profile['profile_banner_url'],
+    'profile_image_url_https' => $profile['profile_image_url_https'],
+    'hunter_warrior_id' => "HW-00{$hunter_warrior_id}",
+    'created_at' => date('Y-m-d H:i:s', time()),
+    'updated_at' => date('Y-m-d H:i:s', time())
+  ]);
+}
 
-    if (isset($user_profile[0]) && check_eligibility($user_profile[0])) {
-      $id = $alita_army_db->get_last_index();
-      $user_profile[0]['_HUNTER_WARRIOR_ID'] = "HW-0$id";
-      $user_profile = $alita_army_db->add($user_profile[0]);
-      echo json_encode([
-        'message' => 'Thank you for joining the Alita Army!',
-        'data' => $user_profile
-      ]);
-    } else if (isset($user_profile['errors'])) {
-      http_response_code($user_profile['code']);
-      echo json_encode([
-        'message' => 'twitter: ' . $user_profile['errors'][0]['message'],
-      ]);
+function update_profile ($profile) {
+  global $database;
+  $database->update('alita_army', [
+    'name' => $profile['name'],
+    'description' => $profile['description'],
+    'location' => $profile['location'],
+    'profile_banner_url' => $profile['profile_banner_url'],
+    'profile_image_url_https' => $profile['profile_image_url_https'],
+    'updated_at' => date('Y-m-d H:i:s', time())
+  ], [
+    'screen_name = ?' => $profile['screen_name']
+  ]);
+}
+
+if ($method === 'POST') {
+  if (isset($_INPUT['screen_name'])) {
+    $screen_name = $_INPUT['screen_name'];
+    $profile = get_profile($_INPUT['screen_name']);
+
+    if ($profile === false) {
+      $twitter_response = TwitterAPI::fetch('users/lookup.json', ['screen_name' => $screen_name]);
+
+      if (isset($twitter_response['errors'])) {
+        http_response_code($twitter_response['code']);
+        response([
+          'message' => 'twitter: ' . $twitter_response['errors'][0]['message']
+        ]);
+      }
+
+      if ($twitter_response[0] && !check_eligibility($twitter_response[0])) {
+        response([
+          'message' => 'You need to have #AlitaArmy (case-sensitive) in your profile bio and also you need to have at least one tweet.',
+          'profile' => $twitter_response[0]
+        ], 400);
+      }
+
+      if ($twitter_response[0]) {
+        $profile = $twitter_response[0];
+        save_profile($profile);
+
+        $profile = get_profile($_INPUT['screen_name']);
+
+        response([
+          'message' => 'Thank you for joining the Alita Army!',
+          'data' => $profile
+        ]);
+      }
     } else {
-      http_response_code(400);
-      echo json_encode([
-        'message' => 'You need to have #AlitaArmy (case-sensitive) in your profile bio and also you need to have at least one tweet.',
-        'error' => $user_profile
-      ]);
-    }
-  } else {
-    $updated_use_profile = TwitterAPI::fetch('users/lookup.json', ['screen_name' => $screen_name]);
-    if(isset($updated_use_profile[0])) {
-      $user_profile = $alita_army_db->update($updated_use_profile[0],'screen_name');
-    }
+      $twitter_response = TwitterAPI::fetch('users/lookup.json', ['screen_name' => $screen_name]);
+      if ($twitter_response[0]) {
+        update_profile($twitter_response[0]);
+      }
 
-    http_response_code(202);
-    echo json_encode([
-      'message' => 'You are already member of Alita Army!',
-      'data' => $user_profile
-    ]);
+      $profile = get_profile($_INPUT['screen_name']);
+
+      response([
+        'message' => 'You are already member of Alita Army!',
+        'data' => $profile
+      ], 202);
+    }
+  }
+}
+
+if ($method === 'GET') {
+  $page = 0;
+  if (isset($_GET['page'])) {
+    $page = intval($_GET['page']);
+    $page--;
   }
 
-  return;
+  if ($page < 0) {
+    $page = 0;
+  }
+
+  $item_per_page = 18;
+  $start = $page * $item_per_page;
+
+  $total = intval($database->fetchOne('SELECT COUNT(*) FROM alita_army'));
+
+  response([
+    'page' => $page + 1,
+    'item_per_page' => $item_per_page,
+    'total_pages' => $total === 0 ? 1 : ceil($total / $item_per_page),
+    'data' => $database->fetchAll("SELECT * FROM alita_army ORDER BY updated_at DESC LIMIT {$item_per_page} OFFSET {$start}")
+  ]);
 }
 
-$page_no = 0;
-if (isset($_REQUEST['page'])) {
-  $page_no = $_REQUEST['page'];
-}
-
-$list = $alita_army_db->get_all();
-usort($list, function ($a, $b) {
-  return $b['_SAVED_AT'] - $a['_SAVED_AT'];
-});
-
-echo json_encode(FileDB::get_page_of($list, $page_no, 15));
