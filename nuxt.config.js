@@ -65,6 +65,7 @@ module.exports = {
     ],
     link: [
       {
+        hid: 'favicon',
         rel: 'icon',
         type: 'image/png',
         href: '/favicon.png'
