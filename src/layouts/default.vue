@@ -57,6 +57,19 @@
 let lastScrollY = 0
 
 export default {
+  link: [
+    {
+      hid: 'favicon',
+      rel: 'icon',
+      type: 'image/png',
+      href: '~/static/favicon.png'
+    },
+    {
+      rel: 'preload',
+      as: 'image/png',
+      href: '~/static/social-banner.jpg'
+    }
+  ],
   data() {
     return {
       cookieNotify: true,

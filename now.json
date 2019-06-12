@@ -6,10 +6,6 @@
       "src": "nuxt.config.js",
       "use": "@nuxtjs/now-builder",
       "config": {}
-    },
-    {
-      "src": "static/",
-      "use": "@now/static"
     }
   ],
   "routes": [
