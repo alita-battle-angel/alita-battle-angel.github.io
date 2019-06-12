@@ -10,6 +10,10 @@
           "src/static/**"
         ]
       }
+    },
+    {
+      "src": "src/static/**",
+      "use": "@now/static"
     }
   ],
   "routes": [
