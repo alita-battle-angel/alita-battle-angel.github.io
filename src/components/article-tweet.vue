@@ -15,7 +15,7 @@
         <i class="fab fa-twitter" />
       </a>
     </div>
-    <p v-html="parsed_text" />
+    <p class="text" v-html="parsed_text" />
     <p class="thin">
       {{ date }}
     </p>
@@ -100,10 +100,13 @@ export default {
 
     > p {
       margin: 15px 0;
-      white-space: pre-wrap;
 
       &:last-child {
         margin-bottom: 0;
+      }
+
+      &.text {
+        white-space: pre-wrap;
       }
 
       > a {

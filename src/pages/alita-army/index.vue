@@ -66,7 +66,7 @@
 <script>
 import HunterWarrior from '~/components/hunter-warrior'
 
-const fetchArmy = async (page) => {
+const fetchPageData = async (page) => {
   const response = await fetch('https://ewcms.org/alita-battle-angel/alita-army.php?page=' + (page || 1))
   return response.json()
 }
@@ -118,7 +118,7 @@ export default {
     '$route.query.page': 'fetchArmy'
   },
   async fetch({ query, store }) {
-    const response = await fetchArmy(query.page)
+    const response = await fetchPageData(query.page)
     store.commit('alita-army/set', response)
   },
   methods: {
