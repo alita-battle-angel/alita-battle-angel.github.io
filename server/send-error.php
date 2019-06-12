@@ -1,9 +1,19 @@
 <?php
 require_once 'autoload.php';
 
-$to = 'eeliya.rasta@gmail.com';
-$subject = 'I Do Not Stand - Alita Army Form';
-$message = $_INPUT['message'];
-$headers = 'From: noreplay@ewcms.org' . "\r\n" . 'Reply-To: noreplay@ewcms.org' . "\r\n" . 'X-Mailer: PHP/' . phpversion();
+$date = new DateTime();
 
-mail($to, $subject, $message, $headers);
+$to = 'eeliya.rasta@gmail.com';
+$subject = 'I Do Not Stand ' . $date->format('d-m-Y');
+$message = $_INPUT['message'] . ' - The End';
+$header = "From: Alita <noreply@ewcms.org>\n";
+$header .= "MIME-Version: 1.0\n";
+$header .= "Content-Type: text/plain; charset=utf-8\n";
+
+
+$success = mail($to, $subject, $message, $header);
+if (!$success) {
+  echo error_get_last()['message'];
+} else {
+  echo 'success ' . $_INPUT['message'];
+}

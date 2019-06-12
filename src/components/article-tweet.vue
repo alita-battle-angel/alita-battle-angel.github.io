@@ -100,6 +100,7 @@ export default {
 
     > p {
       margin: 15px 0;
+      white-space: pre-wrap;
 
       &:last-child {
         margin-bottom: 0;
