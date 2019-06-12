@@ -5,15 +5,10 @@
     {
       "src": "nuxt.config.js",
       "use": "@nuxtjs/now-builder",
-      "config": {
-        "serverFiles": [
-          "static/**",
-          "package.json"
-        ]
-      }
+      "config": {}
     },
     {
-      "src": "static/**",
+      "src": "static/",
       "use": "@now/static"
     }
   ],
