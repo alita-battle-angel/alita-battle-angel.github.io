@@ -1,5 +1,6 @@
 {
   "version": 2,
+  "alias": "i-do-not-stand-by-in-the-presence-of-evil.com",
   "builds": [
     {
       "src": "nuxt.config.js",
