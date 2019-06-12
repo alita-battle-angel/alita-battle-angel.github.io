@@ -2,8 +2,8 @@
   "name": "i-do-not-stand-by-in-the-presence-of-evil",
   "version": "1.0.0",
   "description": "For Alita's fan",
-  "author": "Eeliya",
-  "private": true,
+  "author": "Eeliya Rasta",
+  "private": false,
   "scripts": {
     "dev": "nuxt",
     "build": "nuxt build",
