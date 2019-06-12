@@ -157,7 +157,7 @@ export default {
         rel: 'preload',
         as: 'image',
         type: 'image/jpg',
-        href: '/petition-banner.jpg'
+        href: '~/static/petition-banner.jpg'
       }
     ]
   },
