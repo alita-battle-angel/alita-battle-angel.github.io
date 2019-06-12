@@ -2,6 +2,7 @@
   "name": "i-do-not-stand-by-in-the-presence-of-evil",
   "version": "1.0.0",
   "description": "For Alita's fan",
+  "license": "MIT",
   "author": "Eeliya Rasta",
   "private": false,
   "scripts": {
@@ -13,9 +14,7 @@
     "precommit": "npm run lint"
   },
   "dependencies": {
-    "@nuxtjs/pwa": "^2.6.0",
     "cross-env": "^5.2.0",
-    "express": "^4.16.4",
     "nuxt": "^2.8.1"
   },
   "devDependencies": {
