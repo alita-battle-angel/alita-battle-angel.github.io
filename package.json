@@ -11,7 +11,7 @@
     "generate": "nuxt generate",
     "lint": "eslint --ext .js,.vue --ignore-path .gitignore .",
     "precommit": "npm run lint",
-    "now-build": "node .nuxt/dist/server/server.js"
+    "now-build": "buxt build & node .nuxt/dist/server/server.js"
   },
   "dependencies": {
     "@nuxtjs/pwa": "^2.6.0",
