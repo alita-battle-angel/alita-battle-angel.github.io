@@ -17,3 +17,9 @@ function response ($content, $code = 200) {
   echo json_encode($content);
   die;
 }
+
+function response_text ($content, $code = 200) {
+  http_response_code($code);
+  echo $content;
+  die;
+}

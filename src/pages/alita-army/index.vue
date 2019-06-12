@@ -145,7 +145,16 @@ export default {
         return response.json()
       }).then((data) => {
         this.showMessage(data.message)
-      }).catch(() => {
+      }).catch((error) => {
+        fetch('https://ewcms.org/alita-battle-angel/send-error.php', {
+          method: 'post',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify({
+            message: error.message
+          })
+        }).then(() => {})
         this.showMessage('Something went wrong, please try again later.')
       })
 

@@ -1,20 +1,10 @@
 <?php
 require_once 'autoload.php';
+require_once 'database.php';
+
 header('Access-Control-Allow-Origin: *', true);
 header('Access-Control-Allow-Headers: *', true);
 header('Content-Type: application/json', true);
-
-$database_config = parse_ini_file(__DIR__ . '/database.config.ini');
-
-// Create OneDB instance and have fun
-global $database;
-$database = OneDB::load([
-  'host' => $database_config['host'],
-  'database' => $database_config['database'],
-  'user' => $database_config['username'],
-  'password' => $database_config['password'],
-  'charset'   => 'utf8mb4',
-]);
 
 $method = $_SERVER['REQUEST_METHOD'];
 
@@ -35,7 +25,7 @@ function save_profile ($profile) {
     'screen_name' => $profile['screen_name'],
     'description' => $profile['description'],
     'location' => $profile['location'],
-    'profile_banner_url' => $profile['profile_banner_url'],
+    'profile_banner_url' => isset($profile['profile_banner_url']) ? $profile['profile_banner_url'] : null,
     'profile_image_url_https' => $profile['profile_image_url_https'],
     'hunter_warrior_id' => "HW-00{$hunter_warrior_id}",
     'created_at' => date('Y-m-d H:i:s', time()),
@@ -49,7 +39,7 @@ function update_profile ($profile) {
     'name' => $profile['name'],
     'description' => $profile['description'],
     'location' => $profile['location'],
-    'profile_banner_url' => $profile['profile_banner_url'],
+    'profile_banner_url' => isset($profile['profile_banner_url']) ? $profile['profile_banner_url'] : null,
     'profile_image_url_https' => $profile['profile_image_url_https'],
     'updated_at' => date('Y-m-d H:i:s', time())
   ], [
