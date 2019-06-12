@@ -1,9 +1,23 @@
 {
   "version": 2,
+  "alias": "i-do-not-stand-by-in-the-presence-of-evil.com",
   "builds": [
     {
-      "src": "package.json",
-      "use": "@now/static-build"
+      "src": "nuxt.config.js",
+      "use": "@nuxtjs/now-builder",
+      "config": {}
+    }
+  ],
+  "routes": [
+    {
+      "src": "/_nuxt/.+",
+      "headers": {
+        "Cache-Control": "max-age=31557600"
+      }
+    },
+    {
+      "src": "/(.*)",
+      "dest": "/"
     }
   ]
 }

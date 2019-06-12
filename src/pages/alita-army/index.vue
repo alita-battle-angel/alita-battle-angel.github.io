@@ -56,7 +56,7 @@
         </div>
 
         <main :class="list_state">
-          <HunterWarrior v-for="hunter in data" :key="hunter.id_str" :profile="hunter" />
+          <HunterWarrior v-for="hunter in data" :key="hunter.screen_name" :profile="hunter" />
         </main>
       </div>
     </div>
@@ -65,6 +65,11 @@
 
 <script>
 import HunterWarrior from '~/components/hunter-warrior'
+
+const fetchArmy = async (page) => {
+  const response = await fetch('https://ewcms.org/alita-battle-angel/alita-army.php?page=' + (page || 1))
+  return response.json()
+}
 
 const unAllowedChars = [' ', '@', '#', '-', '=', '+', '(', ')', '*', '^', '%', '&', '!', '~']
 export default {
@@ -83,16 +88,22 @@ export default {
   },
   data: () => {
     return {
-      data: [],
       screen_name: '',
       message: null,
       fetching: false,
-      registering: false,
-      total_pages: 1,
-      page: 1
+      registering: false
     }
   },
   computed: {
+    data() {
+      return this.$store.state['alita-army'].data || []
+    },
+    total_pages() {
+      return this.$store.state['alita-army'].total_pages || 1
+    },
+    page() {
+      return this.$store.state['alita-army'].page || 1
+    },
     list_state() {
       return { hunters: true, loading: this.fetching }
     },
@@ -106,18 +117,16 @@ export default {
   watch: {
     '$route.query.page': 'fetchArmy'
   },
-  mounted() {
-    this.page = this.$route.query.page || 1
-    this.fetchArmy()
+  async fetch({ query, store }) {
+    const response = await fetchArmy(query.page)
+    store.commit('alita-army/set', response)
   },
   methods: {
     async fetchArmy(page) {
       this.fetching = true
       const response = await fetch('https://ewcms.org/alita-battle-angel/alita-army.php?page=' + (page || this.page))
       const jsonResponse = await response.json()
-      this.data = jsonResponse.data || []
-      this.total_pages = jsonResponse.total_pages
-      this.page = jsonResponse.page
+      this.$store.commit('alita-army/set', jsonResponse)
       this.fetching = false
     },
     enroll() {
