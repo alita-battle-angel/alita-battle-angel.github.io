@@ -2,7 +2,7 @@
   "version": 2,
   "builds": [
     {
-      "src": ".nuxt/dist/server/server.js",
+      "src": "package.json",
       "use": "@now/node"
     }
   ]
