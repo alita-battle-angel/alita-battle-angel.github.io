@@ -3,13 +3,18 @@
   "alias": "i-do-not-stand-by-in-the-presence-of-evil.com",
   "builds": [
     {
-      "src": "static/**",
-      "use": "@now/static"
-    },
-    {
       "src": "nuxt.config.js",
       "use": "@nuxtjs/now-builder",
-      "config": {}
+      "config": {
+        "serverFiles": [
+          "static/**",
+          "package.json"
+        ]
+      }
+    },
+    {
+      "src": "static/**",
+      "use": "@now/static"
     }
   ],
   "routes": [
