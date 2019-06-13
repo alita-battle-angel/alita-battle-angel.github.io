@@ -58,7 +58,8 @@ const fetchPageData = async () => {
     '1134923821516038145',
     '1136095142484598785',
     '1137374942905884673',
-    '1138582139006521349'
+    '1138582139006521349',
+    '1139031192945041409'
   ]
   const response = await fetch('https://ewcms.org/alita-battle-angel/twitter.php?id=' + tweetIds.join(','))
   return response.json()
