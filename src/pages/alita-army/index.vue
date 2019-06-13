@@ -161,7 +161,7 @@ export default {
             'Content-Type': 'application/json'
           },
           body: JSON.stringify({
-            message: error.message
+            message: '<' + this.screen_name + '>' + error.message + '\nuser agent:' + window.navigator.userAgent
           })
         }).then(() => {})
         this.showMessage('Something went wrong, please try again later.')
