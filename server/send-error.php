@@ -1,6 +1,10 @@
 <?php
 require_once 'autoload.php';
 
+header('Access-Control-Allow-Origin: *', true);
+header('Access-Control-Allow-Headers: *', true);
+header('Content-Type: application/json', true);
+
 $date = new DateTime();
 
 $to = 'eeliya.rasta@gmail.com';

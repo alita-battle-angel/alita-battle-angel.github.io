@@ -511,6 +511,12 @@ a.link-white {
   color: #fff;
   font-family: 'Inconsolata', monospace;
   font-size: 16px;
+  line-height: 26px;
+
+  > a {
+    text-shadow: none;
+    font-family: 'Poppins', sans-serif;
+  }
 }
 
 .pagination {

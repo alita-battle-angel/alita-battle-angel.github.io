@@ -42,6 +42,13 @@
           <p v-if="message" class="message">
             {{ message }}
           </p>
+          <p v-if="error" class="message">
+            If the problem persist please contact
+            <a
+              href="https://twitter.com/EeliyaKing"
+              target="_blank"
+            >@EeliyaKing</a>
+          </p>
         </header>
         <div class="pagination">
           <button :disabled="can_previous" @click="previous()">
@@ -90,6 +97,7 @@ export default {
     return {
       screen_name: '',
       message: null,
+      error: false,
       fetching: false,
       registering: false
     }
@@ -161,10 +169,10 @@ export default {
             'Content-Type': 'application/json'
           },
           body: JSON.stringify({
-            message: '<' + this.screen_name + '>' + error.message + '\nuser agent:' + window.navigator.userAgent
+            message: '<' + this.screen_name + '> ' + error.message + '\nuser agent: ' + window.navigator.userAgent
           })
         }).then(() => {})
-        this.showMessage('Something went wrong, please try again later.')
+        this.showMessage('Something went wrong, please try again later.', true)
       })
 
       this.showMessage('Registering... please wait')
@@ -176,14 +184,16 @@ export default {
         event.preventDefault()
       }
     },
-    showMessage(text) {
+    showMessage(text, error) {
       this.$nextTick(() => {
         this.message = text
+        this.error = error
 
         clearTimeout(this._messageTimeout)
         this._messageTimeout = setTimeout(() => {
           this.message = null
-        }, 7000)
+          this.error = false
+        }, error ? 15000 : 7000)
       })
     },
     next() {

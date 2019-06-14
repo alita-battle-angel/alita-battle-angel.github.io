@@ -49,27 +49,28 @@ body {
 a {
   font-size: .87em;
   font-weight: 500;
-  color: #963dc5;
+  color: #a14bff;
+  background-color: #2a144a;
   text-decoration: none;
   border-radius: 20px;
-  padding: 6px 10px;
-  transition-property: background-color, border, box-shadow, color, transform, text-shadow;
+  padding: 5px 15px;
+  line-height: 16px;
+  transition-property: all;
   transition-duration: 150ms;
   transition-timing-function: ease-in-out;
   cursor: pointer;
-  border: 1px solid transparent;
 
   & + a {
-    margin-top: 10px;
+    margin-top: 15px;
   }
 
   &:hover {
-    border-color: #963dc5;
+    background-color: #462476;
   }
 
   &:active {
     color: #111;
-    background-color: #963dc5;
+    background-color: #a14bff;
   }
 }
 
