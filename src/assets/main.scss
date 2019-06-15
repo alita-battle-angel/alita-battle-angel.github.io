@@ -72,6 +72,20 @@ a {
     color: #111;
     background-color: #a14bff;
   }
+
+  &.disabled {
+    opacity: .25;
+    cursor: default;
+    pointer-events: none;
+  }
+
+  &.button {
+    background-color: #000;
+
+    &:hover {
+      background-color: #000;
+    }
+  }
 }
 
 a.action {

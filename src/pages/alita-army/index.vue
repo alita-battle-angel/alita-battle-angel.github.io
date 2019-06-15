@@ -51,15 +51,15 @@
           </p>
         </header>
         <div class="pagination">
-          <button :disabled="can_previous" @click="previous()">
+          <nuxt-link :class="{button:true , disabled:can_previous}" :to="previous_url">
             <i class="material-icons">keyboard_arrow_left</i>
-          </button>
+          </nuxt-link>
           <span>
             {{ page }} / {{ total_pages }}
           </span>
-          <button :disabled="can_next" @click="next()">
+          <nuxt-link :class="{button:true , disabled: can_next}" :to="next_url">
             <i class="material-icons">keyboard_arrow_right</i>
-          </button>
+          </nuxt-link>
         </div>
 
         <main :class="list_state">
@@ -120,6 +120,12 @@ export default {
     },
     can_next() {
       return this.total_pages <= this.page
+    },
+    previous_url() {
+      return '/alita-army?page=' + (this.page - 1)
+    },
+    next_url() {
+      return '/alita-army?page=' + (this.page + 1)
     }
   },
   watch: {
@@ -195,16 +201,6 @@ export default {
           this.error = false
         }, error ? 15000 : 7000)
       })
-    },
-    next() {
-      if (this.total_pages > this.page) {
-        this.$router.push({ path: this.$route.path, query: { page: this.page + 1 } })
-      }
-    },
-    previous() {
-      if (this.page > 1) {
-        this.$router.push({ path: this.$route.path, query: { page: this.page - 1 } })
-      }
     }
   }
 }
