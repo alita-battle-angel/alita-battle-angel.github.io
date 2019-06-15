@@ -56,7 +56,7 @@ export default {
       })
 
       let withHashTags = withMentions.replace(/#([^\s]*)/g, (hash, text) => {
-        return `<a href="https://twitter.com/hashtag/${text}">${hash}</a>`
+        return `<a class="inline" href="https://twitter.com/hashtag/${text}">${hash}</a>`
       })
 
       if (media.url) {
@@ -111,7 +111,11 @@ export default {
 
       > a {
         padding: 0 4px 0 3px;
-        margin: 0 -2px;
+        margin: 0 -1px;
+
+        &.link-white {
+          padding: 0 5px 1px 3px;
+        }
       }
 
       > img {
@@ -125,7 +129,7 @@ export default {
     }
 
     .link-white {
-      font-weight: 400;
+      /*font-weight: 400;*/
     }
   }
 

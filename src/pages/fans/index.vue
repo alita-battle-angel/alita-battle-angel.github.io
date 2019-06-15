@@ -59,7 +59,9 @@ const fetchPageData = async () => {
     '1136095142484598785',
     '1137374942905884673',
     '1138582139006521349',
-    '1139031192945041409'
+    '1139031192945041409',
+    '1139906722963873792',
+    '1140024068776710144'
   ]
   const response = await fetch('https://ewcms.org/alita-battle-angel/twitter.php?id=' + tweetIds.join(','))
   return response.json()
@@ -72,7 +74,7 @@ export default {
       {
         hid: 'description',
         name: 'description',
-        content: 'Explore all the projects and contents made by Alita\'s fans, also known as Alita Army.'
+        content: 'Explore all the contents made by Alita\'s fans, also known as Alita Army.'
       }
     ]
   },

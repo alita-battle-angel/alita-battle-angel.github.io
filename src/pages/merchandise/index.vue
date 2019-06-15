@@ -7,7 +7,7 @@
             Merchandise
           </h1>
           <h2>
-            Comming soon
+            This page is work-in-progress
           </h2>
         </header>
         <main class="f-col">

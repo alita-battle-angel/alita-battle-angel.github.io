@@ -50,10 +50,10 @@ a {
   font-size: .87em;
   font-weight: 500;
   color: #a14bff;
-  background-color: #2a144a;
+  //background-color: rgba(#a14bff, .15);
   text-decoration: none;
   border-radius: 20px;
-  padding: 5px 15px;
+  padding: 5px 10px 4px;
   line-height: 16px;
   transition-property: all;
   transition-duration: 150ms;
@@ -65,7 +65,7 @@ a {
   }
 
   &:hover {
-    background-color: #462476;
+    background-color: rgba(#a14bff, .25);
   }
 
   &:active {
@@ -85,6 +85,37 @@ a {
     &:hover {
       background-color: #000;
     }
+  }
+
+  &.inline {
+    background-color: transparent;
+
+    &:hover {
+      background-color: rgba(#a14bff, .3);
+    }
+
+    &:active {
+      color: #111;
+      background-color: #a14bff;
+    }
+  }
+}
+
+a.link-white {
+  color: #eee;
+  text-shadow: 0 0 3px rgba(#fff, .3), 0 0 7px rgba(#fff, .5);
+  letter-spacing: .2px;
+  background-color: transparent;
+  padding: 3px 5px;
+  font-weight: 400;
+
+  &:hover {
+    background-color: rgba(#fff, .15);
+  }
+
+  &:active {
+    color: #111;
+    background-color: #eee;
   }
 }
 

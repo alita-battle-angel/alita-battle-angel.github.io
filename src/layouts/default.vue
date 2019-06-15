@@ -69,19 +69,24 @@ export default {
           exact: false
         },
         {
-          title: 'Statistics',
-          href: '/statistics',
-          icon: 'show_chart'
-        },
-        {
           title: 'Fans',
           href: '/fans',
           icon: 'group'
         },
         {
+          title: 'Projects',
+          href: '/projects',
+          icon: 'work_outline'
+        },
+        {
           title: 'Alita Army',
           href: '/alita-army',
           icon: 'stars'
+        },
+        {
+          title: 'Statistics',
+          href: '/statistics',
+          icon: 'show_chart'
         },
         {
           title: 'Merchandise',
