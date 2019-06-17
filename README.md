@@ -1,7 +1,5 @@
 # alita-battle-angel.github.io
 
-[![Travis (.com) branch](https://img.shields.io/travis/com/alita-battle-angel/alita-battle-angel.github.io/develop.svg?style=flat-square)](https://travis-ci.com/alita-battle-angel/alita-battle-angel.github.io)
-
 Build by Nuxt.js
 
 ## Build Setup

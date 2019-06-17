@@ -2,10 +2,6 @@
 require_once 'autoload.php';
 require_once 'database.php';
 
-header('Access-Control-Allow-Origin: *', true);
-header('Access-Control-Allow-Headers: *', true);
-header('Content-Type: application/json', true);
-
 $method = $_SERVER['REQUEST_METHOD'];
 
 $file_name = 'petition-data.json';

@@ -49,9 +49,6 @@ $tweets = $_REQUEST['id'];
 
 $db = new FileDB('tweets-db.json');
 
-header('Content-Type: application/json', true);
-header("Access-Control-Allow-Origin: *");
-
 $requested_tweets = explode(',', $tweets);
 
 // We only need to fetch tweets that are not already in the database

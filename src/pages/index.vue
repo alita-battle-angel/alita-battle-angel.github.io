@@ -13,7 +13,7 @@
           >
             <img
               height="188"
-              src="/petition-banner.jpg"
+              src="~/assets/img/petition-banner.jpg"
               alt="petition logo"
             >
             <span>Alita's Sequel Petition</span>
@@ -27,7 +27,7 @@
           >
             <img
               height="188"
-              src="/alita-unbreakable-warrior.jpg"
+              src="~/assets/img/alita-unbreakable-warrior.jpg"
               alt="petition logo"
             >
             <span>Alita Unbreakable Warrior</span>
@@ -41,7 +41,7 @@
           >
             <img
               height="188"
-              src="/discord-thumbnail.jpg"
+              src="~/assets/img/discord-thumbnail.jpg"
               alt="Discord"
             >
             <span>Gunnm/Alita: Battle Angel</span>

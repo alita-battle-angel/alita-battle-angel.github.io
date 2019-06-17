@@ -3,6 +3,10 @@ error_reporting(E_ALL);
 ini_set('display_errors', 1);
 ini_set('error_log', __DIR__ . '/php-error.log');
 
+header('Access-Control-Allow-Origin: *', true);
+header('Access-Control-Allow-Headers: Content-Type', true);
+header('Content-Type: application/json', true);
+
 function my_autoloader ($class) {
   include __DIR__ . '/' . $class . '.class.php';
 }
