@@ -27,7 +27,7 @@
       "src": "/(.*)/(?<q>.*)$",
       "status": 301,
       "headers": {
-        "Location": "/$1$q"
+        "Location": "/$1$2"
       }
     },
     {
