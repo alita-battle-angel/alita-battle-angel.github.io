@@ -80,15 +80,25 @@ const fetchPageData = async (page) => {
 
 const unAllowedChars = [' ', '@', '#', '-', '=', '+', '(', ')', '*', '^', '%', '&', '!', '~']
 export default {
-  head: {
-    title: 'Alita Army | I Do Not Stand by in The Presence of Evil',
-    meta: [
-      {
-        hid: 'description',
-        name: 'description',
-        content: 'List of members of the Alita Army. You can join the Alita Army too!'
-      }
-    ]
+  head() {
+    const canonical = this.$store.state['alita-army'].page <= 1 ? {
+      rel: 'canonical',
+      href: 'https://i-do-not-stand-by-in-the-presence-of-evil.com/alita-army'
+    } : {}
+
+    return {
+      title: 'Alita Army | I Do Not Stand by in The Presence of Evil',
+      meta: [
+        {
+          hid: 'description',
+          name: 'description',
+          content: 'List of members of the Alita Army. You can join the Alita Army too!'
+        }
+      ],
+      link: [
+        canonical
+      ]
+    }
   },
   components: {
     HunterWarrior
