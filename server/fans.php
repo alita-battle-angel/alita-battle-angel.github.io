@@ -13,7 +13,7 @@ function get_profile ($screen_name) {
   return $database->fetchRow("SELECT * FROM alita_army WHERE alita_army.screen_name = '{$screen_name}'");
 }
 
-function save_profile ($profile) {
+function save_tweet ($profile) {
   global $database;
   $hunter_warrior_id = $database->fetchOne("SELECT AUTO_INCREMENT FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_NAME = 'alita_army'");
   $database->insert('alita_army', [
@@ -23,7 +23,9 @@ function save_profile ($profile) {
     'location' => $profile['location'],
     'profile_banner_url' => isset($profile['profile_banner_url']) ? $profile['profile_banner_url'] : null,
     'profile_image_url_https' => $profile['profile_image_url_https'],
-    'hunter_warrior_id' => "HW-00{$hunter_warrior_id}"
+    'hunter_warrior_id' => "HW-00{$hunter_warrior_id}",
+    'created_at' => date('Y-m-d H:i:s', time()),
+    'updated_at' => date('Y-m-d H:i:s', time())
   ]);
 }
 
@@ -35,7 +37,7 @@ function update_profile ($profile) {
     'location' => $profile['location'],
     'profile_banner_url' => isset($profile['profile_banner_url']) ? $profile['profile_banner_url'] : null,
     'profile_image_url_https' => $profile['profile_image_url_https'],
-    'updated_at' => NULL
+    'updated_at' => date('Y-m-d H:i:s', time())
   ], [
     'screen_name = ?' => $profile['screen_name']
   ]);

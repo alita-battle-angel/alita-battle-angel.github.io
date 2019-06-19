@@ -31,7 +31,7 @@ function save_petition ($data) {
     'id' => $data['id'],
     'name' => 'petition',
     'value' => $data['value'],
-    'updated_at' => date('Y-m-d H:i:s', time())
+    'updated_at' => NULL
   ]);
 }
 
