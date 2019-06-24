@@ -529,31 +529,6 @@ form.inline {
   }
 }
 
-.pagination {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 20px 0;
-  font-family: 'Inconsolata', monospace;
-
-  > button, .button {
-    display: flex;
-    width: 84px;
-    height: 42px;
-    padding: 5px 0;
-    margin: 0 15px;
-    vertical-align: middle;
-    align-items: center;
-    justify-content: center;
-  }
-
-  > span {
-    width: 80px;
-    text-align: center;
-    font-weight: bold;
-  }
-}
-
 article {
   > h4 {
     margin-bottom: 0;

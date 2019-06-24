@@ -50,27 +50,20 @@
             >@EeliyaKing</a>
           </p>
         </header>
-        <div class="pagination">
-          <nuxt-link :class="{button:true , disabled:can_previous}" :to="previous_url">
-            <i class="material-icons">keyboard_arrow_left</i>
-          </nuxt-link>
-          <span>
-            {{ page }} / {{ total_pages }}
-          </span>
-          <nuxt-link :class="{button:true , disabled: can_next}" :to="next_url">
-            <i class="material-icons">keyboard_arrow_right</i>
-          </nuxt-link>
-        </div>
+        <Pagination :page="page" :total-pages="total_pages" :previous-url="previous_url" :next-url="next_url" />
 
         <main :class="list_state">
           <HunterWarrior v-for="hunter in data" :key="hunter.screen_name" :profile="hunter" />
         </main>
+
+        <Pagination :page="page" :total-pages="total_pages" :previous-url="previous_url" :next-url="next_url" />
       </div>
     </div>
   </div>
 </template>
 
 <script>
+import Pagination from '~/components/pagination'
 import HunterWarrior from '~/components/hunter-warrior'
 
 const fetchPageData = async (page) => {
@@ -101,6 +94,7 @@ export default {
     }
   },
   components: {
+    Pagination,
     HunterWarrior
   },
   data: () => {
@@ -124,12 +118,6 @@ export default {
     },
     list_state() {
       return { hunters: true, loading: this.fetching }
-    },
-    can_previous() {
-      return this.page <= 1
-    },
-    can_next() {
-      return this.total_pages <= this.page
     },
     previous_url() {
       return '/alita-army?page=' + (this.page - 1)
@@ -173,6 +161,10 @@ export default {
         if (response.status === 200) {
           this.screen_name = ''
           this.fetchArmy()
+        }
+
+        if (response.status === 202) {
+          this.$router.push({ path: this.$route.path })
         }
 
         return response.json()

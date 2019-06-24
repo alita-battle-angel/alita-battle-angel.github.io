@@ -4,52 +4,61 @@ require_once 'database.php';
 
 $method = $_SERVER['REQUEST_METHOD'];
 
-function check_eligibility ($profile) {
-  return $profile['statuses_count'] >= 1 && strpos($profile['description'], '#AlitaArmy') !== false;
+function get_tweet ($id_str) {
+  global $database;
+  return $database->fetchRow("SELECT * FROM tweets WHERE tweets.id_str = '{$id_str}'");
 }
 
-function get_profile ($screen_name) {
+function save_tweet ($status) {
   global $database;
-  return $database->fetchRow("SELECT * FROM alita_army WHERE alita_army.screen_name = '{$screen_name}'");
-}
 
-function save_tweet ($profile) {
-  global $database;
-  $hunter_warrior_id = $database->fetchOne("SELECT AUTO_INCREMENT FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_NAME = 'alita_army'");
-  $database->insert('alita_army', [
-    'name' => $profile['name'],
-    'screen_name' => $profile['screen_name'],
-    'description' => $profile['description'],
-    'location' => $profile['location'],
-    'profile_banner_url' => isset($profile['profile_banner_url']) ? $profile['profile_banner_url'] : null,
-    'profile_image_url_https' => $profile['profile_image_url_https'],
-    'hunter_warrior_id' => "HW-00{$hunter_warrior_id}",
-    'created_at' => date('Y-m-d H:i:s', time()),
-    'updated_at' => date('Y-m-d H:i:s', time())
+  $database->insert('tweets', [
+    'id_str' => $status['id_str'],
+    'name' => $status['name'],
+    'screen_name' => $status['screen_name'],
+    'profile_image_url_https' => $status['profile_image_url_https'],
+    'full_text' => $status['full_text'],
+    'in_reply_to_status_id_str' => $status['in_reply_to_status_id_str'],
+    'retweet_status' => $status['retweet_status'],
+    'hashtags' => $status['hashtags'],
+    'urls' => $status['urls'],
+    'media' => $status['media'],
+    'user_mentions' => $status['user_mentions'],
+    'status_created_at' => $status['created_at']
   ]);
 }
 
-function update_profile ($profile) {
+function update_tweet ($status) {
   global $database;
-  $database->update('alita_army', [
-    'name' => $profile['name'],
-    'description' => $profile['description'],
-    'location' => $profile['location'],
-    'profile_banner_url' => isset($profile['profile_banner_url']) ? $profile['profile_banner_url'] : null,
-    'profile_image_url_https' => $profile['profile_image_url_https'],
-    'updated_at' => date('Y-m-d H:i:s', time())
+  $database->update('tweets', [
+    'id_str' => $status['id_str'],
+    'name' => $status['name'],
+    'screen_name' => $status['screen_name'],
+    'profile_image_url_https' => $status['profile_image_url_https'],
+    'full_text' => $status['full_text'],
+    'in_reply_to_status_id_str' => $status['in_reply_to_status_id_str'],
+    'retweet_status' => $status['retweet_status'],
+    'hashtags' => $status['hashtags'],
+    'urls' => $status['urls'],
+    'media' => $status['media'],
+    'user_mentions' => $status['user_mentions'],
+    'status_created_at' => $status['created_at'],
+    'updated_at' => NULL
   ], [
-    'screen_name = ?' => $profile['screen_name']
+    'screen_name = ?' => $status['screen_name']
   ]);
 }
 
 if ($method === 'POST') {
-  if (isset($_INPUT['screen_name'])) {
-    $screen_name = $_INPUT['screen_name'];
-    $profile = get_profile($_INPUT['screen_name']);
+  if (isset($_INPUT['tweet_id'])) {
+    $tweet_id = $_INPUT['tweet_id'];
+    $tweet = get_tweet($_INPUT['tweet_id']);
 
-    if ($profile === false) {
-      $twitter_response = TwitterAPI::fetch('users/lookup.json', ['screen_name' => $screen_name]);
+    if ($tweet === false) {
+      $twitter_response = TwitterAPI::fetch('statuses/lookup.json', [
+        'tweet_mode' => 'extended',
+        'id' => $tweet_id
+      ]);
 
       if (isset($twitter_response['errors'])) {
         http_response_code($twitter_response['code']);
@@ -58,22 +67,15 @@ if ($method === 'POST') {
         ]);
       }
 
-      if ($twitter_response[0] && !check_eligibility($twitter_response[0])) {
-        response([
-          'message' => 'You need to have #AlitaArmy (case-sensitive) in your profile bio and also you need to have at least one tweet.',
-          'profile' => $twitter_response[0]
-        ], 400);
-      }
-
       if ($twitter_response[0]) {
-        $profile = $twitter_response[0];
-        save_profile($profile);
+        $tweet = $twitter_response[0];
+        save_tweet($tweet);
 
-        $profile = get_profile($_INPUT['screen_name']);
+        $tweet = get_tweet($tweet_id);
 
         response([
           'message' => 'Thank you for joining the Alita Army!',
-          'data' => $profile
+          'data' => $tweet
         ]);
       }
     } else {
@@ -106,13 +108,13 @@ if ($method === 'GET') {
   $item_per_page = 18;
   $start = $page * $item_per_page;
 
-  $total = intval($database->fetchOne('SELECT COUNT(*) FROM alita_army'));
+  $total = intval($database->fetchOne('SELECT COUNT(*) FROM tweets'));
 
   response([
     'page' => $page + 1,
     'item_per_page' => $item_per_page,
     'total_pages' => $total === 0 ? 1 : ceil($total / $item_per_page),
-    'data' => $database->fetchAll("SELECT * FROM alita_army ORDER BY updated_at DESC LIMIT {$item_per_page} OFFSET {$start}")
+    'data' => $database->fetchAll("SELECT * FROM tweets ORDER BY updated_at DESC LIMIT {$item_per_page} OFFSET {$start}")
   ]);
 }
 
