@@ -7,16 +7,19 @@
             Fans
           </h1>
           <h2>
-            Find out what fans are up to
+            Find out about latest stuff
           </h2>
           <p>
-            This page is under construction and more contents & projects related to Alita will be added!
+            Would you like to add a specific tweet!? then contact <a
+              href="https://twitter.com/EeliyaKing"
+              target="_blank"
+            >@EeliyaKing</a>
           </p>
         </header>
-        <main class="articles">
-          <h3 v-if="!tweets.length">
-            Loading...
-          </h3>
+
+        <Pagination :page="page" :total-pages="total_pages" :previous-url="previous_url" :next-url="next_url" />
+
+        <main :class="list_state">
           <div class="column">
             <article-tweet
               v-for="tweet in oddTweets"
@@ -36,96 +39,92 @@
             </article-tweet>
           </div>
         </main>
+
+        <Pagination :page="page" :total-pages="total_pages" :previous-url="previous_url" :next-url="next_url" />
       </div>
     </div>
   </div>
 </template>
 
 <script>
+import Pagination from '~/components/pagination'
 import ArticleTweet from '~/components/article-tweet'
 
-const fetchPageData = async () => {
-  const tweetIds = [
-    '1132276020843880448',
-    '1130514726914596866',
-    '1129912507576070150',
-    '1126524230483496961',
-    '1120750607806214149',
-    '1117501789849444355',
-    '1112391562628136960',
-    '1135116404901011457',
-    '1131952934579625984',
-    '1134923821516038145',
-    '1136095142484598785',
-    '1137374942905884673',
-    '1138582139006521349',
-    '1139031192945041409',
-    '1139906722963873792',
-    '1140024068776710144'
-  ]
-  const response = await fetch('https://ewcms.org/alita-battle-angel/twitter.php?id=' + tweetIds.join(','))
+const fetchPageData = async (page) => {
+  const response = await fetch('https://ewcms.org/alita-battle-angel/fans.php?page=' + (page || 1))
   return response.json()
 }
 
 export default {
-  head: {
-    title: 'Fans | I Do Not Stand by in The Presence of Evil',
-    meta: [
-      {
-        hid: 'description',
-        name: 'description',
-        content: 'Explore all the contents made by Alita\'s fans, also known as Alita Army.'
-      }
-    ]
+  head() {
+    const canonical = this.$store.state.tweets.page <= 1 ? {
+      rel: 'canonical',
+      href: 'https://i-do-not-stand-by-in-the-presence-of-evil.com/fans'
+    } : {}
+
+    return {
+      title: 'Fans | I Do Not Stand by in The Presence of Evil',
+      meta: [
+        {
+          hid: 'description',
+          name: 'description',
+          content: 'Explore all the contents made by Alita\'s fans, also known as Alita Army.'
+        }
+      ],
+      link: [
+        canonical
+      ]
+    }
   },
   components: {
+    Pagination,
     ArticleTweet
   },
+  data() {
+    return {
+      fetching: false
+    }
+  },
   computed: {
-    tweets() {
+    data() {
       return this.$store.state.tweets.data || []
     },
     oddTweets() {
-      return this.tweets.filter((item, i) => i % 2 === 0)
+      return this.data.filter((item, i) => i % 2 === 0)
     },
     evenTweets() {
-      return this.tweets.filter((item, i) => i % 2 === 1)
+      return this.data.filter((item, i) => i % 2 === 1)
+    },
+    total_pages() {
+      return this.$store.state.tweets.total_pages || 1
+    },
+    page() {
+      return this.$store.state.tweets.page || 1
+    },
+    list_state() {
+      return { articles: true, loading: this.fetching }
+    },
+    previous_url() {
+      return '/fans?page=' + (this.page - 1)
+    },
+    next_url() {
+      return '/fans?page=' + (this.page + 1)
     }
   },
-  async fetch({ store }) {
-    const response = await fetchPageData()
+  watch: {
+    '$route.query.page': 'fetchTweets'
+  },
+  async fetch({ query, store }) {
+    const response = await fetchPageData(query.page)
     store.commit('tweets/set', response)
   },
   methods: {
-    getParsedText(tweet) {
-      if (!tweet) {
-        return ''
-      }
-
-      const media = tweet.entities.media ? tweet.entities.media[0] : {}
-
-      let withHashTags = tweet.full_text.replace(/#([^\s]*)/g, (hash, text) => {
-        return `<a href="https://twitter.com/hashtag/${text}">${hash}</a>`
-      })
-
-      if (media.url) {
-        withHashTags = withHashTags.replace(media.url, `<img src="${media.media_url_https}"/>`)
-      }
-
-      return withHashTags
-    },
-    getTweetLink(tweet) {
-      return `https://twitter.com/${tweet.user.screen_name}/status/${tweet.id_str}`
-    },
-    getUserLink(tweet) {
-      return `https://twitter.com/${tweet.user.screen_name}`
-    },
-    getTweetDate(tweet) {
-      if (!tweet) {
-        return ''
-      }
-
-      return new Date(tweet.created_at).toLocaleString()
+    async fetchTweets(page) {
+      this.fetching = true
+      const response = await fetch('https://ewcms.org/alita-battle-angel/fans.php?page=' + (page || this.page))
+      const jsonResponse = await response.json()
+      this.$store.commit('tweets/set', jsonResponse)
+      this.fetching = false
     }
   }
 }

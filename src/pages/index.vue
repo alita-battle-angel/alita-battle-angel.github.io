@@ -1,10 +1,11 @@
 <template>
   <div class="page">
     <article class="page-row">
-      <div class="box f-col">
+      <div class="box f-col banner">
         <h1>I do not stand by in the presence of Evil</h1>
-        <h2>UNDER CONSTRUCTION...</h2>
-
+        <p>Join the Alita Army by
+          <nuxt-link class="link-white" to="/alita-army">registering as a member</nuxt-link>
+        </p>
         <div class="f-row">
           <a
             class="link-icon x-large "
@@ -172,5 +173,9 @@ export default {
 </script>
 
 <style lang="scss">
-
+  .banner {
+    h1 {
+      text-align: center;
+    }
+  }
 </style>

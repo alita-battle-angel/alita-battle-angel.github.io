@@ -5,10 +5,10 @@
     <slot />
     <div class="twitter-user-info">
       <div class="action user">
-        <img :src="tweet.user.profile_image_url_https" :alt="tweet.user.name">
+        <img :src="tweet.profile_image_url_https" :alt="tweet.name">
         <div>
-          <strong>{{ tweet.user.name }}</strong>
-          <span>@{{ tweet.user.screen_name }}</span>
+          <strong>{{ tweet.name }}</strong>
+          <span>@{{ tweet.screen_name }}</span>
         </div>
       </div>
       <a class="action btn-see-tweet" :href="tweet_url" target="_blank">
@@ -37,7 +37,7 @@ export default {
       return this.getTweetURL(this.tweet)
     },
     user_url() {
-      return `https://twitter.com/${this.tweet.user.screen_name}`
+      return `https://twitter.com/${this.tweet.screen_name}`
     },
     date() {
       return this.getTweetDate(this.tweet)
@@ -49,7 +49,7 @@ export default {
         return ''
       }
 
-      const media = tweet.entities.media ? tweet.entities.media[0] : {}
+      const media = tweet.media ? tweet.media[0] : {}
 
       const withMentions = tweet.full_text.replace(/@([^\s]*)/g, (at, text) => {
         return `<a class="link-white" href="https://twitter.com/${text}">${at}</a>`
@@ -63,22 +63,21 @@ export default {
         withHashTags = withHashTags.replace(media.url, `<img src="${media.media_url_https}"/>`)
       }
 
-      tweet.entities.urls.forEach((item) => {
-        const url = item.url
-        withHashTags = withHashTags.replace(url, `<a href="${url}" target="_blank">${url}</a>`)
+      tweet.urls.split('\n').forEach((item) => {
+        withHashTags = withHashTags.replace(item, `<a href="${item}" target="_blank">${item}</a>`)
       })
 
       return withHashTags
     },
     getTweetURL(tweet) {
-      return `https://twitter.com/${tweet.user.screen_name}/status/${tweet.id_str}`
+      return `https://twitter.com/${tweet.screen_name}/status/${tweet.id_str}`
     },
     getTweetDate(tweet) {
       if (!tweet) {
         return ''
       }
 
-      return new Date(tweet.created_at).toLocaleString()
+      return new Date(tweet.status_created_at).toLocaleString()
     }
   }
 }

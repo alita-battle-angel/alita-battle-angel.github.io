@@ -1,8 +1,10 @@
 export const state = () => ({
-  data: []
+  data: [],
+  page: 1,
+  total_pages: 1
 })
 export const mutations = {
   set(state, payload) {
-    state.data = payload
+    Object.assign(state, payload)
   }
 }
