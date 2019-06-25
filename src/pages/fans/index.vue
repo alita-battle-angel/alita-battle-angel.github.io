@@ -7,7 +7,7 @@
             Fans
           </h1>
           <h2>
-            Find out about latest stuff
+            Find out about the latest stuff
           </h2>
           <p>
             Would you like to add a specific tweet!? then contact <a
@@ -17,7 +17,7 @@
           </p>
         </header>
 
-        <Pagination :page="page" :total-pages="total_pages" :previous-url="previous_url" :next-url="next_url" />
+        <pagination :page="page" :total-pages="total_pages" :previous-url="previous_url" :next-url="next_url" />
 
         <main :class="list_state">
           <div class="column">
@@ -40,7 +40,7 @@
           </div>
         </main>
 
-        <Pagination :page="page" :total-pages="total_pages" :previous-url="previous_url" :next-url="next_url" />
+        <pagination :page="page" :total-pages="total_pages" :previous-url="previous_url" :next-url="next_url" />
       </div>
     </div>
   </div>
@@ -68,7 +68,7 @@ export default {
         {
           hid: 'description',
           name: 'description',
-          content: 'Explore all the contents made by Alita\'s fans, also known as Alita Army.'
+          content: 'Find out about the latest stuff made by Alita\'s fans, also known as Alita Army.'
         }
       ],
       link: [
@@ -117,7 +117,9 @@ export default {
   async validate({ store, query }) {
     const response = await fetchPageData(query.page)
     store.commit('tweets/set', response)
-    return parseInt(query.page || 1) <= store.state.tweets.total_pages
+
+    const page = parseInt(query.page || 1)
+    return page <= store.state.tweets.total_pages && page > 0
   },
   methods: {
     async fetchTweets(page) {

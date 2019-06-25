@@ -88,8 +88,8 @@ function populate_weekly_tweets () {
   $fan_weekly_tweets = $database->fetchRow("SELECT * FROM cache WHERE cache.name = 'fan_weekly_tweets'");
 
   $current_time = time();
-  // Make a request every 24 hours
-  if ($fan_weekly_tweets && $current_time - strtotime($fan_weekly_tweets['updated_at']) < (24 * 3600)) {
+  // Make a request every 12 hours
+  if ($fan_weekly_tweets && $current_time - strtotime($fan_weekly_tweets['updated_at']) < (12 * 3600)) {
     return;
   }
 
@@ -102,13 +102,8 @@ function populate_weekly_tweets () {
 
   $alita_statuses = search('#Alita');
 
-  $fan_arts = TwitterAPI::fetch('search/tweets.json', [
-    'tweet_mode' => 'extended',
-    'q' => urlencode('#Alita #FanArt')
-  ]);
-
-  $fan_art_statuses = array_filter($fan_arts['statuses'], function ($item) {
-    return !isset($item['retweeted_status']) && isset($item['extended_entities']);
+  $fan_art_statuses = array_filter(search('#Alita #FanArt'), function ($item) {
+    return isset($item['extended_entities']);
   });
 
   $alita_army_statuses = search('#AlitaArmy');

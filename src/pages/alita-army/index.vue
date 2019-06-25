@@ -50,13 +50,13 @@
             >@EeliyaKing</a>
           </p>
         </header>
-        <Pagination :page="page" :total-pages="total_pages" :previous-url="previous_url" :next-url="next_url" />
+        <pagination :page="page" :total-pages="total_pages" :previous-url="previous_url" :next-url="next_url" />
 
         <main :class="list_state">
-          <HunterWarrior v-for="hunter in data" :key="hunter.screen_name" :profile="hunter" />
+          <hunter-warrior v-for="hunter in data" :key="hunter.screen_name" :profile="hunter" />
         </main>
 
-        <Pagination :page="page" :total-pages="total_pages" :previous-url="previous_url" :next-url="next_url" />
+        <pagination :page="page" :total-pages="total_pages" :previous-url="previous_url" :next-url="next_url" />
       </div>
     </div>
   </div>
@@ -132,7 +132,9 @@ export default {
   async validate({ store, query }) {
     const response = await fetchPageData(query.page)
     store.commit('alita-army/set', response)
-    return parseInt(query.page || 1) <= store.state['alita-army'].total_pages
+
+    const page = parseInt(query.page || 1)
+    return page <= store.state['alita-army'].total_pages && page > 0
   },
   methods: {
     async fetchArmy(page) {
