@@ -129,16 +129,16 @@ export default {
   watch: {
     '$route.query.page': 'fetchArmy'
   },
-  async fetch({ query, store }) {
+  async validate({ store, query }) {
     const response = await fetchPageData(query.page)
     store.commit('alita-army/set', response)
+    return parseInt(query.page || 1) <= store.state['alita-army'].total_pages
   },
   methods: {
     async fetchArmy(page) {
       this.fetching = true
-      const response = await fetch('https://ewcms.org/alita-battle-angel/alita-army.php?page=' + (page || this.page))
-      const jsonResponse = await response.json()
-      this.$store.commit('alita-army/set', jsonResponse)
+      const response = await fetchPageData(page || this.page)
+      this.$store.commit('alita-army/set', response)
       this.fetching = false
     },
     enroll() {

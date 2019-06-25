@@ -114,16 +114,16 @@ export default {
   watch: {
     '$route.query.page': 'fetchTweets'
   },
-  async fetch({ query, store }) {
+  async validate({ store, query }) {
     const response = await fetchPageData(query.page)
     store.commit('tweets/set', response)
+    return parseInt(query.page || 1) <= store.state.tweets.total_pages
   },
   methods: {
     async fetchTweets(page) {
       this.fetching = true
-      const response = await fetch('https://ewcms.org/alita-battle-angel/fans.php?page=' + (page || this.page))
-      const jsonResponse = await response.json()
-      this.$store.commit('tweets/set', jsonResponse)
+      const response = await fetchPageData(page || this.page)
+      this.$store.commit('tweets/set', response)
       this.fetching = false
     }
   }
