@@ -19,6 +19,17 @@
 
         <pagination :page="page" :total-pages="total_pages" :previous-url="previous_url" :next-url="next_url" />
 
+        <div class="filters">
+          <nuxt-link
+            v-for="item in filterItems"
+            :key="item"
+            :class="{toggle: true, active: isFilterActive(item)}"
+            :to="getHref(item)"
+          >
+            #{{ item }}
+          </nuxt-link>
+        </div>
+
         <main :class="list_state">
           <div class="column">
             <article-tweet
@@ -50,8 +61,8 @@
 import Pagination from '~/components/pagination'
 import ArticleTweet from '~/components/article-tweet'
 
-const fetchPageData = async (page) => {
-  const response = await fetch('https://ewcms.org/alita-battle-angel/fans.php?page=' + (page || 1))
+const fetchPageData = async (page, filterBy) => {
+  const response = await fetch('https://ewcms.org/alita-battle-angel/fans.php?page=' + (page || 1) + '&filterBy=' + (filterBy || ''))
   return response.json()
 }
 
@@ -82,10 +93,24 @@ export default {
   },
   data() {
     return {
-      fetching: false
+
+      filterItems: [
+        'AlitaArmy',
+        'FanArt',
+        'AlitaChallenge',
+        'Alita',
+        'AlitaBattleAngel'
+      ],
+      lastQuery: null
     }
   },
   computed: {
+    activeFilter() {
+      return this.$route.query.filterBy
+    },
+    fetching() {
+      return this.$store.state.tweets.fetching || false
+    },
     data() {
       return this.$store.state.tweets.data || []
     },
@@ -105,28 +130,34 @@ export default {
       return { articles: true, loading: this.fetching }
     },
     previous_url() {
-      return '/fans?page=' + (this.page - 1)
+      return '/fans?page=' + (this.page - 1) + (this.activeFilter ? '&filterBy=' + this.activeFilter : '')
     },
     next_url() {
-      return '/fans?page=' + (this.page + 1)
+      return '/fans?page=' + (this.page + 1) + (this.activeFilter ? '&filterBy=' + this.activeFilter : '')
     }
   },
-  watch: {
-    '$route.query.page': 'fetchTweets'
+  asyncData({ query }) {
+    return { filterBy: query.filterBy }
   },
   async validate({ store, query }) {
-    const response = await fetchPageData(query.page)
+    store.commit('tweets/set', { fetching: true })
+    const response = await fetchPageData(query.page, query.filterBy)
     store.commit('tweets/set', response)
+    store.commit('tweets/set', { fetching: false })
 
     const page = parseInt(query.page || 1)
     return page <= store.state.tweets.total_pages && page > 0
   },
   methods: {
-    async fetchTweets(page) {
-      this.fetching = true
-      const response = await fetchPageData(page || this.page)
-      this.$store.commit('tweets/set', response)
-      this.fetching = false
+    isFilterActive(item) {
+      return this.activeFilter === item
+    },
+    getHref(item) {
+      if (this.activeFilter === item) {
+        return { query: {} }
+      }
+
+      return { query: { filterBy: item } }
     }
   }
 }
@@ -167,6 +198,18 @@ export default {
         padding: 1px 6px;
         line-height: 20px;
       }
+    }
+  }
+
+  .filters {
+    padding: 15px 0;
+    margin-bottom: 15px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+
+    > a {
+      margin: 5px;
     }
   }
 </style>

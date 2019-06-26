@@ -88,7 +88,7 @@ function populate_weekly_tweets () {
   $fan_weekly_tweets = $database->fetchRow("SELECT * FROM cache WHERE cache.name = 'fan_weekly_tweets'");
 
   $current_time = time();
-  // Make a request every 12 hours
+  // Make a request every 24 hours
   if ($fan_weekly_tweets && $current_time - strtotime($fan_weekly_tweets['updated_at']) < (12 * 3600)) {
     return;
   }
@@ -102,8 +102,13 @@ function populate_weekly_tweets () {
 
   $alita_statuses = search('#Alita');
 
-  $fan_art_statuses = array_filter(search('#Alita #FanArt'), function ($item) {
-    return isset($item['extended_entities']);
+  $fan_arts = TwitterAPI::fetch('search/tweets.json', [
+    'tweet_mode' => 'extended',
+    'q' => urlencode('#Alita #FanArt')
+  ]);
+
+  $fan_art_statuses = array_filter($fan_arts['statuses'], function ($item) {
+    return !isset($item['retweeted_status']) && isset($item['extended_entities']);
   });
 
   $alita_army_statuses = search('#AlitaArmy');
@@ -117,7 +122,19 @@ function populate_weekly_tweets () {
 
   $all = array_merge($all, $replies_tweets);
 
-  array_walk($all, function ($status) {
+
+  $_duplicates = array();
+  foreach ($all as $v) {
+    if (isset($_duplicates[$v['id_str']])) {
+      // found duplicate
+      continue;
+    }
+    // remember unique item
+    $_duplicates[$v['id_str']] = $v;
+  }
+
+  $_all = array_values($_duplicates);
+  array_walk($_all, function ($status) {
     save_tweet($status);
   });
 }
@@ -182,9 +199,14 @@ if ($method === 'GET') {
   $item_per_page = 8;
   $start = $page * $item_per_page;
 
-  $total = intval($database->fetchOne('SELECT COUNT(*) FROM tweets WHERE id_str NOT IN (SELECT in_reply_to_status_id_str FROM tweets WHERE in_reply_to_status_id_str IS NOT NULL)'));
+  $filters = '';
+  if (isset($_GET['filterBy'])) {
+    $filters = "AND hashtags LIKE '%{$_GET['filterBy']}%'";
+  }
 
-  $data = $database->fetchAll("SELECT * FROM tweets WHERE id_str NOT IN (SELECT in_reply_to_status_id_str FROM tweets WHERE in_reply_to_status_id_str IS NOT NULL) ORDER BY status_created_at DESC LIMIT {$item_per_page} OFFSET {$start}");
+  $total = intval($database->fetchOne('SELECT COUNT(*) FROM tweets WHERE id_str NOT IN (SELECT in_reply_to_status_id_str FROM tweets WHERE in_reply_to_status_id_str IS NOT NULL) ' . $filters));
+
+  $data = $database->fetchAll("SELECT * FROM tweets WHERE id_str NOT IN (SELECT in_reply_to_status_id_str FROM tweets WHERE in_reply_to_status_id_str IS NOT NULL) $filters ORDER BY status_created_at DESC LIMIT {$item_per_page} OFFSET {$start}");
   array_walk($data, function (&$item) {
     $item['media'] = json_decode($item['media']);
 

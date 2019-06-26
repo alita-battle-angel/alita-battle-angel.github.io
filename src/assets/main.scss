@@ -135,6 +135,22 @@ a.action {
   }
 }
 
+a.toggle {
+  color: #000;
+  background-color: #bbb;
+
+  &:hover {
+    background-color: #fff;
+  }
+
+  &:active, &.active {
+    color: #222;
+    background-color: #fff;
+    box-shadow: 0 0 9px 1px rgba(#fff, .6);
+
+  }
+}
+
 a.link-icon {
   display: flex;
   flex-direction: column;

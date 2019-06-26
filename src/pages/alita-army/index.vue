@@ -102,11 +102,13 @@ export default {
       screen_name: '',
       message: null,
       error: false,
-      fetching: false,
       registering: false
     }
   },
   computed: {
+    fetching() {
+      return this.$store.state['alita-army'].fetching || false
+    },
     data() {
       return this.$store.state['alita-army'].data || []
     },
@@ -126,23 +128,16 @@ export default {
       return '/alita-army?page=' + (this.page + 1)
     }
   },
-  watch: {
-    '$route.query.page': 'fetchArmy'
-  },
   async validate({ store, query }) {
+    store.commit('alita-army/set', { fetching: true })
     const response = await fetchPageData(query.page)
     store.commit('alita-army/set', response)
+    store.commit('alita-army/set', { fetching: false })
 
     const page = parseInt(query.page || 1)
     return page <= store.state['alita-army'].total_pages && page > 0
   },
   methods: {
-    async fetchArmy(page) {
-      this.fetching = true
-      const response = await fetchPageData(page || this.page)
-      this.$store.commit('alita-army/set', response)
-      this.fetching = false
-    },
     enroll() {
       this.screen_name = this.screen_name.replace(' ', '')
       if (!this.screen_name) {
