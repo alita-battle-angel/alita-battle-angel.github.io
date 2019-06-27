@@ -157,7 +157,7 @@ export default {
         this.registering = false
         if (response.status === 200) {
           this.screen_name = ''
-          this.fetchArmy()
+          this.$router.push({ path: this.$route.path })
         }
 
         if (response.status === 202) {
