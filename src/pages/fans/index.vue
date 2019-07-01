@@ -97,6 +97,7 @@ export default {
       filterItems: [
         'AlitaArmy',
         'FanArt',
+        'Cosplay',
         'AlitaChallenge',
         'Alita',
         'AlitaBattleAngel'
@@ -106,7 +107,7 @@ export default {
   },
   computed: {
     activeFilter() {
-      return this.$route.query.filterBy
+      return this.$store.state.tweets.filterBy
     },
     fetching() {
       return this.$store.state.tweets.fetching || false
@@ -136,14 +137,11 @@ export default {
       return '/fans?page=' + (this.page + 1) + (this.activeFilter ? '&filterBy=' + this.activeFilter : '')
     }
   },
-  asyncData({ query }) {
-    return { filterBy: query.filterBy }
-  },
   async validate({ store, query }) {
-    store.commit('tweets/set', { fetching: true })
+    store.commit('tweets/set', { fetching: true, filterBy: query.filterBy })
     const response = await fetchPageData(query.page, query.filterBy)
     store.commit('tweets/set', response)
-    store.commit('tweets/set', { fetching: false })
+    store.commit('tweets/set', { fetching: false, filterBy: query.filterBy })
 
     const page = parseInt(query.page || 1)
     return page <= store.state.tweets.total_pages && page > 0
