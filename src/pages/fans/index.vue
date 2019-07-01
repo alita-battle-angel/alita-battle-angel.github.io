@@ -62,7 +62,7 @@ import Pagination from '~/components/pagination'
 import ArticleTweet from '~/components/article-tweet'
 
 const fetchPageData = async (page, filterBy) => {
-  const response = await fetch('https://ewcms.org/alita-battle-angel/fans.php?page=' + (page || 1) + '&filterBy=' + (filterBy || ''))
+  const response = await fetch('https://ewcms.org/alita-battle-angel/fans.php?page=' + (page || '') + '&filterBy=' + (filterBy || ''))
   return response.json()
 }
 

@@ -186,27 +186,32 @@ if ($method === 'POST') {
 if ($method === 'GET') {
   populate_weekly_tweets();
 
-  $page = 0;
-  if (isset($_GET['page'])) {
-    $page = intval($_GET['page']);
-    $page--;
-  }
-
-  if ($page < 0) {
-    $page = 0;
-  }
-
   $item_per_page = 8;
-  $start = $page * $item_per_page;
-
   $filters = '';
+
   if (isset($_GET['filterBy'])) {
     $filters = "AND hashtags LIKE '%{$_GET['filterBy']}%'";
   }
 
   $total = intval($database->fetchOne('SELECT COUNT(*) FROM tweets WHERE id_str NOT IN (SELECT in_reply_to_status_id_str FROM tweets WHERE in_reply_to_status_id_str IS NOT NULL) ' . $filters));
 
-  $data = $database->fetchAll("SELECT * FROM tweets WHERE id_str NOT IN (SELECT in_reply_to_status_id_str FROM tweets WHERE in_reply_to_status_id_str IS NOT NULL) $filters ORDER BY status_created_at DESC LIMIT {$item_per_page} OFFSET {$start}");
+  $page = 0;
+  if (isset($_GET['page']) && is_numeric($_GET['page'])) {
+    $page = intval($_GET['page']);
+    $page--;
+  } else {
+    $page = ceil($total / $item_per_page) - 1;
+  }
+
+  if ($page < 0) {
+    $page = 0;
+  }
+
+
+  $start = $page * $item_per_page;
+
+
+  $data = $database->fetchAll("SELECT * FROM tweets WHERE id_str NOT IN (SELECT in_reply_to_status_id_str FROM tweets WHERE in_reply_to_status_id_str IS NOT NULL) $filters ORDER BY status_created_at ASC LIMIT {$item_per_page} OFFSET {$start}");
   array_walk($data, function (&$item) {
     $item['media'] = json_decode($item['media']);
 
