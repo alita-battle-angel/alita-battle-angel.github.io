@@ -161,7 +161,7 @@ export default {
         }
 
         if (response.status === 202) {
-          this.$router.push({ path: this.$route.path })
+          this.$router.replace({ path: this.$route.path })
         }
 
         return response.json()

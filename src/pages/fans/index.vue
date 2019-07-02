@@ -11,9 +11,9 @@
           </h2>
           <p>
             Would you like to add a specific tweet!? then contact <a
-              href="https://twitter.com/EeliyaKing"
-              target="_blank"
-            >@EeliyaKing</a>
+            href="https://twitter.com/EeliyaKing"
+            target="_blank"
+          >@EeliyaKing</a>
           </p>
         </header>
 
@@ -68,18 +68,35 @@ const fetchPageData = async (page, filterBy) => {
 
 export default {
   head() {
-    const canonical = this.$store.state.tweets.page <= 1 ? {
+    const canonical = parseInt(this.$route.query.page || 0) === this.$store.state.tweets.total_pages ? {
       rel: 'canonical',
       href: 'https://i-do-not-stand-by-in-the-presence-of-evil.com/fans'
     } : {}
 
+    const filterBy = this.$store.state.tweets.filterBy ? ' #' + this.$store.state.tweets.filterBy : ''
+    const filterByText = filterBy ? 'Alita Army, filtered by' + filterBy : 'Alita\'s fans, also known as Alita Army'
+
+    const users = this.$store.state.tweets.data.map((tweet) => {
+      return '@' + tweet.screen_name
+    })
+
+    const uniqueUsers = []
+
+    users.forEach((user) => {
+      if (uniqueUsers.indexOf(user) === -1) {
+        uniqueUsers.push(user)
+      }
+    })
+
+    const usersText = 'Posts by ' + uniqueUsers.join(' ')
+
     return {
-      title: 'Fans | I Do Not Stand by in The Presence of Evil',
+      title: `Fans${filterBy} | I Do Not Stand by in The Presence of Evil`,
       meta: [
         {
           hid: 'description',
           name: 'description',
-          content: 'Find out about the latest stuff made by Alita\'s fans, also known as Alita Army.'
+          content: `Find out about the latest stuff made by ${filterByText}.\n${usersText}`
         }
       ],
       link: [
