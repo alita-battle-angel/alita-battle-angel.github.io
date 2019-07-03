@@ -54,12 +54,15 @@
 
     <article class="page-row">
       <div class="box split f-col">
-        <h3 class="">
+        <h3>
           In the mean while you can check following links
         </h3>
         <div class="f-col">
           <a href="https://shop.foxmovies.com/collections/alita">
             Official Alita's Merchandise
+          </a>
+          <a href="https://alitastan.fandom.com/wiki/Alitastan">
+            Alitastan Wiki
           </a>
           <a href="https://www.reddit.com/r/alitabattleangel/">
             Alita Battle Angel on reddit
