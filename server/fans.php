@@ -111,9 +111,18 @@ function populate_weekly_tweets () {
     return !isset($item['retweeted_status']) && isset($item['extended_entities']);
   });
 
+  $alita_battle_arts = TwitterAPI::fetch('search/tweets.json', [
+    'tweet_mode' => 'extended',
+    'q' => urlencode('#AlitaBattleArt')
+  ]);
+
+  $alita_battle_arts_status = array_filter($alita_battle_arts['statuses'], function ($item) {
+    return !isset($item['retweeted_status']) && isset($item['extended_entities']);
+  });
+
   $alita_army_statuses = search('#AlitaArmy');
 
-  $all = array_merge($alita_statuses, $fan_art_statuses, $alita_army_statuses);
+  $all = array_merge($alita_statuses, $fan_art_statuses, $alita_battle_arts_status, $alita_army_statuses);
 
   $replies = extract_in_replay_to_status_ids($all);
   $replies_tweets = array_filter(read_tweets(implode(',', $replies)), function ($item) {
@@ -191,6 +200,12 @@ if ($method === 'GET') {
 
   if (isset($_GET['filterBy'])) {
     $filters = "AND hashtags LIKE '%{$_GET['filterBy']}%'";
+
+    // Some users use #AlitaBattleArt, therefore we need to include this condition to the sql query
+    // when the filterBy is FanArt
+    if ($_GET['filterBy'] === 'FanArt') {
+      $filters .= " OR hashtags LIKE '%AlitaBattleArt%'";
+    }
   }
 
   $total = intval($database->fetchOne('SELECT COUNT(*) FROM tweets WHERE id_str NOT IN (SELECT in_reply_to_status_id_str FROM tweets WHERE in_reply_to_status_id_str IS NOT NULL) ' . $filters));
