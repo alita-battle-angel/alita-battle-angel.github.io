@@ -13,13 +13,12 @@
         <main class="f-col">
           <iframe
             class="youtube-widget"
-            src="https://www.youtube.com/embed/KnC5FpDf7w0?controls=1"
+            src="https://www.youtube.com/embed/qWYXMDiCRD8?controls=1"
             frameborder="0"
             allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
             allowfullscreen
           />
-          <h3>Countdown to Digital Release</h3>
-          <countdown-to-release />
+          <h3>Digital release available on Jul 09, 2019</h3>
 
           <a
             class="link-icon large"
@@ -41,8 +40,6 @@
 </template>
 
 <script>
-import CountdownToRelease from '~/components/countdown-to-release'
-
 export default {
   head: {
     title: 'Merchandise | I Do Not Stand by in The Presence of Evil',
@@ -54,9 +51,7 @@ export default {
       }
     ]
   },
-  components: {
-    CountdownToRelease
-  }
+  components: {}
 }
 </script>
 
