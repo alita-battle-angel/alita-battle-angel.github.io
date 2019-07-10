@@ -37,11 +37,14 @@
               sell a few more copies of his great work.
             </li>
             <li>
-              If asked about <a class="link-white" href="https://www.imdb.com/title/tt4154664/" target="_blank">Captain
-                Marvel</a> or any other movie perceived as competition to Alita: Battle Angel, simply
+              If asked about
+              <a
+                class="link-white"
+                href="https://www.imdb.com/title/tt4154664/"
+                target="_blank"
+              > Captain Marvel</a> or any other movie perceived as competition to Alita: Battle Angel, simply
               state they are different movies with different stories and should succeed on their own merits. Feel free
-              to
-              vary your response, but don’t take the bait of wading into <strong>“controversy.”</strong>
+              to vary your response, but don’t take the bait of wading into <strong>“controversy.”</strong>
             </li>
             <li>
               If asked about political issues, the correct answer is that Alita: Battle Angel is a great movie in part
@@ -57,15 +60,24 @@
               Retain copies of all correspondence to and from the journalist. Use screenshots if needed. This is to help
               prevent you from being quoted inaccurately or taken out of context. In the unlikely case you are asked to
               participate in a video or audio interview, try to record your own copy, dress professionally, and smile.
+              <br />
+              <strong>
+                For legal reasons, it’s best to ask permission to record your own audio or video copy of the
+                interview; be wary if you are told no. Look up “two-party consent state” and see the
+                <a
+                  class="link-white"
+                  href="https://www.reddit.com/r/alitabattleangel/comments/carg8v/sir_psychotrons_guide_for_constructively_engaging/comments"
+                  target="_blank"
+                >comments on original reddit post</a> for more info.
+              </strong>
+              <br />
               DM <a class="link-white" href="https://www.reddit.com/user/Sir_Psychotron/">u/Sir_Psychotron</a> if for
               some reason you are contacted to participate in a video or audio interview.
             </li>
             <li>
               Remember, at this point any publicity is good publicity in order to sell the movie. Even if you suspect
-              the
-              journalist has ulterior motives, simply follow the above recommendations and be as polite as possible. Do
-              not
-              accuse them of pushing an agenda.
+              the journalist has ulterior motives, simply follow the above recommendations and be as polite as possible.
+              Do not accuse them of pushing an agenda.
             </li>
             <li>See <strong>#1</strong></li>
           </ol>
