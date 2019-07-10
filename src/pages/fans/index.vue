@@ -68,13 +68,16 @@ const fetchPageData = async (page, filterBy) => {
 
 export default {
   head() {
-    const canonical = parseInt(this.$route.query.page || 0) === this.$store.state.tweets.total_pages ? {
+    const pageNumber = parseInt(this.$route.query.page || 0)
+    const canonical = pageNumber === this.$store.state.tweets.total_pages ? {
       rel: 'canonical',
       href: 'https://i-do-not-stand-by-in-the-presence-of-evil.com/fans'
     } : {}
 
     const filterBy = this.$store.state.tweets.filterBy ? ' #' + this.$store.state.tweets.filterBy : ''
     const filterByText = filterBy ? 'Alita Army, filtered by' + filterBy : 'Alita\'s fans, also known as Alita Army'
+
+    const pageNumberText = pageNumber ? `| Page ${pageNumber} ` : ''
 
     const users = this.$store.state.tweets.data.map((tweet) => {
       return '@' + tweet.screen_name
@@ -91,7 +94,7 @@ export default {
     const usersText = 'Posts by ' + uniqueUsers.join(' ')
 
     return {
-      title: `Fans${filterBy} | I Do Not Stand by in The Presence of Evil`,
+      title: `Fans${filterBy} ${pageNumberText}| I Do Not Stand by in The Presence of Evil`,
       meta: [
         {
           hid: 'description',

@@ -3,8 +3,16 @@
     <article class="page-row">
       <div class="box f-col banner">
         <h1>I do not stand by in the presence of Evil</h1>
-        <p>Join the Alita Army by
-          <nuxt-link class="link-white" to="/alita-army">registering as a member</nuxt-link>
+        <p>
+          Join the Alita Army by
+          <nuxt-link class="link-white" to="/alita-army">
+            registering as a member
+          </nuxt-link>
+        </p>
+        <p>Also, we highly recommend reading
+          <nuxt-link class="link-white" to="/articles/sir-psychotrons-guide-for-constructively-engaging">
+            Sir_Psychotron’s Guide for Constructively Engaging With the Media
+          </nuxt-link>
         </p>
         <div class="f-row">
           <a
