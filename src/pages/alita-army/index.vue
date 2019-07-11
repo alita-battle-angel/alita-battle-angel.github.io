@@ -72,14 +72,15 @@ import Pagination from '~/components/pagination'
 import HunterWarrior from '~/components/hunter-warrior'
 
 const fetchPageData = async (page) => {
-  const response = await fetch('https://ewcms.org/alita-battle-angel/alita-army.php?page=' + (page || 1))
+  const response = await fetch('https://ewcms.org/alita-battle-angel/alita-army.php?page=' + (page || ''))
   return response.json()
 }
 
 const unAllowedChars = [' ', '@', '#', '-', '=', '+', '(', ')', '*', '^', '%', '&', '!', '~']
 export default {
   head() {
-    const canonical = this.$store.state['alita-army'].page <= 1 ? {
+    const pageNumber = parseInt(this.$route.query.page || 0)
+    const canonical = pageNumber === this.$store.state['alita-army'].total_pages ? {
       rel: 'canonical',
       href: 'https://i-do-not-stand-by-in-the-presence-of-evil.com/alita-army'
     } : {}

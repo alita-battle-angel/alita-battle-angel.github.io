@@ -91,26 +91,28 @@ if ($method === 'POST') {
 }
 
 if ($method === 'GET') {
+  $item_per_page = 18;
+  $total = intval($database->fetchOne('SELECT COUNT(*) FROM alita_army'));
+
   $page = 0;
-  if (isset($_GET['page'])) {
+  if (isset($_GET['page']) && is_numeric($_GET['page'])) {
     $page = intval($_GET['page']);
     $page--;
+  } else {
+    $page = ceil($total / $item_per_page) - 1;
   }
 
   if ($page < 0) {
     $page = 0;
   }
 
-  $item_per_page = 18;
   $start = $page * $item_per_page;
-
-  $total = intval($database->fetchOne('SELECT COUNT(*) FROM alita_army'));
 
   response([
     'page' => $page + 1,
     'item_per_page' => $item_per_page,
     'total_pages' => $total === 0 ? 1 : ceil($total / $item_per_page),
-    'data' => $database->fetchAll("SELECT * FROM alita_army ORDER BY updated_at DESC LIMIT {$item_per_page} OFFSET {$start}")
+    'data' => $database->fetchAll("SELECT * FROM alita_army ORDER BY updated_at ASC LIMIT {$item_per_page} OFFSET {$start}")
   ]);
 }
 

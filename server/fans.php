@@ -222,9 +222,7 @@ if ($method === 'GET') {
     $page = 0;
   }
 
-
   $start = $page * $item_per_page;
-
 
   $data = $database->fetchAll("SELECT * FROM tweets WHERE id_str NOT IN (SELECT in_reply_to_status_id_str FROM tweets WHERE in_reply_to_status_id_str IS NOT NULL) $filters ORDER BY status_created_at ASC LIMIT {$item_per_page} OFFSET {$start}");
   array_walk($data, function (&$item) {

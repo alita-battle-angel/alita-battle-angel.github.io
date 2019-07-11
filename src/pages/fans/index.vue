@@ -11,9 +11,9 @@
           </h2>
           <p>
             Would you like to add a specific tweet!? then contact <a
-            href="https://twitter.com/EeliyaKing"
-            target="_blank"
-          >@EeliyaKing</a>
+              href="https://twitter.com/EeliyaKing"
+              target="_blank"
+            >@EeliyaKing</a>
           </p>
         </header>
 
@@ -68,14 +68,15 @@ const fetchPageData = async (page, filterBy) => {
 
 export default {
   head() {
+    const filterBy = this.$store.state.tweets.filterBy ? ' #' + this.$store.state.tweets.filterBy : ''
+    const filterByText = filterBy ? 'Alita Army, filtered by' + filterBy : 'Alita\'s fans, also known as Alita Army'
+    const filterByQuery = this.$store.state.tweets.filterBy ? '?filterBy=' + this.$store.state.tweets.filterBy : ''
+
     const pageNumber = parseInt(this.$route.query.page || 0)
     const canonical = pageNumber === this.$store.state.tweets.total_pages ? {
       rel: 'canonical',
-      href: 'https://i-do-not-stand-by-in-the-presence-of-evil.com/fans'
+      href: 'https://i-do-not-stand-by-in-the-presence-of-evil.com/fans' + filterByQuery
     } : {}
-
-    const filterBy = this.$store.state.tweets.filterBy ? ' #' + this.$store.state.tweets.filterBy : ''
-    const filterByText = filterBy ? 'Alita Army, filtered by' + filterBy : 'Alita\'s fans, also known as Alita Army'
 
     const pageNumberText = pageNumber ? `| Page ${pageNumber} ` : ''
 
