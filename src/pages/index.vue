@@ -62,8 +62,23 @@
 
     <article class="page-row">
       <div class="box split f-col">
+        <h3>Miscellaneous links</h3>
+        <div class="f-col">
+          <a href="https://screenrant.com/alita-battle-angel-movie-rosa-salazar-sequels/">
+            <strong>SCREEN RANT</strong> Alita: Battle Angel Star Rosa Salazar Wants To Return For Sequels
+          </a>
+
+          <a href="https://www.cbr.com/alita-battle-angel-sequel-possibility/">
+            <strong>CBR.com</strong> Will Alita: Battle Angel Get a Sequel?
+          </a>
+
+          <a href="https://www.boxofficemojo.com/movies/?id=alita.htm">
+            <strong>Box Office Mojo</strong> Alita: Battle Angel
+          </a>
+        </div>
+
         <h3>
-          In the mean while you can check following links
+          Community related links
         </h3>
         <div class="f-col">
           <a href="https://shop.foxmovies.com/collections/alita">
