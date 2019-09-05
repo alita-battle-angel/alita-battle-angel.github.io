@@ -67,7 +67,7 @@ const fetchPageData = async (page, filterBy) => {
 }
 
 export default {
-  head() {
+  head () {
     const filterBy = this.$store.state.tweets.filterBy ? ' #' + this.$store.state.tweets.filterBy : ''
     const filterByText = filterBy ? 'Alita Army, filtered by' + filterBy : 'Alita\'s fans, also known as Alita Army'
     const filterByQuery = this.$store.state.tweets.filterBy ? '?filterBy=' + this.$store.state.tweets.filterBy : ''
@@ -87,7 +87,7 @@ export default {
     const uniqueUsers = []
 
     users.forEach((user) => {
-      if (uniqueUsers.indexOf(user) === -1) {
+      if (!uniqueUsers.includes(user)) {
         uniqueUsers.push(user)
       }
     })
@@ -112,7 +112,7 @@ export default {
     Pagination,
     ArticleTweet
   },
-  data() {
+  data () {
     return {
 
       filterItems: [
@@ -127,38 +127,38 @@ export default {
     }
   },
   computed: {
-    activeFilter() {
+    activeFilter () {
       return this.$store.state.tweets.filterBy
     },
-    fetching() {
+    fetching () {
       return this.$store.state.tweets.fetching || false
     },
-    data() {
+    data () {
       return this.$store.state.tweets.data || []
     },
-    oddTweets() {
+    oddTweets () {
       return this.data.filter((item, i) => i % 2 === 0)
     },
-    evenTweets() {
+    evenTweets () {
       return this.data.filter((item, i) => i % 2 === 1)
     },
-    total_pages() {
+    total_pages () {
       return this.$store.state.tweets.total_pages || 1
     },
-    page() {
+    page () {
       return this.$store.state.tweets.page || 1
     },
-    list_state() {
+    list_state () {
       return { articles: true, loading: this.fetching }
     },
-    previous_url() {
+    previous_url () {
       return '/fans?page=' + (this.page - 1) + (this.activeFilter ? '&filterBy=' + this.activeFilter : '')
     },
-    next_url() {
+    next_url () {
       return '/fans?page=' + (this.page + 1) + (this.activeFilter ? '&filterBy=' + this.activeFilter : '')
     }
   },
-  async validate({ store, query }) {
+  async validate ({ store, query }) {
     store.commit('tweets/set', { fetching: true, filterBy: query.filterBy })
     const response = await fetchPageData(query.page, query.filterBy)
     store.commit('tweets/set', response)
@@ -168,10 +168,10 @@ export default {
     return page <= store.state.tweets.total_pages && page > 0
   },
   methods: {
-    isFilterActive(item) {
+    isFilterActive (item) {
       return this.activeFilter === item
     },
-    getHref(item) {
+    getHref (item) {
       if (this.activeFilter === item) {
         return { query: {} }
       }

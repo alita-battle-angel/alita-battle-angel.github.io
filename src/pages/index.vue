@@ -9,7 +9,8 @@
             registering as a member
           </nuxt-link>
         </p>
-        <p>Also, we highly recommend reading
+        <p>
+          Also, we highly recommend reading
           <nuxt-link class="link-white" to="/articles/sir-psychotrons-guide-for-constructively-engaging">
             Sir_Psychotron’s Guide for Constructively Engaging With the Media
           </nuxt-link>
@@ -182,7 +183,7 @@
 <script>
 export default {
   components: {},
-  data() {
+  data () {
     return {
       petition: {
         signatureCount: {
@@ -191,7 +192,7 @@ export default {
       }
     }
   },
-  mounted() {
+  mounted () {
     fetch('https://ewcms.org/alita-battle-angel/petition.php').then((res) => {
       return res.json()
     }).then((data) => {

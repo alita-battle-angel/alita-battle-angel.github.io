@@ -30,7 +30,7 @@ export default {
     }
   },
   computed: {
-    account_url() {
+    account_url () {
       return 'https://twitter.com/' + this.profile.screen_name
     }
   },

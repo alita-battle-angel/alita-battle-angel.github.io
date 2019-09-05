@@ -3,10 +3,16 @@
     <div class="error">
       <i class="material-icons">error</i>
 
-      <h1 class="title">{{ statusCode }}</h1>
-      <h2 class="title">{{ message }}</h2>
+      <h1 class="title">
+        {{ statusCode }}
+      </h1>
+      <h2 class="title">
+        {{ message }}
+      </h2>
       <p v-if="statusCode === 404" class="description">
-        <NuxtLink class="error-link" to="/">Go back to Home</NuxtLink>
+        <NuxtLink class="error-link" to="/">
+          Go back to Home
+        </NuxtLink>
       </p>
     </div>
   </div>
@@ -21,7 +27,7 @@ export default {
       default: null
     }
   },
-  head() {
+  head () {
     return {
       title: this.message,
       meta: [
@@ -33,10 +39,10 @@ export default {
     }
   },
   computed: {
-    statusCode() {
+    statusCode () {
       return (this.error && this.error.statusCode) || 500
     },
-    message() {
+    message () {
       return this.error.message || ''
     }
   }

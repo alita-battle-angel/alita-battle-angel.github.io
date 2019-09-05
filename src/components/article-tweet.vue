@@ -30,21 +30,21 @@ export default {
     }
   },
   computed: {
-    parsed_text() {
+    parsed_text () {
       return this.getParsedText(this.tweet)
     },
-    tweet_url() {
+    tweet_url () {
       return this.getTweetURL(this.tweet)
     },
-    user_url() {
+    user_url () {
       return `https://twitter.com/${this.tweet.screen_name}`
     },
-    date() {
+    date () {
       return this.getTweetDate(this.tweet)
     }
   },
   methods: {
-    getParsedText(tweet) {
+    getParsedText (tweet) {
       if (!tweet) {
         return ''
       }
@@ -69,10 +69,10 @@ export default {
 
       return withHashTags
     },
-    getTweetURL(tweet) {
+    getTweetURL (tweet) {
       return `https://twitter.com/${tweet.screen_name}/status/${tweet.id_str}`
     },
-    getTweetDate(tweet) {
+    getTweetDate (tweet) {
       if (!tweet) {
         return ''
       }

@@ -58,7 +58,7 @@ let lastScrollY = 0
 
 export default {
   link: [],
-  data() {
+  data () {
     return {
       cookieNotify: true,
       menus: [
@@ -97,8 +97,8 @@ export default {
       expand: false
     }
   },
-  mounted() {
-    this.cookieNotify = document.cookie.indexOf('notify=true') !== -1
+  mounted () {
+    this.cookieNotify = document.cookie.includes('notify=true')
     const body = document.querySelector('body')
 
     this.scrollHandler = () => {
@@ -117,28 +117,28 @@ export default {
     window.addEventListener('scroll', this.scrollHandler)
     this.scrollHandler()
   },
-  destroyed() {
+  destroyed () {
     window.removeEventListener('scroll', this.scrollHandler)
   },
   methods: {
-    toggleExpand(event) {
+    toggleExpand (event) {
       if (event.type === 'click' && window.hasOwnProperty('ontouchstart')) {
         return
       }
 
       this.expand = !this.expand
     },
-    shrink() {
+    shrink () {
       this.expand = false
     },
-    updatePerspective() {
+    updatePerspective () {
 
     },
-    acceptCookies() {
+    acceptCookies () {
       const expiry = new Date()
       expiry.setTime(new Date().getTime() + (10 * 24 * 60 * 60 * 1000))
       document.cookie = 'notify=true; expires=' + expiry.toGMTString()
-      this.cookieNotify = document.cookie.indexOf('notify=true') !== -1
+      this.cookieNotify = document.cookie.includes('notify=true')
     }
   }
 }

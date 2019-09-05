@@ -78,7 +78,7 @@ const fetchPageData = async (page) => {
 
 const unAllowedChars = [' ', '@', '#', '-', '=', '+', '(', ')', '*', '^', '%', '&', '!', '~']
 export default {
-  head() {
+  head () {
     const pageNumber = parseInt(this.$route.query.page || 0)
     const canonical = pageNumber === this.$store.state['alita-army'].total_pages ? {
       rel: 'canonical',
@@ -112,29 +112,29 @@ export default {
     }
   },
   computed: {
-    fetching() {
+    fetching () {
       return this.$store.state['alita-army'].fetching || false
     },
-    data() {
+    data () {
       return this.$store.state['alita-army'].data || []
     },
-    total_pages() {
+    total_pages () {
       return this.$store.state['alita-army'].total_pages || 1
     },
-    page() {
+    page () {
       return this.$store.state['alita-army'].page || 1
     },
-    list_state() {
+    list_state () {
       return { hunters: true, loading: this.fetching }
     },
-    previous_url() {
+    previous_url () {
       return '/alita-army?page=' + (this.page - 1)
     },
-    next_url() {
+    next_url () {
       return '/alita-army?page=' + (this.page + 1)
     }
   },
-  async validate({ store, query }) {
+  async validate ({ store, query }) {
     store.commit('alita-army/set', { fetching: true })
     const response = await fetchPageData(query.page)
     store.commit('alita-army/set', response)
@@ -144,7 +144,7 @@ export default {
     return page <= store.state['alita-army'].total_pages && page > 0
   },
   methods: {
-    enroll() {
+    enroll () {
       this.screen_name = this.screen_name.replace(' ', '')
       if (!this.screen_name) {
         return false
@@ -190,12 +190,12 @@ export default {
 
       return false
     },
-    filterChar(event) {
-      if (unAllowedChars.indexOf(event.key) !== -1) {
+    filterChar (event) {
+      if (unAllowedChars.includes(event.key)) {
         event.preventDefault()
       }
     },
-    showMessage(text, error) {
+    showMessage (text, error) {
       this.$nextTick(() => {
         this.message = text
         this.error = error

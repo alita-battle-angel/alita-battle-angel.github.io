@@ -60,7 +60,7 @@
               Retain copies of all correspondence to and from the journalist. Use screenshots if needed. This is to help
               prevent you from being quoted inaccurately or taken out of context. In the unlikely case you are asked to
               participate in a video or audio interview, try to record your own copy, dress professionally, and smile.
-              <br />
+              <br>
               <strong>
                 For legal reasons, it’s best to ask permission to record your own audio or video copy of the
                 interview; be wary if you are told no. Look up “two-party consent state” and see the
@@ -70,7 +70,7 @@
                   target="_blank"
                 >comments on original reddit post</a> for more info.
               </strong>
-              <br />
+              <br>
               DM <a class="link-white" href="https://www.reddit.com/user/Sir_Psychotron/">u/Sir_Psychotron</a> if for
               some reason you are contacted to participate in a video or audio interview.
             </li>

@@ -32,10 +32,10 @@ export default {
     }
   },
   computed: {
-    can_previous() {
+    can_previous () {
       return this.page <= 1
     },
-    can_next() {
+    can_next () {
       return this.totalPages <= this.page
     }
   },

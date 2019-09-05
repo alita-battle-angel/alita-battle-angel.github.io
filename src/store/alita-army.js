@@ -5,7 +5,7 @@ export const state = () => ({
   fetching: false
 })
 export const mutations = {
-  set(state, payload) {
+  set (state, payload) {
     const data = payload.data || []
     data.sort((a, b) => {
       const dateA = new Date(a.updated_at)

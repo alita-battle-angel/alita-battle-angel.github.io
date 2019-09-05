@@ -17,22 +17,22 @@ export default {
     }
   },
   computed: {
-    seconds() {
+    seconds () {
       const minutesms = this.timespan % (60)
       return Math.floor(minutesms)
     },
-    minutes() {
+    minutes () {
       const hoursms = this.timespan % (60 * 60)
       return Math.floor((hoursms) / (60))
     },
-    hours() {
+    hours () {
       const daysms = this.timespan % (24 * 60 * 60)
       return Math.floor((daysms) / (60 * 60))
     },
-    days() {
+    days () {
       return Math.floor(this.timespan / (24 * 60 * 60))
     },
-    remain() {
+    remain () {
       const days = Math.floor(this.timespan / (24 * 60 * 60))
       const daysms = this.timespan % (24 * 60 * 60)
       const hours = Math.floor((daysms) / (60 * 60))
@@ -43,17 +43,17 @@ export default {
       return `${days} D ${hours} H ${minutes} M ${sec} S`
     }
   },
-  created() {
+  created () {
     this.calculate()
     this.interval = setInterval(() => {
       this.calculate()
     }, 1000)
   },
-  destroyed() {
+  destroyed () {
     clearInterval(this.interval)
   },
   methods: {
-    calculate() {
+    calculate () {
       const startDate = new Date().getTime()
       const diff = endDate - startDate
       this.timespan = Math.floor(diff / 1000)
