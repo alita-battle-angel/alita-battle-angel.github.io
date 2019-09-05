@@ -86,11 +86,45 @@
             <li>
               <a
                 href="https://www.reddit.com/r/alitabattleangel/comments/byirp4/gunnm_exist_test_08_yup_its_still_not_dead/"
-              >Reddit
-                post</a>
+              ><strong>09-06-2019</strong> Reddit post</a>
             </li>
             <li>
               <a href="https://www.youtube.com/watch?v=1mDuOr-v8fg&feature=youtu.be">Gameplay - YouTube</a>
+            </li>
+            <li>
+              <a
+                href="https://www.reddit.com/r/alitabattleangel/comments/c04fq5/in_dis_gaem_we_foit_pointless_violenz/"
+              ><strong>13-06-2019</strong> Reddit post - In dis gaem we foit pointless violenz</a>
+            </li>
+            <li>
+              <a
+                href="https://www.reddit.com/r/alitabattleangel/comments/c0vscd/finally_starting_level_2_drafting/"
+              ><strong>15-06-2019</strong> Reddit post - Finally starting Level 2 drafting...</a>
+            </li>
+            <li>
+              <a
+                href="https://www.reddit.com/r/alitabattleangel/comments/c1827g/a_new_enemy_design_because_annoying_enemy_types/"
+              ><strong>16-06-2019</strong> Reddit post - A new enemy design, because annoying enemy types are a must have</a>
+            </li>
+            <li>
+              <a
+                href="https://www.reddit.com/r/alitabattleangel/comments/c3p6p8/added_a_throwing_mechanic_puzzles_and_frags/"
+              ><strong>22-06-2019</strong> Reddit post - Added a throwing mechanic. Puzzles and frags incomin' :D</a>
+            </li>
+            <li>
+              <a
+                href="https://www.reddit.com/r/alitabattleangel/comments/c421xv/and_now_to_breakable_platforms_another_must_for/"
+              ><strong>23-06-2019</strong> Reddit post - And now to breakable platforms, another must for any platformer</a>
+            </li>
+            <li>
+              <a
+                href="https://www.reddit.com/r/alitabattleangel/comments/ciwfis/finally_getting_my_hands_to_work_on_a_train_level/"
+              ><strong>28-07-2019</strong> Reddit post - Finally getting my hands to work on a train level...</a>
+            </li>
+            <li>
+              <a
+                href="https://www.reddit.com/r/alitabattleangel/comments/ck6bm4/the_train_level_is_moving_on_3/"
+              ><strong>31-07-2019</strong> Reddit post - The train level is moving on :3</a>
             </li>
           </ul>
         </article>
@@ -99,9 +133,9 @@
           <h4>I Do Not Stand by in The Presence of Evil Website</h4>
           <p>
             You are at the moment in this website. <a
-              class="link-white"
-              href="https://twitter.com/EeliyaKing"
-            >@EeliyaKing</a> originally bought the <strong>i-do-not-stand-by-in-the-presence-of-evil.com</strong> domain
+            class="link-white"
+            href="https://twitter.com/EeliyaKing"
+          >@EeliyaKing</a> originally bought the <strong>i-do-not-stand-by-in-the-presence-of-evil.com</strong> domain
             and started the
             project.
             <a class="link-white" href="https://twitter.com/dmitmel">@dmitmel</a> is also participating regarding to

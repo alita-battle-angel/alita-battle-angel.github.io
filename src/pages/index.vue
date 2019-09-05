@@ -64,6 +64,9 @@
       <div class="box split f-col">
         <h3>Miscellaneous links</h3>
         <div class="f-col">
+          <a href="https://comicbookdebate.com/2019/02/16/the-humanity-of-alita-battle-angel/">
+            <strong>COMICBOOK DEBATE</strong> The Humanity of Alita: Battle Angel
+          </a>
           <a href="https://screenrant.com/alita-battle-angel-movie-rosa-salazar-sequels/">
             <strong>SCREEN RANT</strong> Alita: Battle Angel Star Rosa Salazar Wants To Return For Sequels
           </a>

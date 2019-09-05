@@ -115,6 +115,7 @@ export default {
     }
 
     window.addEventListener('scroll', this.scrollHandler)
+    this.scrollHandler()
   },
   destroyed() {
     window.removeEventListener('scroll', this.scrollHandler)
