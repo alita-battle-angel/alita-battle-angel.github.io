@@ -135,7 +135,7 @@
             You are at the moment in this website. <a
               class="link-white"
               href="https://twitter.com/EeliyaKing"
-            >@EeliyaKing</a> originally bought the <strong>i-do-not-stand-by-in-the-presence-of-evil.com</strong> domain
+            >@EeliyaKing</a> originally bought the <strong>i-do-not-standby-in-the-presence-of-evil.com</strong> domain
             and started the
             project.
             <a class="link-white" href="https://twitter.com/dmitmel">@dmitmel</a> is also participating regarding to

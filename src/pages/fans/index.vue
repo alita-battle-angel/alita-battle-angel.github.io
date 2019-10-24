@@ -75,7 +75,7 @@ export default {
     const pageNumber = parseInt(this.$route.query.page || 0)
     const canonical = pageNumber === this.$store.state.tweets.total_pages ? {
       rel: 'canonical',
-      href: 'https://i-do-not-stand-by-in-the-presence-of-evil.com/fans' + filterByQuery
+      href: 'https://i-do-not-standby-in-the-presence-of-evil.com/fans' + filterByQuery
     } : {}
 
     const pageNumberText = pageNumber ? `| Page ${pageNumber} ` : ''

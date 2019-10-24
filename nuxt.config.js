@@ -24,7 +24,7 @@ module.exports = {
       },
       {
         name: 'twitter:url',
-        content: 'https://i-do-not-stand-by-in-the-presence-of-evil.com'
+        content: 'https://i-do-not-standby-in-the-presence-of-evil.com'
       },
       {
         name: 'twitter:title',
@@ -36,7 +36,7 @@ module.exports = {
       },
       {
         name: 'twitter:image',
-        content: 'https://i-do-not-stand-by-in-the-presence-of-evil.com/social-banner.jpg'
+        content: 'https://i-do-not-standby-in-the-presence-of-evil.com/social-banner.jpg'
       },
       {
         name: 'og:title',
@@ -48,7 +48,7 @@ module.exports = {
       },
       {
         name: 'og:url',
-        content: 'https://i-do-not-stand-by-in-the-presence-of-evil.com'
+        content: 'https://i-do-not-standby-in-the-presence-of-evil.com'
       },
       {
         name: 'og:description',
@@ -60,7 +60,7 @@ module.exports = {
       },
       {
         name: 'og:image',
-        content: 'https://i-do-not-stand-by-in-the-presence-of-evil.com/social-banner.jpg'
+        content: 'https://i-do-not-standby-in-the-presence-of-evil.com/social-banner.jpg'
       }
     ],
     link: [

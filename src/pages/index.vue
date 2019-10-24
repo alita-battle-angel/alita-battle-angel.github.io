@@ -1,8 +1,15 @@
 <template>
   <div class="page">
     <article class="page-row">
-      <div class="box f-col banner">
-        <h1>I do not stand by in the presence of Evil</h1>
+      <div class="box ta-center banner">
+        <blockquote>
+          <h1 style="margin-bottom: 10px">
+            "I do not standby in the presence of Evil"
+          </h1>
+          <h3 style="margin-top: 0; margin-bottom: 60px; font-weight: 300">
+            - Alita
+          </h3>
+        </blockquote>
         <p>
           Join the Alita Army by
           <nuxt-link class="link-white" to="/alita-army">
