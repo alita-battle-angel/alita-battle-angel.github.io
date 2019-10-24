@@ -98,7 +98,7 @@
 <script>
 export default {
   head: {
-    title: 'Sir_Psychotron’s Guide for Constructively Engaging With the Media | Articles | I Do Not Stand by in The Presence of Evil',
+    title: 'Sir_Psychotron’s Guide for Constructively Engaging With the Media | Articles | I Do Not Standby in The Presence of Evil',
     meta: [
       {
         hid: 'description',

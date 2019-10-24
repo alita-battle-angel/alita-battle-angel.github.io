@@ -86,7 +86,7 @@ export default {
     } : {}
 
     return {
-      title: 'Alita Army | I Do Not Stand by in The Presence of Evil',
+      title: 'Alita Army | I Do Not Standby in The Presence of Evil',
       meta: [
         {
           hid: 'description',

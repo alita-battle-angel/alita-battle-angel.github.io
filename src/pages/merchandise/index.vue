@@ -42,7 +42,7 @@
 <script>
 export default {
   head: {
-    title: 'Merchandise | I Do Not Stand by in The Presence of Evil',
+    title: 'Merchandise | I Do Not Standby in The Presence of Evil',
     meta: [
       {
         hid: 'description',

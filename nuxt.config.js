@@ -6,7 +6,7 @@ module.exports = {
   ** Headers of the page
   */
   head: {
-    title: 'I Do Not Stand by in The Presence of Evil',
+    title: 'I Do Not Standby in The Presence of Evil',
     meta: [
       { charset: 'utf-8' },
       {
@@ -28,7 +28,7 @@ module.exports = {
       },
       {
         name: 'twitter:title',
-        content: 'I Do Not Stand by in the Presence of Evil'
+        content: 'I Do Not Standby in the Presence of Evil'
       },
       {
         name: 'twitter:description',
@@ -40,11 +40,11 @@ module.exports = {
       },
       {
         name: 'og:title',
-        content: 'I Do Not Stand by in The Presence of Evil'
+        content: 'I Do Not Standby in The Presence of Evil'
       },
       {
         name: 'og:site_name',
-        content: 'I Do Not Stand by in The Presence of Evil'
+        content: 'I Do Not Standby in The Presence of Evil'
       },
       {
         name: 'og:url',

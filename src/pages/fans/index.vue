@@ -95,7 +95,7 @@ export default {
     const usersText = 'Posts by ' + uniqueUsers.join(' ')
 
     return {
-      title: `Fans${filterBy} ${pageNumberText}| I Do Not Stand by in The Presence of Evil`,
+      title: `Fans${filterBy} ${pageNumberText}| I Do Not Standby in The Presence of Evil`,
       meta: [
         {
           hid: 'description',

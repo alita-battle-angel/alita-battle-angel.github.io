@@ -130,7 +130,7 @@
         </article>
 
         <article class="project">
-          <h4>I Do Not Stand by in The Presence of Evil Website</h4>
+          <h4>I Do Not Standby in The Presence of Evil Website</h4>
           <p>
             You are at the moment in this website. <a
               class="link-white"
@@ -166,7 +166,7 @@
 <script>
 export default {
   head: {
-    title: 'Projects | I Do Not Stand by in The Presence of Evil',
+    title: 'Projects | I Do Not Standby in The Presence of Evil',
     meta: [
       {
         hid: 'description',
