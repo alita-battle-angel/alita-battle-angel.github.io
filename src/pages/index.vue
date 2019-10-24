@@ -4,7 +4,7 @@
       <div class="box ta-center banner">
         <blockquote>
           <h1 style="margin-bottom: 10px">
-            "I do not standby in the presence of Evil"
+            "I Do Not Stand by in The Presence of Evil"
           </h1>
           <h3 style="margin-top: 0; margin-bottom: 60px; font-weight: 300">
             - Alita
