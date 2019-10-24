@@ -82,11 +82,11 @@ export default {
     const pageNumber = parseInt(this.$route.query.page || 0)
     const canonical = pageNumber === this.$store.state['alita-army'].total_pages ? {
       rel: 'canonical',
-      href: 'https://i-do-not-standby-in-the-presence-of-evil.com/alita-army'
+      href: 'https://i-do-not-stand-by-in-the-presence-of-evil.com/alita-army'
     } : {}
 
     return {
-      title: 'Alita Army | I Do Not Standby in The Presence of Evil',
+      title: 'Alita Army | I Do Not Stand by in The Presence of Evil',
       meta: [
         {
           hid: 'description',

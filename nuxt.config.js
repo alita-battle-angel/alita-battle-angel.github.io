@@ -6,7 +6,7 @@ module.exports = {
   ** Headers of the page
   */
   head: {
-    title: 'I Do Not Standby in The Presence of Evil',
+    title: 'I Do Not Stand by in The Presence of Evil',
     meta: [
       { charset: 'utf-8' },
       {
@@ -24,11 +24,11 @@ module.exports = {
       },
       {
         name: 'twitter:url',
-        content: 'https://i-do-not-standby-in-the-presence-of-evil.com'
+        content: 'https://i-do-not-stand-by-in-the-presence-of-evil.com'
       },
       {
         name: 'twitter:title',
-        content: 'I Do Not Standby in the Presence of Evil'
+        content: 'I Do Not Stand by in the Presence of Evil'
       },
       {
         name: 'twitter:description',
@@ -36,19 +36,19 @@ module.exports = {
       },
       {
         name: 'twitter:image',
-        content: 'https://i-do-not-standby-in-the-presence-of-evil.com/social-banner.jpg'
+        content: 'https://i-do-not-stand-by-in-the-presence-of-evil.com/social-banner.jpg'
       },
       {
         name: 'og:title',
-        content: 'I Do Not Standby in The Presence of Evil'
+        content: 'I Do Not Stand by in The Presence of Evil'
       },
       {
         name: 'og:site_name',
-        content: 'I Do Not Standby in The Presence of Evil'
+        content: 'I Do Not Stand by in The Presence of Evil'
       },
       {
         name: 'og:url',
-        content: 'https://i-do-not-standby-in-the-presence-of-evil.com'
+        content: 'https://i-do-not-stand-by-in-the-presence-of-evil.com'
       },
       {
         name: 'og:description',
@@ -60,7 +60,7 @@ module.exports = {
       },
       {
         name: 'og:image',
-        content: 'https://i-do-not-standby-in-the-presence-of-evil.com/social-banner.jpg'
+        content: 'https://i-do-not-stand-by-in-the-presence-of-evil.com/social-banner.jpg'
       }
     ],
     link: [
