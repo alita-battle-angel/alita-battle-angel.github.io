@@ -12,9 +12,16 @@
           <p>
             Check out the
             <a
+              href="https://twitter.com/NeoWarrior26651/status/1202479731779592192"
+              target="_blank"
+            >
+              Alex #99 tweet
+            </a>
+            and
+            <a
               href="https://twitter.com/AlitaArmy/status/1201926493695295488"
               target="_blank"
-            >original tweet</a>
+            >The #AlitaArmy Tweet</a>
           </p>
         </header>
         <article>
@@ -28,7 +35,9 @@
             What can I do?
           </h4>
           <p>
-            We need to make noise. We need to make the hashtag <nuxt-link class="link-white" to="/fans?filterBy=AlitaSequel">#AlitaSequel</nuxt-link> go trending. Not now, but all together at
+            We need to make noise. We need to make the hashtag <nuxt-link class="link-white" to="/fans?filterBy=AlitaSequel">
+              #AlitaSequel
+            </nuxt-link> go trending. Not now, but all together at
             the same time worldwide. For one hour we Tweet, we unleash hell.
           </p>
 
