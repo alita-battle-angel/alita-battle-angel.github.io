@@ -122,7 +122,9 @@ function populate_weekly_tweets () {
 
   $alita_army_statuses = search('#AlitaArmy');
 
-  $all = array_merge($alita_statuses, $fan_art_statuses, $alita_battle_arts_status, $alita_army_statuses);
+  $alita_sequel_statuses = search('#AlitaSequel');
+
+  $all = array_merge($alita_statuses, $fan_art_statuses, $alita_battle_arts_status, $alita_army_statuses, $alita_sequel_statuses);
 
   $replies = extract_in_replay_to_status_ids($all);
   $replies_tweets = array_filter(read_tweets(implode(',', $replies)), function ($item) {

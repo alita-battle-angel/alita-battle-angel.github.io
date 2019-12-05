@@ -117,6 +117,7 @@ export default {
 
       filterItems: [
         'AlitaArmy',
+        'AlitaSequel',
         'FanArt',
         'Cosplay',
         'AlitaChallenge',

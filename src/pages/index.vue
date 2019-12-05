@@ -22,6 +22,12 @@
             Sir_Psychotron’s Guide for Constructively Engaging With the Media
           </nuxt-link>
         </p>
+        <p>
+          <nuxt-link class="mission" to="/articles/make-alita-sequel-go-trending">
+            MISSION: Make #AlitaSequel Go Trending<br>
+            11:00 AM UTC
+          </nuxt-link>
+        </p>
         <div class="f-row">
           <a
             class="link-icon x-large "
