@@ -35,8 +35,8 @@ module.exports = {
         content: 'A community hub for Alita\'s fandom.'
       },
       {
-        name: 'twitter:image',
         hid: 'twitter:image',
+        name: 'twitter:image',
         content: 'https://i-do-not-stand-by-in-the-presence-of-evil.com/social-banner.jpg'
       },
       {
@@ -60,8 +60,8 @@ module.exports = {
         content: 'website'
       },
       {
-        name: 'og:image',
         hid: 'og:image',
+        name: 'og:image',
         content: 'https://i-do-not-stand-by-in-the-presence-of-evil.com/social-banner.jpg'
       }
     ],

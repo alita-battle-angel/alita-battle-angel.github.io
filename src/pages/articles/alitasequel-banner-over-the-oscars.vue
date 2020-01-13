@@ -97,13 +97,13 @@ export default {
         content: 'We want to fly a banner with "#AlitaSequel #AlitaArmy" over the red carpet at the Academy Awards for three hours.'
       },
       {
-        name: 'twitter:image',
         hid: 'twitter:image',
+        name: 'twitter:image',
         content: 'https://i-do-not-stand-by-in-the-presence-of-evil.com/gofundme-banner.jpg'
       },
       {
+        hid: 'og:image',
         name: 'og:image',
-        hid: 'twitter:image',
         content: 'https://i-do-not-stand-by-in-the-presence-of-evil.com/gofundme-banner.jpg'
       }
     ]
