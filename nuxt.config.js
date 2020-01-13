@@ -36,6 +36,7 @@ module.exports = {
       },
       {
         name: 'twitter:image',
+        hid: 'twitter:image',
         content: 'https://i-do-not-stand-by-in-the-presence-of-evil.com/social-banner.jpg'
       },
       {
@@ -60,6 +61,7 @@ module.exports = {
       },
       {
         name: 'og:image',
+        hid: 'og:image',
         content: 'https://i-do-not-stand-by-in-the-presence-of-evil.com/social-banner.jpg'
       }
     ],
