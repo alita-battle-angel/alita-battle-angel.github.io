@@ -23,14 +23,17 @@ module.exports = {
         content: 'summary_large_image'
       },
       {
+        hid: 'twitter:url',
         name: 'twitter:url',
         content: 'https://i-do-not-stand-by-in-the-presence-of-evil.com'
       },
       {
+        hid: 'twitter:title',
         name: 'twitter:title',
         content: 'I Do Not Stand by in the Presence of Evil'
       },
       {
+        hid: 'twitter:description',
         name: 'twitter:description',
         content: 'A community hub for Alita\'s fandom.'
       },
@@ -40,18 +43,22 @@ module.exports = {
         content: 'https://i-do-not-stand-by-in-the-presence-of-evil.com/social-banner.jpg'
       },
       {
+        hid: 'og:title',
         name: 'og:title',
         content: 'I Do Not Stand by in The Presence of Evil'
       },
       {
+        hid: 'og:site_name',
         name: 'og:site_name',
         content: 'I Do Not Stand by in The Presence of Evil'
       },
       {
+        hid: 'og:url',
         name: 'og:url',
         content: 'https://i-do-not-stand-by-in-the-presence-of-evil.com'
       },
       {
+        hid: 'og:description',
         name: 'og:description',
         content: 'For Alita\'s fan'
       },
