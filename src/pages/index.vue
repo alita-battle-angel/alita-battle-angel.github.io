@@ -23,7 +23,12 @@
           </nuxt-link>
         </p>
         <p>
+          <nuxt-link class="mission" to="/articles/alitasequel-banner-over-the-oscars">
+            <small>Jan 8, 2020</small>
+            MISSION: #AlitaSequel Banner Over The Oscars
+          </nuxt-link>
           <nuxt-link class="mission" to="/articles/make-alita-sequel-go-trending">
+            <small>Dec 5, 2019</small>
             MISSION: Make #AlitaSequel Go Trending<br>
             11:00 AM UTC
           </nuxt-link>

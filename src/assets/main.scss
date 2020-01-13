@@ -105,11 +105,24 @@ a.mission {
   font-size: 1.5em;
   line-height: 1.3em;
   font-weight: bold;
-  margin: 15px 0;
+  margin: 15px auto;
   padding: 10px 15px;
   display: inline-block;
   color: #F1CA1A;
   border: 1px solid transparent;
+
+  > small {
+    display: block;
+    font-size: .55em;
+    font-weight: normal;
+  }
+
+  > img {
+    display: block;
+    max-width: 600px;
+    margin: 0 auto 15px;
+    border-radius: 4px;
+  }
 
   &:hover {
     background-color: transparent;

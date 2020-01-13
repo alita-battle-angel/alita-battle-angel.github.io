@@ -16,7 +16,7 @@
               target="_blank"
             >
               Alex #99 tweet
-            </a>&nbsp;and <a
+            </a>&nbsp;<a
               href="https://twitter.com/AlitaArmy/status/1201926493695295488"
               target="_blank"
             >The #AlitaArmy Tweet</a>
@@ -52,7 +52,7 @@
 
           <h4>Links</h4>
           <div class="foot-note">
-            <h4>Doc Ido Video</h4>
+            <h4>Doc Ido's Video</h4>
             <p>
               Alita Sequel in Doubt? Rosa Salazar asks for HELP!! Blu-Ray Sales Update <a
                 href="https://www.youtube.com/watch?v=9sb05YDpsy8"

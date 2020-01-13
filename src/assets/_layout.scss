@@ -556,6 +556,13 @@ article {
   > .thin {
     margin-top: 60px;
   }
+
+  > img {
+    display: block;
+    margin: 15px auto;
+    max-width: 800px;
+    border: 10px solid #222;
+  }
 }
 
 blockquote {
