@@ -110,6 +110,8 @@ a.mission {
   display: inline-block;
   color: #F1CA1A;
   border: 1px solid transparent;
+  max-width: 100%;
+  overflow: hidden;
 
   > small {
     display: block;
@@ -122,6 +124,7 @@ a.mission {
     max-width: 600px;
     margin: 0 auto 15px;
     border-radius: 4px;
+    width: 100%;
   }
 
   &:hover {

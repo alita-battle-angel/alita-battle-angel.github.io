@@ -54,7 +54,7 @@
 
 <script>
 
-let lastScrollY = 0
+// let lastScrollY = 0
 
 export default {
   link: [],
@@ -99,23 +99,23 @@ export default {
   },
   mounted () {
     this.cookieNotify = document.cookie.includes('notify=true')
-    const body = document.querySelector('body')
-
-    this.scrollHandler = () => {
-      const max = (document.scrollingElement.scrollHeight - window.innerHeight)
-      lastScrollY = window.scrollY
-
-      if (lastScrollY) {
-        requestAnimationFrame(() => {
-          body.style.backgroundPositionY = -Math.floor((lastScrollY * Math.floor(max * 0.15)) / max) + 'px'
-        })
-      } else {
-        body.style.backgroundPositionY = 0
-      }
-    }
-
-    window.addEventListener('scroll', this.scrollHandler)
-    this.scrollHandler()
+    // const body = document.querySelector('body')
+    //
+    // this.scrollHandler = () => {
+    //   const max = (document.scrollingElement.scrollHeight - window.innerHeight)
+    //   lastScrollY = window.scrollY
+    //
+    //   if (lastScrollY) {
+    //     requestAnimationFrame(() => {
+    //       body.style.backgroundPositionY = -Math.floor((lastScrollY * Math.floor(max * 0.05)) / max) + 'px'
+    //     })
+    //   } else {
+    //     body.style.backgroundPositionY = 0
+    //   }
+    // }
+    //
+    // window.addEventListener('scroll', this.scrollHandler)
+    // this.scrollHandler()
   },
   destroyed () {
     window.removeEventListener('scroll', this.scrollHandler)
