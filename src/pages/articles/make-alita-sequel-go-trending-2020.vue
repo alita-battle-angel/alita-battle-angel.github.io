@@ -22,7 +22,7 @@
               href="https://twitter.com/NeoWarrior26651/status/1202479731779592192"
               target="_blank"
             >
-              <img src="/trending-2020.jfif">
+              <img src="/trending-2020.jpg">
               <small>
                 Make #AlitaSequel Go Trending
               </small>
@@ -111,7 +111,7 @@ export default {
       {
         hid: 'twitter:image',
         name: 'twitter:image',
-        content: 'https://i-do-not-stand-by-in-the-presence-of-evil.com/trending-2020.jfif'
+        content: 'https://i-do-not-stand-by-in-the-presence-of-evil.com/trending-2020.jpg'
       },
       {
         hid: 'twitter:url',
@@ -146,7 +146,7 @@ export default {
       {
         hid: 'og:image',
         name: 'og:image',
-        content: 'https://i-do-not-stand-by-in-the-presence-of-evil.com/trending-2020.jfif'
+        content: 'https://i-do-not-stand-by-in-the-presence-of-evil.com/trending-2020.jpg'
       }
     ]
   },
