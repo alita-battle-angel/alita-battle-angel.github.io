@@ -7,14 +7,16 @@
 html, body {
   font-family: 'Poppins', sans-serif;
   font-size: 16px;
-  line-height: 18px;
+  line-height: 25px;
 
   @media only screen and (max-width: 1000px) {
     font-size: 14px;
+    line-height: 23px;
   }
 
   @media only screen and (max-width: 500px) {
     font-size: 13px;
+    line-height: 22px;
   }
 }
 

@@ -4,23 +4,11 @@
       <div class="box">
         <header>
           <h1 class="title">
-            Mission: Make #AlitaSequel Go Trending
+            Mission: Make #AlitaSequel Go Trending - 2019
           </h1>
           <h2 class="subtitle">
             Call out to Alita Army
           </h2>
-          <p>
-            Check out
-            <a
-              href="https://twitter.com/NeoWarrior26651/status/1202479731779592192"
-              target="_blank"
-            >
-              Alex #99 tweet
-            </a>&nbsp;<a
-              href="https://twitter.com/AlitaArmy/status/1201926493695295488"
-              target="_blank"
-            >The #AlitaArmy Tweet</a>
-          </p>
         </header>
         <article>
           <h4>Mission Description</h4>
@@ -43,11 +31,7 @@
 
           <h4>When should I Tweet?</h4>
           <p>
-            Thursday December 5, 2019 at <a
-              class="link-white"
-              href="https://www.google.com/search?q=11%3A00+AM+UTC"
-              target="_blank"
-            >11:00 AM UTC</a>
+            Thursday December 5, 2019 at 11:00 AM UTC
           </p>
 
           <h4>Links</h4>
@@ -92,7 +76,7 @@
 <script>
 export default {
   head: {
-    title: 'Call out to Alita Army: Make #AlitaSequel Go Trending | Articles | I Do Not Stand by in The Presence of Evil',
+    title: 'Call out to Alita Army: Make #AlitaSequel Go Trending - 2019 | Articles | I Do Not Stand by in The Presence of Evil',
     meta: [
       {
         hid: 'description',
