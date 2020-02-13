@@ -91,7 +91,7 @@ export default {
         {
           hid: 'description',
           name: 'description',
-          content: 'List of members of the Alita Army. You can join the Alita Army too!'
+          content: 'You can join the Alita Army too! Just add a #AlitaArmy to your twitter bio and register. Click here to see the list of who already joined.'
         }
       ],
       link: [
