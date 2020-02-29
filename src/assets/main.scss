@@ -40,6 +40,15 @@ body {
     z-index: 0;
   }
 
+  &::after {
+    position: absolute;
+    width: 0;
+    height: 0;
+    overflow: hidden;
+    z-index: -1; // hide images
+    content: url('~assets/img/alita-charged.jpg') url('~assets/img/alita-in-under-world.jpg') url('~assets/img/alita-searching.jpg');
+  }
+
   &.alita-army {
     &::before {
       background-image: url('~assets/img/alita-in-under-world.jpg');
