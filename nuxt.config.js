@@ -16,7 +16,7 @@ module.exports = {
       {
         hid: 'description',
         name: 'description',
-        content: 'For Alita\'s fan'
+        content: 'A community hub for Alita: Battle Angle\'s fandom. Learn more about what fans are up to.'
       },
       {
         name: 'twitter:card',
@@ -35,7 +35,7 @@ module.exports = {
       {
         hid: 'twitter:description',
         name: 'twitter:description',
-        content: 'A community hub for Alita\'s fandom.'
+        content: 'A community hub for Alita: Battle Angle\'s fandom. Learn more about what fans are up to.'
       },
       {
         hid: 'twitter:image',
@@ -60,7 +60,7 @@ module.exports = {
       {
         hid: 'og:description',
         name: 'og:description',
-        content: 'For Alita\'s fan'
+        content: 'A community hub for Alita: Battle Angle\'s fandom. Learn more about what fans are up to.'
       },
       {
         name: 'og:type',

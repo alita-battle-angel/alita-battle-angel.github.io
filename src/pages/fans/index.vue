@@ -100,7 +100,7 @@ export default {
         {
           hid: 'description',
           name: 'description',
-          content: `Find out about the latest stuff made by ${filterByText}.\n${usersText}`
+          content: `Fan made content. Click to find out more about the latest stuff made by ${filterByText}.\n${usersText}`
         }
       ],
       link: [
