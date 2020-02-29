@@ -3,16 +3,18 @@
     class="hunter-warrior-info"
     :href="account_url"
     target="_blank"
+    @click="reload($event)"
   >
-    <div class="content" />
+    <div class="content"/>
     <img
       v-if="profile.profile_banner_url"
       class="banner"
       :src="profile.profile_banner_url"
       :alt="profile.name +' banner'"
+      @error="onImageError()"
     >
     <div class="user">
-      <img :src="profile.profile_image_url_https" :alt="profile.name">
+      <img :src="profile.profile_image_url_https" :alt="profile.name" @error="onImageError()">
       <div>
         <strong>{{ profile.name }}</strong>
         <span>@{{ profile.screen_name }}</span>
@@ -29,21 +31,55 @@ export default {
       default: null
     }
   },
+  data () {
+    return {
+      reloadable: false
+    }
+  },
   computed: {
     account_url () {
       return 'https://twitter.com/' + this.profile.screen_name
     }
   },
-  methods: {}
+  methods: {
+    onImageError () {
+      this.reloadable = true
+    },
+    reload (event) {
+      if (this.reloadable) {
+        event.preventDefault()
+        this.reloadable = false
+        fetch('https://ewcms.org/alita-battle-angel/alita-army.php', {
+          method: 'post',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify({
+            screen_name: this.profile.screen_name,
+            register: true
+          })
+        }).then((response) => {
+          return response.json()
+        }).then((response) => {
+          if (response.data) {
+            this.$store.commit('alita-army/update', response.data)
+          } else {
+            this.$store.commit('alita-army/remove', this.profile)
+          }
+        })
+      }
+    }
+  }
 }
 </script>
 <style lang="scss">
   .hunter-warrior-info {
     width: 100%;
     margin: 4px;
-    background-color: #2c3139;
+    background-color: #2b476444;
+    border: 1px solid #fff1;
     color: #bbb;
-    border: none;
+    /*border: none;*/
     font-size: 1em;
     border-radius: 0;
     padding: 0;
@@ -53,8 +89,9 @@ export default {
     overflow: hidden;
 
     &:hover {
-      background-color: #56606a;
-      box-shadow: 0 5px 23px rgba(#555, .58), 0 0 2px 1px #222;
+      background-color: #2b4764;
+      box-shadow: 0 6px 23px #2b4764aa, 0 0 2px 1px #2b4764aa;
+      border-color: #fff2;
       color: #fff;
     }
 
@@ -84,6 +121,10 @@ export default {
       align-items: center;
       padding: 8px 8px 0;
 
+      > div {
+        overflow: hidden;
+      }
+
       strong, span {
         white-space: nowrap;
         text-overflow: ellipsis;
@@ -107,6 +148,7 @@ export default {
         height: 48px;
         border-radius: 50%;
         margin-right: 8px;
+        flex: 0 0 auto;
       }
     }
 

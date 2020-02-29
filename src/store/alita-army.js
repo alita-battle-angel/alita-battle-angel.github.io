@@ -14,5 +14,22 @@ export const mutations = {
     })
 
     Object.assign(state, payload)
+  },
+  update (state, payload) {
+    state.data.forEach((item) => {
+      if (item.screen_name === payload.screen_name) {
+        Object.assign(item, payload)
+      }
+    })
+  },
+  remove (state, payload) {
+    const found = state.data.filter((item) => {
+      return item.screen_name === payload.screen_name
+    })[0]
+
+    if (found) {
+      const index = state.data.indexOf(found)
+      state.data.splice(index, 1)
+    }
   }
 }

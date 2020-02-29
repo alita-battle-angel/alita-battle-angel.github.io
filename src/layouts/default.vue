@@ -74,25 +74,25 @@ export default {
           icon: 'group'
         },
         {
-          title: 'Projects',
-          href: '/projects',
-          icon: 'work_outline'
-        },
-        {
           title: 'Alita Army',
           href: '/alita-army',
           icon: 'stars'
         },
         {
-          title: 'Statistics',
-          href: '/statistics',
-          icon: 'show_chart'
-        },
-        {
-          title: 'Merchandise',
-          href: '/merchandise',
-          icon: 'shopping_cart'
+          title: 'Projects',
+          href: '/projects',
+          icon: 'work_outline'
         }
+        // {
+        //   title: 'Statistics',
+        //   href: '/statistics',
+        //   icon: 'show_chart'
+        // },
+        // {
+        //   title: 'Merchandise',
+        //   href: '/merchandise',
+        //   icon: 'shopping_cart'
+        // }
       ],
       expand: false
     }

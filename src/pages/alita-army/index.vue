@@ -18,11 +18,11 @@
           <p>
             Because "Alita Army" is a passionate fanbase of Alita's fans that positively support her. We will give our
             heart to her because she would do the same. Check out the <a
-              class="link-white"
-              href="https://alitastan.fandom.com/wiki/The_Alita_Army"
-            >
-              The Alita Army
-            </a> from Alitastan Wiki.
+            class="link-white"
+            href="https://alitastan.fandom.com/wiki/The_Alita_Army"
+          >
+            The Alita Army
+          </a> from Alitastan Wiki.
           </p>
           <p>
             Also, because we are not bots.
@@ -55,13 +55,13 @@
             >@EeliyaKing</a>
           </p>
         </header>
-        <pagination :page="page" :total-pages="total_pages" :previous-url="previous_url" :next-url="next_url" />
+        <pagination :page="page" :total-pages="total_pages" :previous-url="previous_url" :next-url="next_url"/>
 
         <main :class="list_state">
-          <hunter-warrior v-for="hunter in data" :key="hunter.screen_name" :profile="hunter" />
+          <hunter-warrior v-for="hunter in data" :key="hunter.screen_name" :profile="hunter"/>
         </main>
 
-        <pagination :page="page" :total-pages="total_pages" :previous-url="previous_url" :next-url="next_url" />
+        <pagination :page="page" :total-pages="total_pages" :previous-url="previous_url" :next-url="next_url"/>
       </div>
     </div>
   </div>
@@ -72,7 +72,7 @@ import Pagination from '~/components/pagination'
 import HunterWarrior from '~/components/hunter-warrior'
 
 const fetchPageData = async (page) => {
-  const response = await fetch('https://ewcms.org/alita-battle-angel/alita-army.php?page=' + (page || ''))
+  const response = await fetch('https://ewcms.org/alita-battle-angel/alita-army.php?page=' + (page || '') + '&item_per_page=30')
   return response.json()
 }
 
@@ -96,7 +96,10 @@ export default {
       ],
       link: [
         canonical
-      ]
+      ],
+      bodyAttrs: {
+        class: ['alita-army']
+      }
     }
   },
   components: {
@@ -182,7 +185,8 @@ export default {
           body: JSON.stringify({
             message: '<' + this.screen_name + '> ' + error.message + '\nuser agent: ' + window.navigator.userAgent
           })
-        }).then(() => {})
+        }).then(() => {
+        })
         this.showMessage('Something went wrong, please try again later.', true)
       })
 

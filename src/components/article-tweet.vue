@@ -139,7 +139,7 @@ export default {
       height: 64px;
       flex: 1 1 auto;
       overflow: hidden;
-      background-color: rgba(#fff, .04);
+      background-color: #fff1;
       margin-right: 4px;
       padding: 8px;
 
@@ -173,7 +173,7 @@ export default {
       text-align: center;
       font-size: 32px;
       line-height: 48px;
-      background-color: rgba(#fff, .04);
+      background-color: #fff1;
       padding: 8px;
     }
 

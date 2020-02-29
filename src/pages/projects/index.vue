@@ -104,7 +104,8 @@
             <li>
               <a
                 href="https://www.reddit.com/r/alitabattleangel/comments/c1827g/a_new_enemy_design_because_annoying_enemy_types/"
-              ><strong>16-06-2019</strong> Reddit post - A new enemy design, because annoying enemy types are a must have</a>
+              ><strong>16-06-2019</strong> Reddit post - A new enemy design, because annoying enemy types are a must
+                have</a>
             </li>
             <li>
               <a
@@ -133,9 +134,9 @@
           <h4>I Do Not Stand by in The Presence of Evil Website</h4>
           <p>
             You are at the moment in this website. <a
-              class="link-white"
-              href="https://twitter.com/EeliyaKing"
-            >@EeliyaKing</a> originally bought the <strong>i-do-not-stand-by-in-the-presence-of-evil.com</strong> domain
+            class="link-white"
+            href="https://twitter.com/EeliyaKing"
+          >@EeliyaKing</a> originally bought the <strong>i-do-not-stand-by-in-the-presence-of-evil.com</strong> domain
             and started the
             project.
             <a class="link-white" href="https://twitter.com/dmitmel">@dmitmel</a> is also participating regarding to
@@ -173,7 +174,10 @@ export default {
         name: 'description',
         content: 'Learn about the projects that are being developed by Alita Army. You can participate in projects that interests you.'
       }
-    ]
+    ],
+    bodyAttrs: {
+      class: ['projects']
+    }
   },
   components: {}
 }
@@ -181,8 +185,9 @@ export default {
 
 <style lang="scss">
   .project {
-    padding: 0 20px;
-    border: 2px solid #222;
+    padding: 5px 20px;
+    background-color: #1119;
+    border: 1px solid #fff2;
 
     & + .project {
       margin-top: 30px;

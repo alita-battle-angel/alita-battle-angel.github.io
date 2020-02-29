@@ -231,25 +231,13 @@ form.inline {
   flex: 1 0 auto;
 
   > .box {
-    background-color: #151515;
+    background-color: #151515aa;
+    border: 1px solid #fff1;
     padding: 45px 55px;
     position: relative;
 
-    &::before {
-      content: ' ';
-      position: absolute;
-      background-image: url('~assets/textures/white-texture.png');
-      left: 0;
-      top: 0;
-      width: 100%;
-      height: 100%;
-      opacity: .1;
-      transition: all 100ms ease-in-out;
-      z-index: 0;
-    }
-
     &.split {
-      border-top: 2px solid #000;
+      border-top: 2px solid #fff2;
     }
 
     > * {
@@ -260,7 +248,7 @@ form.inline {
     > header {
       padding-bottom: 60px;
       margin-bottom: 60px;
-      border-bottom: 2px solid #222;
+      border-bottom: 2px solid #fff2;
 
       &:last-child {
         border-bottom: none;
@@ -479,7 +467,8 @@ form.inline {
     > article {
       flex: 1 0 auto;
       margin: 0 0 4px;
-      background-color: #27242e;
+      border: 1px solid #fff2;
+      background-color: #0009;
       border-radius: 0;
       padding: 15px;
       position: relative;
@@ -574,7 +563,8 @@ blockquote {
 .foot-note {
   font-size: .9em;
   padding: 0 20px;
-  border: 2px solid #222;
+  border: 2px solid #252525;
+  background-color: #151515aa;
   margin: .65em 0;
 
   > h4 {

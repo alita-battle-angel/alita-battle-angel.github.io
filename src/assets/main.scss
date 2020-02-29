@@ -26,23 +26,33 @@ body {
     top: 0;
     width: 100%;
     height: 100%;
-    background-image: url('~assets/textures/white-diamond.png');
+    //background-image: url('~assets/textures/white-diamond.png');
+    //background-image: url('~assets/img/alita-in-under-world.jpg');
+    background-image: url('~assets/img/alita-charged.jpg');
     background-attachment: fixed;
-    background-position: inherit;
+    background-size: cover;
+    background-position: top center;
+    background-repeat: no-repeat;
     content: ' ';
     opacity: .8;
     position: absolute;
+    transition: background .3s linear;
     z-index: 0;
   }
 
-  @media only screen and (max-width: 600px) {
-    background-position: 0 0 !important;
-
+  &.alita-army {
     &::before {
-      background-attachment: initial;
-      background-position: initial;
-      position: fixed;
+      background-image: url('~assets/img/alita-in-under-world.jpg');
     }
+  }
+
+  &.projects {
+    &::before {
+      background-image: url('~assets/img/alita-searching.jpg');
+    }
+  }
+
+  @media only screen and (max-width: 600px) {
   }
 }
 
@@ -106,12 +116,13 @@ a.mission {
   line-height: 1.3em;
   font-weight: bold;
   margin: 15px auto;
-  padding: 10px 15px;
+  padding: 10px;
   display: inline-block;
   color: #F1CA1A;
   border: 1px solid transparent;
   max-width: 100%;
   overflow: hidden;
+  border-radius: 15px;
 
   > small {
     display: block;
@@ -123,13 +134,18 @@ a.mission {
     display: block;
     max-width: 600px;
     margin: 0 auto 15px;
-    border-radius: 4px;
+    border-radius: 5px;
     width: 100%;
   }
 
   &:hover {
     background-color: transparent;
-    border-color: #F1CA1A;
+    border-color: #F1CA1ACC;
+    box-shadow: 0 0 7px #F1CA1A77;
+  }
+
+  &:active {
+    background-color: #F1CA1A22;
   }
 }
 

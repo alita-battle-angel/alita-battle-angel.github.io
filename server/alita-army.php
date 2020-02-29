@@ -4,30 +4,37 @@ require_once 'database.php';
 
 $method = $_SERVER['REQUEST_METHOD'];
 
-function check_eligibility ($profile) {
+function check_eligibility($profile)
+{
   return $profile['statuses_count'] >= 1 && strpos($profile['description'], '#AlitaArmy') !== false;
 }
 
-function get_profile ($screen_name) {
+function get_profile($screen_name)
+{
   global $database;
   return $database->fetchRow("SELECT * FROM alita_army WHERE alita_army.screen_name = '{$screen_name}'");
 }
 
-function save_profile ($profile) {
+function save_profile($profile)
+{
   global $database;
   $hunter_warrior_id = $database->fetchOne("SELECT AUTO_INCREMENT FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_NAME = 'alita_army'");
-  $database->insert('alita_army', [
-    'name' => $profile['name'],
-    'screen_name' => $profile['screen_name'],
-    'description' => $profile['description'],
-    'location' => $profile['location'],
-    'profile_banner_url' => isset($profile['profile_banner_url']) ? $profile['profile_banner_url'] : null,
-    'profile_image_url_https' => $profile['profile_image_url_https'],
-    'hunter_warrior_id' => "HW-00{$hunter_warrior_id}"
-  ]);
+  $exist = get_profile($profile['screen_name']);
+  if ($exist === false) {
+    $database->insert('alita_army', [
+      'name' => $profile['name'],
+      'screen_name' => $profile['screen_name'],
+      'description' => $profile['description'],
+      'location' => $profile['location'],
+      'profile_banner_url' => isset($profile['profile_banner_url']) ? $profile['profile_banner_url'] : null,
+      'profile_image_url_https' => $profile['profile_image_url_https'],
+      'hunter_warrior_id' => "HW-00{$hunter_warrior_id}"
+    ]);
+  }
 }
 
-function update_profile ($profile) {
+function update_profile($profile)
+{
   global $database;
   $database->update('alita_army', [
     'name' => $profile['name'],
@@ -37,6 +44,14 @@ function update_profile ($profile) {
     'profile_image_url_https' => $profile['profile_image_url_https'],
     'updated_at' => NULL
   ], [
+    'screen_name = ?' => $profile['screen_name']
+  ]);
+}
+
+function delete_profile($profile)
+{
+  global $database;
+  $database->delete('alita_army', [
     'screen_name = ?' => $profile['screen_name']
   ]);
 }
@@ -76,8 +91,19 @@ if ($method === 'POST') {
       }
     } else {
       $twitter_response = TwitterAPI::fetch('users/lookup.json', ['screen_name' => $screen_name]);
-      if ($twitter_response[0]) {
+      if (isset($twitter_response[0])) {
         update_profile($twitter_response[0]);
+      } else if (isset($twitter_response['errors'])) {
+        $profile = get_profile($_INPUT['screen_name']);
+        if ($profile) {
+          delete_profile($profile);
+        }
+
+        response([
+          'message' => 'Account not found or it is disabled',
+          'data' => null
+        ], 202);
+        die;
       }
 
       $profile = get_profile($_INPUT['screen_name']);
@@ -91,7 +117,11 @@ if ($method === 'POST') {
 }
 
 if ($method === 'GET') {
-  $item_per_page = 18;
+  if (isset($_GET['item_per_page']) && is_numeric($_GET['item_per_page'])) {
+    $item_per_page = $_GET['item_per_page'];
+  } else {
+    $item_per_page = 18;
+  }
   $total = intval($database->fetchOne('SELECT COUNT(*) FROM alita_army'));
 
   $page = 0;
