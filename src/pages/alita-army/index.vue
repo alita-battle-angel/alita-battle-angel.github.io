@@ -10,22 +10,25 @@
             Join the Alita Army
           </h2>
           <p>
-            You can join the Alita Army by registering your twitter username
+            You can join the Alita Army by registering your twitter username.
           </p>
           <h3>
             Why join?
           </h3>
           <p>
             Because "Alita Army" is a passionate fanbase of Alita's fans that positively support her. We will give our
-            heart to her because she would do the same. Check out the <a
-            class="link-white"
-            href="https://alitastan.fandom.com/wiki/The_Alita_Army"
-          >
-            The Alita Army
-          </a> from Alitastan Wiki.
+            heart to her because she would do the same. Check out <a href="https://alitaarmy.com">AlitaArmy.com</a> to learn about upcoming missions!
           </p>
           <p>
-            Also, because we are not bots.
+            Also check out the <a
+              class="link-white"
+              href="https://alitastan.fandom.com/wiki/The_Alita_Army"
+            >
+              The Alita Army
+            </a> from Alitastan Wiki.
+          </p>
+          <p>
+            And also, we are NOT bots.
           </p>
           <ul>
             <li>You need to have a <strong>#AlitaArmy</strong> in your twitter bio</li>
