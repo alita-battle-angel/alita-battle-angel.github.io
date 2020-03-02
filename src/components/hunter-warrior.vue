@@ -5,7 +5,7 @@
     target="_blank"
     @click="reload($event)"
   >
-    <div class="content"/>
+    <div class="content" />
     <img
       v-if="profile.profile_banner_url"
       class="banner"

@@ -58,7 +58,8 @@
           </p>
           <p>
             To learn more about us and why we're doing this, please visit our website: <a
-            href="https://alitaarmy.home.blog/">The Alita Army</a>
+              href="https://alitaarmy.home.blog/"
+            >The Alita Army</a>
           </p>
 
           <h4>Related</h4>
@@ -66,9 +67,9 @@
             <h4>Doc Ido's Video</h4>
             <p>
               Alita Sequel Banner to Fly at Oscars + Rosa Wins Best VFX Performance <a
-              href="https://www.youtube.com/watch?v=qWwDlv0EQS4"
-            >
-              YouTube Video</a>
+                href="https://www.youtube.com/watch?v=qWwDlv0EQS4"
+              >
+                YouTube Video</a>
             </p>
           </div>
 

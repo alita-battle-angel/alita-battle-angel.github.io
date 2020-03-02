@@ -34,7 +34,6 @@
             <li>You need to have a <strong>#AlitaArmy</strong> in your twitter bio</li>
             <li>You need to have at least one post</li>
           </ul>
-
           <form class="inline" method="post" @submit.prevent="enroll()">
             <label class="field inline">
               <span>
@@ -57,14 +56,17 @@
               target="_blank"
             >@EeliyaKing</a>
           </p>
+          <p style="text-align: center; color: #bbb; font-size: .9em;">
+            This list is NOT an official list and only meant for enthusiast fans to show their support
+          </p>
         </header>
-        <pagination :page="page" :total-pages="total_pages" :previous-url="previous_url" :next-url="next_url"/>
+        <pagination :page="page" :total-pages="total_pages" :previous-url="previous_url" :next-url="next_url" />
 
         <main :class="list_state">
-          <hunter-warrior v-for="hunter in data" :key="hunter.screen_name" :profile="hunter"/>
+          <hunter-warrior v-for="hunter in data" :key="hunter.screen_name" :profile="hunter" />
         </main>
 
-        <pagination :page="page" :total-pages="total_pages" :previous-url="previous_url" :next-url="next_url"/>
+        <pagination :page="page" :total-pages="total_pages" :previous-url="previous_url" :next-url="next_url" />
       </div>
     </div>
   </div>

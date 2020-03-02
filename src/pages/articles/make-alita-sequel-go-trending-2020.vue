@@ -73,9 +73,9 @@
             <h4>‘Alita: Battle Angel’ Deserves A Sequel — And A Video Game</h4>
             <p>
               Read more <a
-              href="https://www.forbes.com/sites/erikkain/2020/02/02/alita-battle-angel-deserves-a-sequel--and-a-video-game/#779bb1dc5c31"
-            >
-              Forbes Article</a>
+                href="https://www.forbes.com/sites/erikkain/2020/02/02/alita-battle-angel-deserves-a-sequel--and-a-video-game/#779bb1dc5c31"
+              >
+                Forbes Article</a>
             </p>
             <blockquote>
               Disney would be wise to diversify a little bit, and put some of its eggs into the Alita: Battle Angel
