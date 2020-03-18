@@ -1,17 +1,17 @@
 <template>
   <a
-    class="hunter-warrior-info"
     :href="account_url"
-    target="_blank"
     @click="reload($event)"
+    class="hunter-warrior-info"
+    target="_blank"
   >
     <div class="content" />
     <img
       v-if="profile.profile_banner_url"
-      class="banner"
       :src="profile.profile_banner_url"
       :alt="profile.name +' banner'"
       @error="onImageError()"
+      class="banner"
     >
     <div class="user">
       <img :src="profile.profile_image_url_https" :alt="profile.name" @error="onImageError()">

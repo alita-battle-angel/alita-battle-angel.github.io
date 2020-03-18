@@ -100,55 +100,57 @@
 
 <script>
 export default {
-  head: {
-    title: 'Call out to Alita Army: Make #AlitaSequel Go Trending - 2020 | Articles | I Do Not Stand by in The Presence of Evil',
-    meta: [
-      {
-        hid: 'description',
-        name: 'description',
-        content: 'We want the Saga of Alita: Battle Angel to continue. The experience we had was remarkable. And we want to feel that magic of the first one again. Join us on our quest!'
-      },
-      {
-        hid: 'twitter:image',
-        name: 'twitter:image',
-        content: 'https://i-do-not-stand-by-in-the-presence-of-evil.com/trending-2020.jpg'
-      },
-      {
-        hid: 'twitter:url',
-        name: 'twitter:url',
-        content: 'https://i-do-not-stand-by-in-the-presence-of-evil.com/articles/make-alita-sequel-go-trending-2020'
-      },
-      {
-        hid: 'twitter:title',
-        name: 'twitter:title',
-        content: 'Mission: Make #AlitaSequel Go Trending - 2020'
-      },
-      {
-        hid: 'twitter:description',
-        name: 'twitter:description',
-        content: 'We want the Saga of Alita: Battle Angel to continue. The experience we had was remarkable. And we want to feel that magic of the first one again. Join us on our quest!'
-      },
-      {
-        hid: 'og:title',
-        name: 'og:title',
-        content: 'Mission: Make #AlitaSequel Go Trending - 2020'
-      },
-      {
-        hid: 'og:url',
-        name: 'og:url',
-        content: 'https://i-do-not-stand-by-in-the-presence-of-evil.com/articles/make-alita-sequel-go-trending-2020'
-      },
-      {
-        hid: 'og:description',
-        name: 'og:description',
-        content: 'We want the Saga of Alita: Battle Angel to continue. The experience we had was remarkable. And we want to feel that magic of the first one again. Join us on our quest!'
-      },
-      {
-        hid: 'og:image',
-        name: 'og:image',
-        content: 'https://i-do-not-stand-by-in-the-presence-of-evil.com/trending-2020.jpg'
-      }
-    ]
+  head () {
+    return {
+      title: 'Call out to Alita Army: Make #AlitaSequel Go Trending - 2020 | Articles | I Do Not Stand by in The Presence of Evil',
+      meta: [
+        {
+          hid: 'description',
+          name: 'description',
+          content: 'We want the Saga of Alita: Battle Angel to continue. The experience we had was remarkable. And we want to feel that magic of the first one again. Join us on our quest!'
+        },
+        {
+          hid: 'twitter:image',
+          name: 'twitter:image',
+          content: 'https://i-do-not-stand-by-in-the-presence-of-evil.com/trending-2020.jpg'
+        },
+        {
+          hid: 'twitter:url',
+          name: 'twitter:url',
+          content: 'https://i-do-not-stand-by-in-the-presence-of-evil.com/articles/make-alita-sequel-go-trending-2020'
+        },
+        {
+          hid: 'twitter:title',
+          name: 'twitter:title',
+          content: 'Mission: Make #AlitaSequel Go Trending - 2020'
+        },
+        {
+          hid: 'twitter:description',
+          name: 'twitter:description',
+          content: 'We want the Saga of Alita: Battle Angel to continue. The experience we had was remarkable. And we want to feel that magic of the first one again. Join us on our quest!'
+        },
+        {
+          hid: 'og:title',
+          name: 'og:title',
+          content: 'Mission: Make #AlitaSequel Go Trending - 2020'
+        },
+        {
+          hid: 'og:url',
+          name: 'og:url',
+          content: 'https://i-do-not-stand-by-in-the-presence-of-evil.com/articles/make-alita-sequel-go-trending-2020'
+        },
+        {
+          hid: 'og:description',
+          name: 'og:description',
+          content: 'We want the Saga of Alita: Battle Angel to continue. The experience we had was remarkable. And we want to feel that magic of the first one again. Join us on our quest!'
+        },
+        {
+          hid: 'og:image',
+          name: 'og:image',
+          content: 'https://i-do-not-stand-by-in-the-presence-of-evil.com/trending-2020.jpg'
+        }
+      ]
+    }
   },
   components: {}
 }

@@ -89,55 +89,57 @@
 
 <script>
 export default {
-  head: {
-    title: 'Call out to Alita Army: #AlitaSequel Banner Over The Oscars | Articles | I Do Not Stand by in The Presence of Evil',
-    meta: [
-      {
-        hid: 'description',
-        name: 'description',
-        content: 'We want to fly a banner with "#AlitaSequel #AlitaArmy" over the red carpet at the Academy Awards for three hours.'
-      },
-      {
-        hid: 'twitter:image',
-        name: 'twitter:image',
-        content: 'https://i-do-not-stand-by-in-the-presence-of-evil.com/gofundme-banner.jpg'
-      },
-      {
-        hid: 'twitter:url',
-        name: 'twitter:url',
-        content: 'https://i-do-not-stand-by-in-the-presence-of-evil.com/articles/alitasequel-banner-over-the-oscars'
-      },
-      {
-        hid: 'twitter:title',
-        name: 'twitter:title',
-        content: 'Call out to Alita Army: #AlitaSequel Banner Over The Oscars'
-      },
-      {
-        hid: 'twitter:description',
-        name: 'twitter:description',
-        content: 'We want to fly a banner with "#AlitaSequel #AlitaArmy" over the red carpet at the Academy Awards for three hours.'
-      },
-      {
-        hid: 'og:title',
-        name: 'og:title',
-        content: 'Call out to Alita Army: #AlitaSequel Banner Over The Oscars'
-      },
-      {
-        hid: 'og:url',
-        name: 'og:url',
-        content: 'https://i-do-not-stand-by-in-the-presence-of-evil.com/articles/alitasequel-banner-over-the-oscars'
-      },
-      {
-        hid: 'og:description',
-        name: 'og:description',
-        content: 'We want to fly a banner with "#AlitaSequel #AlitaArmy" over the red carpet at the Academy Awards for three hours.'
-      },
-      {
-        hid: 'og:image',
-        name: 'og:image',
-        content: 'https://i-do-not-stand-by-in-the-presence-of-evil.com/gofundme-banner.jpg'
-      }
-    ]
+  head () {
+    return {
+      title: 'Call out to Alita Army: #AlitaSequel Banner Over The Oscars | Articles | I Do Not Stand by in The Presence of Evil',
+      meta: [
+        {
+          hid: 'description',
+          name: 'description',
+          content: 'We want to fly a banner with "#AlitaSequel #AlitaArmy" over the red carpet at the Academy Awards for three hours.'
+        },
+        {
+          hid: 'twitter:image',
+          name: 'twitter:image',
+          content: 'https://i-do-not-stand-by-in-the-presence-of-evil.com/gofundme-banner.jpg'
+        },
+        {
+          hid: 'twitter:url',
+          name: 'twitter:url',
+          content: 'https://i-do-not-stand-by-in-the-presence-of-evil.com/articles/alitasequel-banner-over-the-oscars'
+        },
+        {
+          hid: 'twitter:title',
+          name: 'twitter:title',
+          content: 'Call out to Alita Army: #AlitaSequel Banner Over The Oscars'
+        },
+        {
+          hid: 'twitter:description',
+          name: 'twitter:description',
+          content: 'We want to fly a banner with "#AlitaSequel #AlitaArmy" over the red carpet at the Academy Awards for three hours.'
+        },
+        {
+          hid: 'og:title',
+          name: 'og:title',
+          content: 'Call out to Alita Army: #AlitaSequel Banner Over The Oscars'
+        },
+        {
+          hid: 'og:url',
+          name: 'og:url',
+          content: 'https://i-do-not-stand-by-in-the-presence-of-evil.com/articles/alitasequel-banner-over-the-oscars'
+        },
+        {
+          hid: 'og:description',
+          name: 'og:description',
+          content: 'We want to fly a banner with "#AlitaSequel #AlitaArmy" over the red carpet at the Academy Awards for three hours.'
+        },
+        {
+          hid: 'og:image',
+          name: 'og:image',
+          content: 'https://i-do-not-stand-by-in-the-presence-of-evil.com/gofundme-banner.jpg'
+        }
+      ]
+    }
   },
   components: {}
 }

@@ -1,5 +1,5 @@
 <template>
-  <article
+  <div
     class="article-tweet"
   >
     <slot />
@@ -19,7 +19,7 @@
     <p class="thin">
       {{ date }}
     </p>
-  </article>
+  </div>
 </template>
 <script>
 export default {
@@ -84,9 +84,31 @@ export default {
 </script>
 <style lang="scss">
   .article-tweet {
+    padding: 15px;
+    flex: 1 0 auto;
+    margin: 0 0 8px;
+    /*border: 1px solid #fff1;*/
+    background-color: #0009;
+    border-radius: 0;
+    position: relative;
+    cursor: default;
+    transition: all 200ms ease-in-out;
+    min-width: 280px;
+
+    a.action {
+      border: 1px solid transparent;
+
+      &:active {
+        background-color: #1DA1F2;
+      }
+    }
+
     &.reply {
+      padding: 0;
+      background-color: transparent;
+
       > p {
-        padding-left: 48px;
+        padding-left: 36px;
         border-left: 2px solid #aaa;
         margin: 15px 0 15px 32px;
 

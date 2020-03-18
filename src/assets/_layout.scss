@@ -457,11 +457,11 @@ form.inline {
     flex-direction: column;
     flex: 1 0 auto;
     max-width: 50%;
-    padding-right: 2px;
+    padding-right: 4px;
 
     &:last-child {
       padding-right: 0;
-      padding-left: 2px;
+      padding-left: 4px;
     }
 
     > article {

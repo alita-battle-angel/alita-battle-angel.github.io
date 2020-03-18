@@ -37,7 +37,7 @@
               :key="tweet.id"
               :tweet="tweet"
             >
-              <article-tweet v-if="tweet.in_reply_to_status" class="reply" :tweet="tweet.in_reply_to_status" />
+              <article-tweet v-if="tweet.in_reply_to_status" :tweet="tweet.in_reply_to_status" class="reply"/>
             </article-tweet>
           </div>
           <div class="column">
@@ -46,7 +46,7 @@
               :key="tweet.id"
               :tweet="tweet"
             >
-              <article-tweet v-if="tweet.in_reply_to_status" class="reply" :tweet="tweet.in_reply_to_status" />
+              <article-tweet v-if="tweet.in_reply_to_status" :tweet="tweet.in_reply_to_status" class="reply"/>
             </article-tweet>
           </div>
         </main>

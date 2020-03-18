@@ -75,15 +75,17 @@
 
 <script>
 export default {
-  head: {
-    title: 'Call out to Alita Army: Make #AlitaSequel Go Trending - 2019 | Articles | I Do Not Stand by in The Presence of Evil',
-    meta: [
-      {
-        hid: 'description',
-        name: 'description',
-        content: 'We want a sequel to Alita: Battle Angel. We need to reach out to Disney and make the sequel happen.'
-      }
-    ]
+  head () {
+    return {
+      title: 'Call out to Alita Army: Make #AlitaSequel Go Trending - 2019 | Articles | I Do Not Stand by in The Presence of Evil',
+      meta: [
+        {
+          hid: 'description',
+          name: 'description',
+          content: 'We want a sequel to Alita: Battle Angel. We need to reach out to Disney and make the sequel happen.'
+        }
+      ]
+    }
   },
   components: {}
 }

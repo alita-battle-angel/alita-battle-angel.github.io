@@ -166,17 +166,19 @@
 
 <script>
 export default {
-  head: {
-    title: 'Projects | I Do Not Stand by in The Presence of Evil',
-    meta: [
-      {
-        hid: 'description',
-        name: 'description',
-        content: 'Learn about the projects that are being developed by Alita Army. You can participate in projects that interests you.'
+  head () {
+    return {
+      title: 'Projects | I Do Not Stand by in The Presence of Evil',
+      meta: [
+        {
+          hid: 'description',
+          name: 'description',
+          content: 'Learn about the projects that are being developed by Alita Army. You can participate in projects that interests you.'
+        }
+      ],
+      bodyAttrs: {
+        class: ['projects']
       }
-    ],
-    bodyAttrs: {
-      class: ['projects']
     }
   },
   components: {}

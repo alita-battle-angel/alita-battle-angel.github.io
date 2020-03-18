@@ -7,8 +7,8 @@
           :key="item.href"
           :to="item.href"
           :active-class="item.href === '/' ? null : 'active'"
-          exact-active-class="active"
           @click.native="shrink()"
+          exact-active-class="active"
         >
           <i class="material-icons">{{ item.icon }}</i>
           <span>

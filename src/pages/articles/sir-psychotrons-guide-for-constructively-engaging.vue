@@ -97,15 +97,17 @@
 
 <script>
 export default {
-  head: {
-    title: 'Sir_Psychotron’s Guide for Constructively Engaging With the Media | Articles | I Do Not Stand by in The Presence of Evil',
-    meta: [
-      {
-        hid: 'description',
-        name: 'description',
-        content: 'An excellent list regarding how to constructively engage with media originally posted by u/Sir_Psychotron on reddit'
-      }
-    ]
+  head () {
+    return {
+      title: 'Sir_Psychotron’s Guide for Constructively Engaging With the Media | Articles | I Do Not Stand by in The Presence of Evil',
+      meta: [
+        {
+          hid: 'description',
+          name: 'description',
+          content: 'An excellent list regarding how to constructively engage with media originally posted by u/Sir_Psychotron on reddit'
+        }
+      ]
+    }
   },
   components: {}
 }

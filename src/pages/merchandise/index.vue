@@ -41,15 +41,17 @@
 
 <script>
 export default {
-  head: {
-    title: 'Merchandise | I Do Not Stand by in The Presence of Evil',
-    meta: [
-      {
-        hid: 'description',
-        name: 'description',
-        content: 'Browse all Alita\'s merchandise'
-      }
-    ]
+  head () {
+    return {
+      title: 'Merchandise | I Do Not Stand by in The Presence of Evil',
+      meta: [
+        {
+          hid: 'description',
+          name: 'description',
+          content: 'Browse all Alita\'s merchandise'
+        }
+      ]
+    }
   },
   components: {}
 }
