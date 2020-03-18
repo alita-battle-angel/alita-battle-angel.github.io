@@ -137,7 +137,7 @@ export default {
 
     > .user {
       height: 64px;
-      flex: 1 1 auto;
+      flex: 1 1;
       overflow: hidden;
       background-color: #fff1;
       margin-right: 4px;

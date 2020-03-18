@@ -205,6 +205,10 @@
 
 <script>
 export default {
+  transition: {
+    name: 'page',
+    mode: 'out-in'
+  },
   components: {},
   data () {
     return {
