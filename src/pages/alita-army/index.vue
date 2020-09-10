@@ -229,18 +229,20 @@ export default {
 
     > .hunter-warrior-info {
       flex: 1 0 auto;
-      max-width: calc(33.33% - 8px);
+      max-width: calc(50% - 7px);
     }
 
     @media only screen and (max-width: 1000px) {
       > .hunter-warrior-info {
-        max-width: calc(50% - 8px);
+        font-size: .9em;
       }
     }
 
     @media only screen and (max-width: 600px) {
       > .hunter-warrior-info {
-        max-width: calc(100% - 8px);
+        max-width: 100%;
+        margin: 10px 0;
+        font-size: .9em;
       }
     }
   }

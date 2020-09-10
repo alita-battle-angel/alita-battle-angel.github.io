@@ -75,12 +75,10 @@ export default {
 <style lang="scss">
   .hunter-warrior-info {
     width: 100%;
-    margin: 4px;
-    background-color: #2b476444;
-    border: 1px solid #fff1;
+    margin: 7px 0;
+    background-color: #333b;
     color: #bbb;
-    /*border: none;*/
-    font-size: 1em;
+    font-size: .92em;
     border-radius: 0;
     padding: 0;
     transition: all .2s ease-in-out;
@@ -88,9 +86,13 @@ export default {
     position: relative;
     overflow: hidden;
 
+    &:nth-child(even) {
+      margin-left: 14px;
+    }
+
     &:hover {
-      background-color: #2b4764;
-      box-shadow: 0 6px 23px #2b4764aa, 0 0 2px 1px #2b4764aa;
+      background-color: #333;
+      box-shadow: 0 6px 23px rgba(0, 154, 229, 0.6), 0 0 9px 1px rgba(0, 154, 229, 0.3);
       border-color: #fff2;
       color: #fff;
     }
@@ -117,9 +119,9 @@ export default {
       bottom: 0;
       left: 0;
       right: 0;
-      font-size: 12px;
+      /*font-size: 12px;*/
       align-items: center;
-      padding: 8px 8px 0;
+      padding: 18px 8px 0;
 
       > div {
         overflow: hidden;
@@ -130,17 +132,19 @@ export default {
         text-overflow: ellipsis;
         overflow: hidden;
         margin: 0;
-        line-height: 16px;
+        line-height: 1;
         display: block;
       }
 
       strong {
-        font-size: 14px;
+        font-size: 1.05em;
         margin-bottom: 4px;
       }
 
       span {
         font-weight: 300;
+        line-height: 1.3em;
+        font-size: .9em;
       }
 
       > img {
@@ -155,10 +159,10 @@ export default {
     > p {
       display: block;
       margin: 0;
-      font-size: 10px;
+      font-size: .86em;
       text-align: right;
-      line-height: 12px;
-      padding: 8px;
+      line-height: 1;
+      padding: 2px 8px 8px;
     }
   }
 </style>

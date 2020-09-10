@@ -64,7 +64,9 @@ export default {
       }
 
       tweet.urls.split('\n').forEach((item) => {
-        withHashTags = withHashTags.replace(item, `<a href="${item}" target="_blank">${item}</a>`)
+        if (item) {
+          withHashTags = withHashTags.replace(item, `<a href="${item}" target="_blank">${item}</a>`)
+        }
       })
 
       return withHashTags
@@ -87,7 +89,6 @@ export default {
     padding: 15px;
     flex: 1 0 auto;
     margin: 0 0 8px;
-    /*border: 1px solid #fff1;*/
     background-color: #0009;
     border-radius: 0;
     position: relative;

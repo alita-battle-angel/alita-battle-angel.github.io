@@ -122,7 +122,8 @@ export default {
         'Cosplay',
         'AlitaChallenge',
         'Alita',
-        'AlitaBattleAngel'
+        'AlitaBattleAngel',
+        'AlitaDay'
       ],
       lastQuery: null
     }
