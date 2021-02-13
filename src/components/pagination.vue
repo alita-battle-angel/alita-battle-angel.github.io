@@ -62,9 +62,10 @@ export default {
     }
 
     > span {
-      width: 80px;
+      width: 120px;
       text-align: center;
       font-weight: bold;
+      white-space: nowrap;
     }
   }
 </style>
