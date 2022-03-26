@@ -37,6 +37,6 @@
     "sass-loader": "^7.3.1"
   },
   "engines": {
-    "node": "10.x"
+    "node": "14.x"
   }
 }
