@@ -119,7 +119,6 @@ export default {
       bottom: 0;
       left: 0;
       right: 0;
-      /*font-size: 12px;*/
       align-items: center;
       padding: 18px 8px 0;
 

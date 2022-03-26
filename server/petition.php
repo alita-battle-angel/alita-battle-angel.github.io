@@ -5,7 +5,8 @@ require_once 'database.php';
 $method = $_SERVER['REQUEST_METHOD'];
 
 $file_name = 'petition-data.json';
-function fetch_petition () {
+function fetch_petition()
+{
   $http_headers = [
     'User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/50.0.2661.102 Safari/537.36',
   ];
@@ -21,11 +22,13 @@ function fetch_petition () {
   curl_close($handle);
 
   $output_array = [];
-  preg_match('/window\.changeTargetingData\s=\s([a-zA-z:\'",\s\d\n\t\{\}\-]*);?/m', $content, $output_array);
-  return json_decode($output_array[1], true);
+  preg_match('/changeTargetingData\s?=\s?([a-zA-z:\'",\s\d\n\t\{\}\-]*);?/m', $content, $output_array);
+  $fixed_json = str_replace('undefined', 'null', $output_array[1]);
+  return json_decode($fixed_json, true);
 }
 
-function save_petition ($data) {
+function save_petition($data)
+{
   global $database;
   $database->save('cache', [
     'id' => $data['id'],
