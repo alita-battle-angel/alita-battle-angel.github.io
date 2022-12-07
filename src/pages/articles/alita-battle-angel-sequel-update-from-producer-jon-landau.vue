@@ -81,17 +81,17 @@
 export default {
   head() {
     return {
-      title: 'Call out to Alita Army: #AlitaSequel Banner Over The Oscars | Articles | I Do Not Stand by in The Presence of Evil',
+      title: 'Alita Battle Angel Sequel Update From Producer Jon Landau',
       meta: [
         {
           hid: 'description',
           name: 'description',
-          content: 'We want to fly a banner with "#AlitaSequel #AlitaArmy" over the red carpet at the Academy Awards for three hours.'
+          content: 'Well, there’s a little film called Alita: Battle Angel that we’d love to circle back and do a sequel to. Jan Landau stated.'
         },
         {
           hid: 'twitter:image',
           name: 'twitter:image',
-          content: 'https://i-do-not-stand-by-in-the-presence-of-evil.com/gofundme-banner.jpg'
+          content: 'https://i-do-not-stand-by-in-the-presence-of-evil.com/alita-looking-up.jpg'
         },
         {
           hid: 'twitter:url',
@@ -101,32 +101,32 @@ export default {
         {
           hid: 'twitter:title',
           name: 'twitter:title',
-          content: 'Call out to Alita Army: #AlitaSequel Banner Over The Oscars'
+          content: 'Alita Battle Angel Sequel Update From Producer Jon Landau'
         },
         {
           hid: 'twitter:description',
           name: 'twitter:description',
-          content: 'We want to fly a banner with "#AlitaSequel #AlitaArmy" over the red carpet at the Academy Awards for three hours.'
+          content: 'Well, there’s a little film called Alita: Battle Angel that we’d love to circle back and do a sequel to. Jan Landau stated.'
         },
         {
           hid: 'og:title',
           name: 'og:title',
-          content: 'Call out to Alita Army: #AlitaSequel Banner Over The Oscars'
+          content: 'Alita Battle Angel Sequel Update From Producer Jon Landau'
         },
         {
           hid: 'og:url',
           name: 'og:url',
-          content: 'https://i-do-not-stand-by-in-the-presence-of-evil.com/articles/alitasequel-banner-over-the-oscars'
+          content: 'https://i-do-not-stand-by-in-the-presence-of-evil.com/articles/alita-battle-angel-sequel-update-from-producer-jon-landau'
         },
         {
           hid: 'og:description',
           name: 'og:description',
-          content: 'We want to fly a banner with "#AlitaSequel #AlitaArmy" over the red carpet at the Academy Awards for three hours.'
+          content: 'Well, there’s a little film called Alita: Battle Angel that we’d love to circle back and do a sequel to. Jan Landau stated.'
         },
         {
           hid: 'og:image',
           name: 'og:image',
-          content: 'https://i-do-not-stand-by-in-the-presence-of-evil.com/gofundme-banner.jpg'
+          content: 'https://i-do-not-stand-by-in-the-presence-of-evil.com/alita-looking-up.jpg'
         }
       ]
     }
