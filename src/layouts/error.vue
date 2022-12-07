@@ -20,13 +20,13 @@
 
 <script>
 export default {
-  name: 'NuxtError',
   props: {
     error: {
       type: Object,
       default: null
     }
   },
+  layout: 'error',
   head () {
     return {
       title: this.message,

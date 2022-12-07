@@ -72,7 +72,8 @@ body {
 a {
   font-size: .87em;
   font-weight: 500;
-  color: #a14bff;
+  //color: #a14bff;
+  color: #dd4b4b;
   //background-color: rgba(#a14bff, .15);
   text-decoration: none;
   border-radius: 20px;
@@ -88,12 +89,12 @@ a {
   }
 
   &:hover {
-    background-color: rgba(#a14bff, .25);
+    background-color: rgba(#dd4b4b, .25);
   }
 
   &:active {
     color: #111;
-    background-color: #a14bff;
+    background-color: #dd4b4b;
   }
 
   &.disabled {

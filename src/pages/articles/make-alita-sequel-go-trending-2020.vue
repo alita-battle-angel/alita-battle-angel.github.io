@@ -46,9 +46,9 @@
               href="https://twitter.com/DisneyMovies"
             >@DisneyMovies</a><br>
             Use
-            <nuxt-link class="link-white" to="/fans?filterBy=AlitaSequel">
+            <NuxtLink class="link-white" to="/fans?filterBy=AlitaSequel">
               #AlitaSequel
-            </nuxt-link>
+            </NuxtLink>
           </p>
           <h4>
             What can you do?
@@ -56,9 +56,9 @@
           <p>
             We tweet. All together at the same time worldwide. Let's raise our voice, and get that sequel once and for
             all!
-            <nuxt-link class="link-white" to="/fans?filterBy=AlitaSequel">
+            <NuxtLink class="link-white" to="/fans?filterBy=AlitaSequel">
               #AlitaSequel
-            </nuxt-link>
+            </NuxtLink>
             go trending. Not now, but all together at
             the same time worldwide. For one hour we Tweet, we unleash hell.
           </p>

@@ -20,14 +20,14 @@
         <pagination :page="page" :total-pages="total_pages" :previous-url="previous_url" :next-url="next_url" />
 
         <div class="filters">
-          <nuxt-link
+          <NuxtLink
             v-for="item in filterItems"
             :key="item"
             :class="{toggle: true, active: isFilterActive(item)}"
             :to="getHref(item)"
           >
             #{{ item }}
-          </nuxt-link>
+          </NuxtLink>
         </div>
 
         <main :class="list_state">

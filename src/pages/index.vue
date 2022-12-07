@@ -12,31 +12,36 @@
         </blockquote>
         <p>
           Join the Alita Army by
-          <nuxt-link class="link-white" to="/alita-army">
+          <NuxtLink class="link-white" to="/alita-army">
             registering as a member
-          </nuxt-link>
+          </NuxtLink>
         </p>
         <p>
           Also, we highly recommend reading
-          <nuxt-link class="link-white" to="/articles/sir-psychotrons-guide-for-constructively-engaging">
+          <NuxtLink class="link-white" to="/articles/sir-psychotrons-guide-for-constructively-engaging">
             Sir_Psychotron’s Guide for Constructively Engaging With the Media
-          </nuxt-link>
+          </NuxtLink>
         </p>
         <p>
-          <nuxt-link class="mission" to="/articles/make-alita-sequel-go-trending-2020">
+          <NuxtLink class="mission" to="/articles/alita-battle-angel-sequel-update-from-producer-jon-landau">
+            <small>Dec 6, 2022</small>
+            Alita Battle Angel Sequel Update From Producer Jon Landau
+          </NuxtLink>
+
+          <NuxtLink class="mission" to="/articles/make-alita-sequel-go-trending-2020">
             <small>Feb 2, 2020</small>
             MISSION: Make #AlitaSequel Go Trending - 2020<br>
             On Feb 6, 12:00 PM UTC
-          </nuxt-link>
-          <nuxt-link class="mission" to="/articles/alitasequel-banner-over-the-oscars">
+          </NuxtLink>
+          <NuxtLink class="mission" to="/articles/alitasequel-banner-over-the-oscars">
             <small>Jan 8, 2020</small>
             MISSION: #AlitaSequel Banner Over The Oscars
-          </nuxt-link>
-          <nuxt-link class="mission" to="/articles/make-alita-sequel-go-trending-2019">
+          </NuxtLink>
+          <NuxtLink class="mission" to="/articles/make-alita-sequel-go-trending-2019">
             <small>Dec 5, 2019</small>
             MISSION: Make #AlitaSequel Go Trending - 2019<br>
             On Dec 5, 11:00 AM UTC
-          </nuxt-link>
+          </NuxtLink>
         </p>
         <div class="f-row">
           <a

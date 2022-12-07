@@ -2,7 +2,7 @@
   <div>
     <div class="header-box">
       <nav :class="{'expand': expand}">
-        <nuxt-link
+        <NuxtLink
           v-for="item in menus"
           :key="item.href"
           :to="item.href"
@@ -14,7 +14,7 @@
           <span>
             {{ item.title }}
           </span>
-        </nuxt-link>
+        </NuxtLink>
 
         <button class="mob-icon menu-btn" @click="toggleExpand($event)" @touchstart="toggleExpand($event)">
           <i class="material-icons">menu</i>

@@ -1,10 +1,6 @@
-module.exports = {
-  mode: 'universal',
-
+export default {
+  // Global page headers: https://go.nuxtjs.dev/config-head
   srcDir: 'src/',
-  /*
-  ** Headers of the page
-  */
   head: {
     title: 'I Do Not Stand by in The Presence of Evil',
     meta: [
@@ -100,78 +96,32 @@ module.exports = {
     ]
   },
 
-  /*
-  ** Customize the progress-bar color
-  */
-  loading: {
-    color: '#aaa',
-    continuous: true,
-    duration: 1000
-  },
-
-  /*
-  ** Global CSS
-  */
+  // Global CSS: https://go.nuxtjs.dev/config-css
   css: [
     '~/assets/main.scss'
   ],
 
-  /*
-  ** Plugins to load before mounting the App
-  */
-  plugins: [],
+  // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
+  plugins: [
+  ],
 
-  /*
-  ** Nuxt.js modules
-  */
-  modules: [],
+  // Auto import components: https://go.nuxtjs.dev/config-components
+  components: true,
 
-  router: {
-    scrollBehavior: function (to, from, savedPosition) {
-      return false
-    }
-  },
+  // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
+  buildModules: [
+  ],
 
-  workbox: {
-    dev: true
-  },
+  // Modules: https://go.nuxtjs.dev/config-modules
+  modules: [
+  ],
 
-  manifest: {
-    icons: [
-      {
-        'src': '/favicon.png',
-        'sizes': '144x144',
-        'type': 'image/png'
-      },
-      {
-        'src': '/favicon.png',
-        'sizes': '192x192',
-        'type': 'image/png'
-      },
-      {
-        'src': '/favicon.png',
-        'sizes': '512x512',
-        'type': 'image/png'
-      }
-    ]
-  },
-  /*
-  ** Build configuration
-  */
+  // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
-    /*
-    ** You can extend webpack config here
-    */
-    extend(config, ctx) {
-      // Run ESLint on save
-      if (ctx.isDev && ctx.isClient) {
-        config.module.rules.push({
-          enforce: 'pre',
-          test: /\.(js|vue)$/,
-          loader: 'eslint-loader',
-          exclude: [/(node_modules)/, /(_nuxt)/]
-        })
-      }
-    }
-  }
+  },
+  loadingIndicator: {
+    name: 'circle',
+    color: '#aaa',
+    background: 'white'
+  },
 }

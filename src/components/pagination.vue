@@ -1,14 +1,14 @@
 <template>
   <div class="pagination">
-    <nuxt-link :class="{button:true , disabled:can_previous}" :to="previousUrl">
+    <NuxtLink :class="{button:true , disabled:can_previous}" :to="previousUrl">
       <i class="material-icons">keyboard_arrow_left</i>
-    </nuxt-link>
+    </NuxtLink>
     <span>
       {{ page }} / {{ totalPages }}
     </span>
-    <nuxt-link :class="{button:true , disabled: can_next}" :to="nextUrl">
+    <NuxtLink :class="{button:true , disabled: can_next}" :to="nextUrl">
       <i class="material-icons">keyboard_arrow_right</i>
-    </nuxt-link>
+    </NuxtLink>
   </div>
 </template>
 <script>

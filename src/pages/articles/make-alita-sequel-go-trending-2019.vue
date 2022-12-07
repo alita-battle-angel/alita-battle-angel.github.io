@@ -22,9 +22,9 @@
           </h4>
           <p>
             We need to make noise. We need to make the hashtag
-            <nuxt-link class="link-white" to="/fans?filterBy=AlitaSequel">
+            <NuxtLink class="link-white" to="/fans?filterBy=AlitaSequel">
               #AlitaSequel
-            </nuxt-link>
+            </NuxtLink>
             go trending. Not now, but all together at
             the same time worldwide. For one hour we Tweet, we unleash hell.
           </p>
