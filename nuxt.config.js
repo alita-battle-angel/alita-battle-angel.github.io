@@ -66,6 +66,11 @@ export default {
         hid: 'og:image',
         name: 'og:image',
         content: 'https://i-do-not-stand-by-in-the-presence-of-evil.com/social-banner.jpg'
+      },
+      {
+        hid: 'google',
+        name: 'google-site-verification',
+        content: 'PS3o2i5ejncRG1QC5nO1rEvQjNCCRbWLZJhNKljFTgU'
       }
     ],
     link: [
